@@ -85,6 +85,7 @@ void CorrectionsTest::subsection() {
     calibration.range().setStop(stop_Hz);
     calibration.range().setStopInclusive(false);
     const double step_Hz = 100.0E6;
+
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
