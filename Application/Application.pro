@@ -9,7 +9,7 @@ TARGET    = JoinCals
 TEMPLATE  = app
 
 include(../Core/core.pri)
-SOURCES       += main.cpp\
+SOURCES       += main.cpp \
                  MainWindow.cpp
 HEADERS       += MainWindow.h
 FORMS         += MainWindow.ui

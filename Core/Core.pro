@@ -1,11 +1,29 @@
-Qt      += core gui widgets testlib
-TEMPLATE = lib
-TARGET   = Core
-CONFIG  += staticlib
-DESTDIR  = $$PWD/Library
+QT           += core gui widgets
+TEMPLATE      = lib
+CONFIG       += staticlib
+DESTDIR       = $$PWD/Library
+
+win32: TARGET = Core
+macx:  TARGET = libCore
+CONFIG(debug, debug|release) {
+       TARGET = $$join(TARGET,,,d)
+}
 
 include(../RsaToolbox/rsatoolbox.pri)
-#HEADERS += 
-#SOURCES +=
+HEADERS += CalibrationWidget.h \
+           CalibrationSource.h \
+           Corrections.h \
+           JoinCalibrations.h \
+           Calibration.h \
+           FrequencyRange.h
+SOURCES += CalibrationWidget.cpp \
+           CalibrationSource.cpp \
+           Corrections.cpp \
+           JoinCalibrations.cpp \
+           Calibration.cpp \
+           FrequencyRange.cpp
+FORMS   += CalibrationWidget.ui
 
-DEFINES += SOURCE_DIR=\\\"$PWD/\\\"
+DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
+CONFIG(debug, debug|release):  DEFINES += DEBUG_MODE
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT

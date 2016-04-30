@@ -1,7 +1,7 @@
 QT += core gui widgets
 
 include(../RsaToolbox/rsatoolbox.pri)
-INCLUDEPATH += $PWD
+INCLUDEPATH += $$PWD
 DEPENDPATH  += $$PWD/Library
 
 win32 {
@@ -10,10 +10,10 @@ win32 {
 
     LIBS += -L$$PWD
     CONFIG(debug, release|debug) {
-        LIBS += -l$$PWD/Cored
+        LIBS += -l$$PWD/Library/Cored
     }
     else {
-        LIBS += -l$$PWD/Core
+        LIBS += -l$$PWD/Library/Core
     }
 }
 macx {
@@ -22,9 +22,9 @@ macx {
     LIBS += -stdlib=libc++
     LIBS += -L$$PWD
     CONFIG(debug, release|debug) {
-        LIBS += $$PWD/libCored.a
+        LIBS += $$PWD/Library/libCored.a
     }
     else {
-        LIBS += $$PWD/libCore.a
+        LIBS += $$PWD/Library/libCore.a
     }
 }

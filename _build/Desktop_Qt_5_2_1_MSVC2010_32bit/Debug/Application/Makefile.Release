@@ -14,10 +14,10 @@ CXX           = cl
 DEFINES       = -DUNICODE -DWIN32 -DSOURCE_DIR=\"C:/Users/Lalic/Documents/Qt/JoinCals/Application\" -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -O2 -MD -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t /wd4482 /wd4482 -O2 -MD -GR -W3 -w34100 -w34189 -EHsc $(DEFINES)
-INCPATH       = -I"..\..\..\..\RsaToolbox\Include" -I"$PWD" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtPrintSupport" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtNetwork" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtANGLE" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore" -I"release" -I"." -I"." -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\win32-msvc2010"
+INCPATH       = -I"..\..\..\..\RsaToolbox\Include" -I"..\..\..\..\Core" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtPrintSupport" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtNetwork" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtANGLE" -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore" -I"release" -I"." -I"." -I"..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\win32-msvc2010"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = qtmain.lib C:/Users/Lalic/Documents/Qt/JoinCals/RsaToolbox/Library/RsaToolbox.lib /LIBPATH:C:\Users\Lalic\Documents\Qt\JoinCals\RsaToolbox\Library /LIBPATH:C:\Users\Lalic\Documents\Qt\JoinCals\Core C:/Users/Lalic/Documents/Qt/JoinCals/Core/Core.lib /LIBPATH:C:\Qt\5.2.1\msvc2010\lib C:\Qt\5.2.1\msvc2010\lib\Qt5PrintSupport.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Widgets.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Network.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Gui.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Core.lib libEGL.lib libGLESv2.lib gdi32.lib user32.lib release\VS2010Resources.res 
+LIBS          = qtmain.lib C:/Users/Lalic/Documents/Qt/JoinCals/RsaToolbox/Library/RsaToolbox.lib /LIBPATH:C:\Users\Lalic\Documents\Qt\JoinCals\RsaToolbox\Library /LIBPATH:C:\Users\Lalic\Documents\Qt\JoinCals\Core C:/Users/Lalic/Documents/Qt/JoinCals/Core/Library/Core.lib /LIBPATH:C:\Qt\5.2.1\msvc2010\lib C:\Qt\5.2.1\msvc2010\lib\Qt5PrintSupport.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Widgets.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Network.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Gui.lib C:\Qt\5.2.1\msvc2010\lib\Qt5Core.lib libEGL.lib libGLESv2.lib gdi32.lib user32.lib release\VS2010Resources.res 
 QMAKE         = C:\Qt\5.2.1\msvc2010\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -61,26 +61,6 @@ DESTDIR_TARGET = release\JoinCals.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-{.}.cpp{release\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
-	$<
-<<
-
-{.}.cc{release\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
-	$<
-<<
-
-{.}.cxx{release\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
-	$<
-<<
-
-{.}.c{release\}.obj::
-	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
-	$<
-<<
-
 {release}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
@@ -117,6 +97,26 @@ DESTDIR_TARGET = release\JoinCals.exe
 <<
 
 {..\..\..\..\Application}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{.}.c{release\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
@@ -534,7 +534,38 @@ release\MainWindow.obj: ..\..\..\..\Application\MainWindow.cpp ..\..\..\..\Appli
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qtouchdevice.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qicon.h \
-		ui_MainWindow.h
+		ui_MainWindow.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QVariant \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QAction \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qaction.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qactiongroup.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QApplication \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qapplication.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qcoreapplication.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qeventloop.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qguiapplication.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qinputmethod.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QButtonGroup \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qbuttongroup.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QHeaderView \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qheaderview.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qframe.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qabstractitemmodel.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qvalidator.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qregularexpression.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qslider.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyle.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabbar.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qrubberband.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QWidget
 
 release\qrc_resources.obj: release\qrc_resources.cpp 
 

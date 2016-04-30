@@ -173,8 +173,9 @@ Makefile: ..\..\..\..\Test\Test.pro ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\resources.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\moc.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\opengl.prf \
+		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\testlib_defines.prf \
+		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\console.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\uic.prf \
-		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\windows.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\testcase_targets.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\exceptions.prf \
 		..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\yacc.prf \
@@ -183,6 +184,7 @@ Makefile: ..\..\..\..\Test\Test.pro ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010
 		C:/Qt/5.2.1/msvc2010/lib/Qt5PrintSupport.prl \
 		C:/Qt/5.2.1/msvc2010/lib/Qt5Widgets.prl \
 		C:/Qt/5.2.1/msvc2010/lib/Qt5Network.prl \
+		C:/Qt/5.2.1/msvc2010/lib/Qt5Test.prl \
 		C:/Qt/5.2.1/msvc2010/lib/Qt5Gui.prl \
 		C:/Qt/5.2.1/msvc2010/lib/Qt5Core.prl \
 		C:/Qt/5.2.1/msvc2010/lib/libEGLd.prl \
@@ -288,8 +290,9 @@ Makefile: ..\..\..\..\Test\Test.pro ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\resources.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\moc.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\opengl.prf:
+..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\testlib_defines.prf:
+..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\console.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\uic.prf:
-..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\win32\windows.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\testcase_targets.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\exceptions.prf:
 ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\mkspecs\features\yacc.prf:
@@ -298,6 +301,7 @@ Makefile: ..\..\..\..\Test\Test.pro ..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010
 C:/Qt/5.2.1/msvc2010/lib/Qt5PrintSupport.prl:
 C:/Qt/5.2.1/msvc2010/lib/Qt5Widgets.prl:
 C:/Qt/5.2.1/msvc2010/lib/Qt5Network.prl:
+C:/Qt/5.2.1/msvc2010/lib/Qt5Test.prl:
 C:/Qt/5.2.1/msvc2010/lib/Qt5Gui.prl:
 C:/Qt/5.2.1/msvc2010/lib/Qt5Core.prl:
 C:/Qt/5.2.1/msvc2010/lib/libEGLd.prl:
