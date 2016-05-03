@@ -61,22 +61,22 @@ DESTDIR_TARGET = release\JoinCals.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-{release}.cpp{release\}.obj::
+{.}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.cc{release\}.obj::
+{.}.cc{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.cxx{release\}.obj::
+{.}.cxx{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{release}.c{release\}.obj::
+{.}.c{release\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
@@ -101,22 +101,22 @@ DESTDIR_TARGET = release\JoinCals.exe
 	$<
 <<
 
-{.}.cpp{release\}.obj::
+{release}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{.}.cc{release\}.obj::
+{release}.cc{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{.}.cxx{release\}.obj::
+{release}.cxx{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
 
-{.}.c{release\}.obj::
+{release}.c{release\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
 <<
@@ -534,38 +534,7 @@ release\MainWindow.obj: ..\..\..\..\Application\MainWindow.cpp ..\..\..\..\Appli
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qtouchdevice.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qicon.h \
-		ui_MainWindow.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QVariant \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QAction \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qaction.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qactiongroup.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QApplication \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qcoreapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qeventloop.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qdesktopwidget.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qguiapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qinputmethod.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QButtonGroup \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qbuttongroup.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QHeaderView \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qheaderview.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemview.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractscrollarea.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qframe.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qabstractitemmodel.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qitemselectionmodel.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemdelegate.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyleoption.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qvalidator.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qregularexpression.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qslider.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractslider.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyle.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabbar.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qrubberband.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QWidget
+		ui_MainWindow.h
 
 release\qrc_resources.obj: release\qrc_resources.cpp 
 

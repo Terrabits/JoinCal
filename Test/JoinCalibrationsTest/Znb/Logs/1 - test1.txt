@@ -1,0 +1,3516 @@
+ Version 0.0
+(C) 2016 Rohde & Schwarz North America
+
+Mon May 2 23:33:52 2016
+
+VNA INSTRUMENT INFO
+Connection:       TCPIP
+Address:          127.0.0.1::5025
+Make:             Rohde & Schwarz
+Model:            ZNB
+Serial No:        1311601064100104
+Firmware Version: 2.60.1.226
+Min Frequency:    100 KHz
+Max Frequency:    20 GHz
+Number of Ports:  4
+Options:          ZNB-K2
+                  ZNB-K4
+                  ZNB-K14
+                  ZNB-K17
+                  ZNB-K19
+                  ZNB20-B24
+                  ZNB-B81
+                  ZNB-B1
+                  ZNB20-B2
+                  ZNB-B12
+
+
+Write:    "*CLS"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    "*RST"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    "*OPC?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DATA 'Ports 1-2 1-4 GHz 100 MHz steps.cal', #558494??"
+Bytes: 58553
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DATA 'Ports 1-2 4p1-8 GHz 100 MHz steps.cal', #563822??"
+Bytes: 63883
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1'"
+Bytes: 8
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1'"
+Bytes: 8
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 2,'Ports 1-2 1-4 GHz 100 MHz steps.cal'"
+Bytes: 56
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3248..."
+Bytes: 254
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3248..."
+Bytes: 254
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,2,Ch2'"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN3 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 3,'Ports 1-2 4p1-8 GHz 100 MHz steps.cal'"
+Bytes: 58
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3320..."
+Bytes: 326
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3320..."
+Bytes: 326
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,2,Ch2,3,Ch3'"
+Bytes: 20
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN4 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR? 4"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Read:     "'Ports 1-2 4p1-8 GHz 100 MHz steps.cal'"
+Bytes: 40
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR:RES 4"
+Bytes: 22
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM:DEL:ALL"
+Bytes: 20
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM1:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM1:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM1:FREQ:STOP 1e+09Hz"
+Bytes: 31
+Status: 0x0 Operation completed successfully.
+
+Write:    "*OPC?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM2:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM2:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM2:FREQ:STOP 1.1e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM3:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM3:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM3:FREQ:STOP 1.2e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM4:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM4:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM4:FREQ:STOP 1.3e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM5:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM5:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM5:FREQ:STOP 1.4e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM6:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM6:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM6:FREQ:STOP 1.5e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM7:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM7:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM7:FREQ:STOP 1.6e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM8:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM8:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM8:FREQ:STOP 1.7e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM9:ADD"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM9:SWE:POIN 1"
+Bytes: 24
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM9:FREQ:STOP 1.8e+09Hz"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM10:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM10:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM10:FREQ:STOP 1.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM11:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM11:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM11:FREQ:STOP 2e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM12:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM12:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM12:FREQ:STOP 2.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM13:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM13:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM13:FREQ:STOP 2.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM14:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM14:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM14:FREQ:STOP 2.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM15:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM15:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM15:FREQ:STOP 2.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM16:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM16:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM16:FREQ:STOP 2.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM17:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM17:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM17:FREQ:STOP 2.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM18:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM18:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM18:FREQ:STOP 2.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM19:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM19:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM19:FREQ:STOP 2.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM20:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM20:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM20:FREQ:STOP 2.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM21:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM21:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM21:FREQ:STOP 3e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM22:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM22:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM22:FREQ:STOP 3.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM23:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM23:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM23:FREQ:STOP 3.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM24:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM24:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM24:FREQ:STOP 3.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM25:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM25:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM25:FREQ:STOP 3.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM26:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM26:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM26:FREQ:STOP 3.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM27:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM27:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM27:FREQ:STOP 3.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM28:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM28:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM28:FREQ:STOP 3.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM29:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM29:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM29:FREQ:STOP 3.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM30:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM30:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM30:FREQ:STOP 3.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM31:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM31:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM31:FREQ:STOP 4e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM32:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM32:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM32:FREQ:STOP 4.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM33:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM33:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM33:FREQ:STOP 4.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM34:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM34:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM34:FREQ:STOP 4.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM35:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM35:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM35:FREQ:STOP 4.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM36:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM36:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM36:FREQ:STOP 4.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM37:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM37:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM37:FREQ:STOP 4.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM38:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM38:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM38:FREQ:STOP 4.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM39:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM39:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM39:FREQ:STOP 4.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM40:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM40:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM40:FREQ:STOP 4.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM41:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM41:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM41:FREQ:STOP 5e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM42:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM42:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM42:FREQ:STOP 5.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM43:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM43:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM43:FREQ:STOP 5.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM44:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM44:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM44:FREQ:STOP 5.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM45:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM45:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM45:FREQ:STOP 5.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM46:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM46:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM46:FREQ:STOP 5.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM47:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM47:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM47:FREQ:STOP 5.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM48:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM48:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM48:FREQ:STOP 5.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM49:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM49:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM49:FREQ:STOP 5.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM50:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM50:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM50:FREQ:STOP 5.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM51:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM51:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM51:FREQ:STOP 6e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM52:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM52:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM52:FREQ:STOP 6.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM53:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM53:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM53:FREQ:STOP 6.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM54:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM54:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM54:FREQ:STOP 6.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM55:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM55:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM55:FREQ:STOP 6.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM56:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM56:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM56:FREQ:STOP 6.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM57:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM57:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM57:FREQ:STOP 6.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM58:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM58:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM58:FREQ:STOP 6.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM59:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM59:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM59:FREQ:STOP 6.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM60:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM60:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM60:FREQ:STOP 6.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM61:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM61:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM61:FREQ:STOP 7e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM62:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM62:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM62:FREQ:STOP 7.1e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM63:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM63:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM63:FREQ:STOP 7.2e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM64:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM64:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM64:FREQ:STOP 7.3e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM65:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM65:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM65:FREQ:STOP 7.4e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM66:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM66:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM66:FREQ:STOP 7.5e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM67:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM67:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM67:FREQ:STOP 7.6e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM68:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM68:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM68:FREQ:STOP 7.7e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM69:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM69:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM69:FREQ:STOP 7.8e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM70:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM70:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM70:FREQ:STOP 7.9e+09Hz"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM71:ADD"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM71:SWE:POIN 1"
+Bytes: 25
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM71:FREQ:STOP 8e+09Hz"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SWE:TYPE SEGM"
+Bytes: 21
+Status: 0x0 Operation completed successfully.
+
+Write:    "*OPC?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
+Bytes: 54
+Status: 0x0 Operation completed successfully.
+
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
+Bytes: 54
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:AVER?"
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+Read:     "0"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SWE:TYPE?"
+Bytes: 17
+Status: 0x0 Operation completed successfully.
+
+Read:     "SEGM"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:SEGM:SWE:TIME:SUM?"
+Bytes: 26
+Status: 0x0 Operation completed successfully.
+
+Read:     "6.2125E-005"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
+Bytes: 54
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CORR:COLL:CHAN:ALL 0"
+Bytes: 22
+Status: 0x0 Operation completed successfully.
+
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
+Bytes: 54
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:COLL:METH:DEF 'JoinCal',TOSM,1,2"
+Bytes: 45
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:COLL:SAVE:SEL:DEF"
+Bytes: 30
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'DIRECTIVITY',1,1"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'SRCMATCH',1,1"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'REFLTRACK',1,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'DIRECTIVITY',1,1"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'SRCMATCH',1,1"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'REFLTRACK',1,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'DIRECTIVITY',1,1, #41136"
+Bytes: 1179
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'SRCMATCH',1,1, #41136"
+Bytes: 1176
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'REFLTRACK',1,1, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'DIRECTIVITY',2,1"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'SRCMATCH',2,1"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'REFLTRACK',2,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'LOADMATCH',2,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'TRANSTRACK',2,1"
+Bytes: 35
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'DIRECTIVITY',2,1"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'SRCMATCH',2,1"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'REFLTRACK',2,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'LOADMATCH',2,1"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'TRANSTRACK',2,1"
+Bytes: 35
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'DIRECTIVITY',2,1, #41136"
+Bytes: 1179
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'SRCMATCH',2,1, #41136"
+Bytes: 1176
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'REFLTRACK',2,1, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'LOADMATCH',2,1, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'TRANSTRACK',2,1, #41136"
+Bytes: 1178
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'DIRECTIVITY',1,2"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'SRCMATCH',1,2"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'REFLTRACK',1,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'LOADMATCH',1,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'TRANSTRACK',1,2"
+Bytes: 35
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'DIRECTIVITY',1,2"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'SRCMATCH',1,2"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'REFLTRACK',1,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'LOADMATCH',1,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'TRANSTRACK',1,2"
+Bytes: 35
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'DIRECTIVITY',1,2, #41136"
+Bytes: 1179
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'SRCMATCH',1,2, #41136"
+Bytes: 1176
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'REFLTRACK',1,2, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'LOADMATCH',1,2, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'TRANSTRACK',1,2, #41136"
+Bytes: 1178
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'DIRECTIVITY',2,2"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'SRCMATCH',2,2"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:CDAT? 'REFLTRACK',2,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3496..."
+Bytes: 502
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'DIRECTIVITY',2,2"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'SRCMATCH',2,2"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:CDAT? 'REFLTRACK',2,2"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3640..."
+Bytes: 646
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'DIRECTIVITY',2,2, #41136"
+Bytes: 1179
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'SRCMATCH',2,2, #41136"
+Bytes: 1176
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:CDAT 'REFLTRACK',2,2, #41136"
+Bytes: 1177
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
+Bytes: 54
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS4:CORR:COLL:SAVE:SEL"
+Bytes: 26
+Status: 0x0 Operation completed successfully.
+
+Write:    "*OPC?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:STOR:CORR 4,'Result.cal'"
+Bytes: 31
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN4 0"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,2,Ch2,3,Ch3'"
+Bytes: 20
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2 0"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,3,Ch3'"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN3 0"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1'"
+Bytes: 8
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SYST:ERR?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "-200,"Execution error;:SENS4:CORR:COLL:SAVE:SEL;No setup is set. Please contact Rohde&Schwarz if thi..."
+Bytes: 121
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SYST:ERR?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0,"No error""
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+SCPI Errors:
+-200: Execution error;:SENS4:CORR:COLL:SAVE:SEL;No setup is set. Please contact Rohde&Schwarz if this problem persists.
+
+Write:    ":SYST:ERR?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0,"No error""
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+Write:    "*CLS"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    "@LOC"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Instrument in local mode
+

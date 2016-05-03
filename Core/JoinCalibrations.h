@@ -20,8 +20,8 @@ public:
     ~JoinCalibrations();
 
 private:
-    static RsaToolbox::QRowVector subsection(const RsaToolbox::QRowVector &freq, double start_Hz, double stop_Hz);
-    static RsaToolbox::ComplexRowVector subsection(const RsaToolbox::ComplexRowVector &corrections, int startIndex, int stopIndex);
+    static void append(RsaToolbox::ComplexRowVector &vector, const RsaToolbox::ComplexRowVector &values);
+
 };
 
 #endif // JOINCALIBRATIONS_H

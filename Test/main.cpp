@@ -3,6 +3,7 @@
 // Project
 #include "CalibrationTest.h"
 #include "CorrectionsTest.h"
+#include "JoinCalibrationsTest.h"
 
 // RsaToolbox
 #include <TestClass.h>
@@ -20,6 +21,7 @@ int main()
     TestRunner testRunner;
     testRunner.addTest(new CalibrationTest);
     testRunner.addTest(new CorrectionsTest);
+    testRunner.addTest(new JoinCalibrationsTest);
 
     qDebug() << "Global result: " << (testRunner.runTests() ? "PASS" : "FAIL");
     return 0;

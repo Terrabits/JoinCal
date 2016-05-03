@@ -5,10 +5,12 @@ CONFIG  += testcase
 
 include(../Core/core.pri)
 HEADERS += CalibrationTest.h \
-    CorrectionsTest.h
+    CorrectionsTest.h \
+    JoinCalibrationsTest.h
 SOURCES += main.cpp \
            CalibrationTest.cpp \
-    CorrectionsTest.cpp
+    CorrectionsTest.cpp \
+    JoinCalibrationsTest.cpp
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
 

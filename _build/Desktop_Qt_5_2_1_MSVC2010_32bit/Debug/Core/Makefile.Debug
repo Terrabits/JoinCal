@@ -66,26 +66,6 @@ DESTDIR_TARGET = ..\..\..\..\Core\Library\Cored.lib
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-{..\..\..\..\Core}.cpp{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{..\..\..\..\Core}.cc{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{..\..\..\..\Core}.cxx{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{..\..\..\..\Core}.c{debug\}.obj::
-	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
 {.}.cpp{debug\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
 	$<
@@ -102,6 +82,26 @@ DESTDIR_TARGET = ..\..\..\..\Core\Library\Cored.lib
 <<
 
 {.}.c{debug\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{..\..\..\..\Core}.cpp{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{..\..\..\..\Core}.cc{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{..\..\..\..\Core}.cxx{debug\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
+	$<
+<<
+
+{..\..\..\..\Core}.c{debug\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
 	$<
 <<
@@ -404,39 +404,7 @@ debug\CalibrationWidget.obj: ..\..\..\..\Core\CalibrationWidget.cpp ..\..\..\..\
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qfiledevice.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qvector2d.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qtouchdevice.h \
-		ui_CalibrationWidget.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QVariant \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QAction \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qaction.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qicon.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qactiongroup.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QApplication \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qcoreapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qeventloop.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qdesktopwidget.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qguiapplication.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qinputmethod.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QButtonGroup \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qbuttongroup.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\QHeaderView \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qheaderview.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemview.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractscrollarea.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qframe.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qabstractitemmodel.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qitemselectionmodel.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractitemdelegate.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyleoption.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtGui\qvalidator.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\qregularexpression.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qslider.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qabstractslider.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qstyle.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabbar.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qtabwidget.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtWidgets\qrubberband.h
+		ui_CalibrationWidget.h
 
 debug\CalibrationSource.obj: ..\..\..\..\Core\CalibrationSource.cpp ..\..\..\..\Core\CalibrationSource.h \
 		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QString \
@@ -624,7 +592,8 @@ debug\Corrections.obj: ..\..\..\..\Core\Corrections.cpp ..\..\..\..\Core\Correct
 		..\..\..\..\RsaToolbox\Include\VnaDiagram.h \
 		..\..\..\..\RsaToolbox\Include\VnaSwitchMatrix.h \
 		..\..\..\..\RsaToolbox\Include\VnaCalUnit.h \
-		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\Qt
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\Qt \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QDebug
 
 debug\JoinCalibrations.obj: ..\..\..\..\Core\JoinCalibrations.cpp ..\..\..\..\Core\JoinCalibrations.h \
 		..\..\..\..\Core\Calibration.h \
@@ -765,7 +734,10 @@ debug\JoinCalibrations.obj: ..\..\..\..\Core\JoinCalibrations.cpp ..\..\..\..\Co
 		..\..\..\..\RsaToolbox\Include\VnaTimeDomain.h \
 		..\..\..\..\RsaToolbox\Include\VnaDiagram.h \
 		..\..\..\..\RsaToolbox\Include\VnaSwitchMatrix.h \
-		..\..\..\..\RsaToolbox\Include\VnaCalUnit.h
+		..\..\..\..\RsaToolbox\Include\VnaCalUnit.h \
+		..\..\..\..\Core\Corrections.h \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\Qt \
+		..\..\..\..\..\..\..\..\..\..\..\..\Qt\5.2.1\msvc2010\include\QtCore\QSharedPointer
 
 debug\Calibration.obj: ..\..\..\..\Core\Calibration.cpp ..\..\..\..\Core\Calibration.h \
 		..\..\..\..\Core\CalibrationSource.h \
