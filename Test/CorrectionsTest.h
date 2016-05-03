@@ -23,6 +23,9 @@ private:
 private slots:
     void fullCorrections();
     void subsection();
+    void stopExcluded();
+    void stopIncluded();
+    void fromCalGroup();
 };
 
 #endif // CORRECTIONSTEST_H

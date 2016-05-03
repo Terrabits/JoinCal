@@ -1,28 +1,37 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Mon May 2 18:02:34 2016
+Mon May 2 18:07:09 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
 Address:          127.0.0.1::5025
 Make:             Rohde & Schwarz
-Model:            ZNB
-Serial No:        1311601064100104
-Firmware Version: 2.60.1.226
-Min Frequency:    100 KHz
-Max Frequency:    20 GHz
+Model:            ZVA
+Serial No:        1145101099999999
+Firmware Version: 3.60
+Min Frequency:    300 KHz
+Max Frequency:    8 GHz
 Number of Ports:  4
-Options:          ZNB-K2
-                  ZNB-K4
-                  ZNB-K14
-                  ZNB-K17
-                  ZNB-K19
-                  ZNB20-B24
-                  ZNB-B81
-                  ZNB-B1
-                  ZNB20-B2
-                  ZNB-B12
+Options:          ZVA-K7
+                  ZVA-K17
+                  ZVAB-SIM
+                  ZVT8-B63
+                  ZVT8-B64
+                  ZVT8-B65
+                  ZVT8-B66
+                  ZVT8-B68
+                  ZVA8-B16
+                  ZVA8-B21
+                  ZVA8-B22
+                  ZVA8-B23
+                  ZVA8-B24
+                  ZVA8-B31
+                  ZVA8-B32
+                  ZVA8-B33
+                  ZVA8-B34
+                  ZVT8-B67
+                  ZVA-B7
 
 
 Write:    "*CLS"
@@ -45,8 +54,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
-Bytes: 46
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -57,12 +66,12 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'Ports 1-2, 1-8 GHz, 100 MHz steps.cal', #582172??"
-Bytes: 82233
+Write:    ":MMEM:DATA 'Ports 1-2, 1-8 GHz, 100 MHz steps.cal', #526649??"
+Bytes: 26710
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
-Bytes: 57
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 1,'Ports 1-2, 1-8 GHz, 100 MHz steps.cal'"
@@ -133,75 +142,8 @@ Write:    "*IDN?"
 Bytes: 6
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
-Bytes: 54
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "0,"No error""
-Bytes: 13
-Status: 0x0 Operation completed successfully.
-
-Write:    "*CLS"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR:DISP?"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Read:     "1"
-Bytes: 2
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR:DISP 0"
-Bytes: 17
-Status: 0x0 Operation completed successfully.
-
-Write:    "*IDN?"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
-Bytes: 54
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? MVNA,1"
-Bytes: 29
-Status: 0x0 Operation completed successfully.
-
-Read:     ""
-Bytes: 1
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "-220,"Parameter error;:SENS1:CORR:DATA:PAR? MVNA,1""
-Bytes: 52
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "0,"No error""
-Bytes: 13
-Status: 0x0 Operation completed successfully.
-
-SCPI Errors:
--220: Parameter error;:SENS1:CORR:DATA:PAR? MVNA,1
-
-Write:    "*CLS"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR:DISP 1"
-Bytes: 17
+Read:     "Rohde&Schwarz,ZVA8-4Port,1145101099999999,3.60"
+Bytes: 47
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS1:CORR:DATA:PAR? PORT"

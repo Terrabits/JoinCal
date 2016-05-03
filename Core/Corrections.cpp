@@ -71,21 +71,21 @@ ComplexRowVector Corrections::transmissionTracking(uint outputPort, uint inputPo
 uint Corrections::findStart(const QRowVector &frequencies_Hz, double start_Hz) {
     const int size = frequencies_Hz.size();
     int i = 0;
-    while (i+1 < size && frequencies_Hz[i+1] <= start_Hz) {
+    while (i+1 < size && frequencies_Hz[i] < start_Hz) {
         i++;
     }
-
     return i;
 }
 uint Corrections::findStop(const QRowVector &frequencies_Hz, double stop_Hz, bool isInclusive) {
     const int size = frequencies_Hz.size();
     int i = size-1;
-    while (i-1 >= 0 && stop_Hz <= frequencies_Hz[i-1]) {
+    while (i-1 >= 0 && stop_Hz < frequencies_Hz[i]) {
         i--;
     }
     if (!isInclusive && i > 0 && frequencies_Hz[i] == stop_Hz) {
         i--;
     }
+
     return i;
 }
 
