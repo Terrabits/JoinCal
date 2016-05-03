@@ -65,7 +65,7 @@ JoinCalibrations::JoinCalibrations(const QVector<Calibration> &sections,
         }
     }
 
-    channel.calibrate().apply();
+//    channel.calibrate().apply();
     channel.saveCalibration(saveAs);
     vna->deleteChannel(c);
 }

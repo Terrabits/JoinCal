@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Mon May 2 23:33:50 2016
+Tue May 3 13:41:56 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -431,10 +431,4 @@ Status: 0x0 Operation completed successfully.
 Write:    "*CLS"
 Bytes: 5
 Status: 0x0 Operation completed successfully.
-
-Write:    "@LOC"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Instrument in local mode
 

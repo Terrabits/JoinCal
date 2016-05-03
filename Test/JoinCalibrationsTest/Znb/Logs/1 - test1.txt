@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Mon May 2 23:33:52 2016
+Tue May 3 13:41:57 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -3417,26 +3417,6 @@ Write:    ":FORM ASC"
 Bytes: 10
 Status: 0x0 Operation completed successfully.
 
-Write:    "*IDN?"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
-Bytes: 54
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS4:CORR:COLL:SAVE:SEL"
-Bytes: 26
-Status: 0x0 Operation completed successfully.
-
-Write:    "*OPC?"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Read:     "1"
-Bytes: 2
-Status: 0x0 Operation completed successfully.
-
 Write:    ":MMEM:STOR:CORR 4,'Result.cal'"
 Bytes: 31
 Status: 0x0 Operation completed successfully.
@@ -3481,8 +3461,40 @@ Write:    ":SYST:ERR?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "-200,"Execution error;:SENS4:CORR:COLL:SAVE:SEL;No setup is set. Please contact Rohde&Schwarz if thi..."
-Bytes: 121
+Read:     "0,"No error""
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "272772, 221589733376, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58494, ports 1-2 1-8 ghz 100 mhz steps..."
+Bytes: 185
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 1,'Result.cal'"
+Bytes: 31
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"
@@ -3493,8 +3505,21 @@ Read:     "0,"No error""
 Bytes: 13
 Status: 0x0 Operation completed successfully.
 
-SCPI Errors:
--200: Execution error;:SENS4:CORR:COLL:SAVE:SEL;No setup is set. Please contact Rohde&Schwarz if this problem persists.
+Write:    ":MMEM:LOAD:CORR? 1"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Read:     "'Result.cal'"
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR? 1"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Read:     "'Result.cal'"
+Bytes: 13
+Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"
 Bytes: 11
@@ -3507,10 +3532,4 @@ Status: 0x0 Operation completed successfully.
 Write:    "*CLS"
 Bytes: 5
 Status: 0x0 Operation completed successfully.
-
-Write:    "@LOC"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Instrument in local mode
 

@@ -7,6 +7,7 @@
 #include "JoinCalibrations.h"
 
 // RsaToolbox
+#include <Test.h>
 #include <VnaFileSystem.h>
 using namespace RsaToolbox;
 
@@ -67,14 +68,11 @@ void JoinCalibrationsTest::test1() {
 
     QCOMPARE(_vna->channels().size(), 1);
     JoinCalibrations join(calibrations, ports, _vna.data(), saveAs);
-    QCOMPARE(_vna->channels().size(), 1);
-
     QVERIFY(!_vna->isError());
-
-    _vna->preset();
-    _vna->pause();
-
     QVERIFY(_vna->isCalGroup("Result"));
+    QCOMPARE(_vna->channels().size(), 1);
+    QVERIFY(!_vna->channel().isCalibrated());
+
     _vna->channel().setCalGroup(saveAs);
     QVERIFY(!_vna->isError());
     QVERIFY(_vna->channel().isCalGroup());
