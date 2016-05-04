@@ -12,10 +12,9 @@ CalibrationSource::CalibrationSource(uint channel) :
     //
 }
 CalibrationSource::CalibrationSource(QString calGroup) :
-    _channel(0),
-    _calGroup(calGroup)
+    _channel(0)
 {
-    //
+    setCalGroup(calGroup);
 }
 
 CalibrationSource::~CalibrationSource()
@@ -46,6 +45,9 @@ QString CalibrationSource::calGroup() const {
 }
 void CalibrationSource::setCalGroup(QString calGroup) {
     clear();
+
+    if (calGroup.endsWith(".cal", Qt::CaseInsensitive))
+        calGroup.chop(4);
     _calGroup = calGroup;
 }
 
@@ -63,4 +65,30 @@ QString CalibrationSource::displayText() const {
     }
 
     return QString();
+}
+
+bool operator!=(const CalibrationSource &left, const CalibrationSource &right) {
+    if (left.isEmpty() != right.isEmpty())
+        return true;
+    if (left.isEmpty())
+        return false;
+
+    if (left.isChannel() != right.isChannel())
+        return true;
+
+    if (left.isChannel()) {
+        if (left.channel() != right.channel())
+            return true;
+    }
+    else if (left.isCalGroup()) {
+        const QString leftGroup  =  left.calGroup().toLower();
+        const QString rightGroup = right.calGroup().toLower();
+        if (leftGroup != rightGroup)
+            return true;
+    }
+
+    return false;
+}
+bool operator==(const CalibrationSource &left, const CalibrationSource &right) {
+    return !(left != right);
 }

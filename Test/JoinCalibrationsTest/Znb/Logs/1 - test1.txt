@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Tue May 3 13:41:57 2016
+Wed May 4 16:19:07 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -3449,14 +3449,6 @@ Write:    ":CONF:CHAN3 0"
 Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Write:    ":CONF:CHAN:CAT?"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Read:     "'1,Ch1'"
-Bytes: 8
-Status: 0x0 Operation completed successfully.
-
 Write:    ":SYST:ERR?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
@@ -3485,12 +3477,28 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "272772, 221589733376, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58494, ports 1-2 1-8 ghz 100 mhz steps..."
+Read:     "272772, 221620899840, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58494, ports 1-2 1-8 ghz 100 mhz steps..."
 Bytes: 185
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
 Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1'"
+Bytes: 8
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:DATA:PAR:COUN?"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "0"
+Bytes: 2
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 1,'Result.cal'"

@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Wed May 4 16:19:04 2016
+Wed May 4 16:19:15 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -57,84 +57,260 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'Ports 1-2 1-8 GHz 100 MHz steps.cal', #582172??"
-Bytes: 82231
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "272772, 221620998144, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58494, ports 1-2 1-8 ghz 100 mhz steps..."
+Bytes: 185
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
 Bytes: 57
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:LOAD:CORR 1,'Ports 1-2 1-8 GHz 100 MHz steps.cal'"
-Bytes: 56
+Write:    ":MMEM:DEL:CORR 'ports 1-2 1-4 ghz 100 mhz steps.cal'"
+Bytes: 53
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:LOAD:CORR? 1"
-Bytes: 19
+Write:    ":MMEM:DEL:CORR 'ports 1-2 1-8 ghz 100 mhz steps.cal'"
+Bytes: 53
 Status: 0x0 Operation completed successfully.
 
-Read:     "'Ports 1-2 1-8 GHz 100 MHz steps.cal'"
-Bytes: 38
+Write:    ":MMEM:DEL:CORR 'ports 1-2 4p1-8 ghz 100 mhz steps.cal'"
+Bytes: 55
 Status: 0x0 Operation completed successfully.
 
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
+Write:    ":MMEM:DEL:CORR 'result.cal'"
+Bytes: 28
 Status: 0x0 Operation completed successfully.
 
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
+Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "SWAP"
-Bytes: 5
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
-Write:    ":FORM REAL,64"
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0, 221621280768,"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DATA 'Cal Group 1.cal', #558494??"
+Bytes: 58533
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DATA 'Cal Group 2.cal', #563822??"
+Bytes: 63861
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "122316, 221621149696, cal group 1.cal, , 58494, cal group 2.cal, , 63822,"
+Bytes: 76
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "122316, 221621149696, cal group 1.cal, , 58494, cal group 2.cal, , 63822,"
+Bytes: 76
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN1 1"
 Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Write:    ":FORM:BORD SWAP"
+Write:    ":CONF:CHAN:CAT?"
 Bytes: 16
 Status: 0x0 Operation completed successfully.
 
-Write:    ":SENS1:CORR:STIM?"
-Bytes: 18
+Read:     "'1,Ch1'"
+Bytes: 8
 Status: 0x0 Operation completed successfully.
 
-Read:     "#3568..."
-Bytes: 574
+Write:    ":CONF:CHAN2 1"
+Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Write:    ":FORM ASC"
-Bytes: 10
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
 Status: 0x0 Operation completed successfully.
 
-Write:    "*IDN?"
-Bytes: 6
+Read:     "'1,Ch1,2,Ch2'"
+Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
-Bytes: 54
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "122316, 221621149696, cal group 1.cal, , 58494, cal group 2.cal, , 63822,"
+Bytes: 76
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "122316, 221621035008, cal group 1.cal, , 58494, cal group 2.cal, , 63822,"
+Bytes: 76
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 1,'cal group 1.cal'"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR:RES 1"
+Bytes: 22
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 2,'cal group 1.cal'"
+Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR:RES 2"
+Bytes: 22
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"
@@ -145,44 +321,88 @@ Read:     "0,"No error""
 Bytes: 13
 Status: 0x0 Operation completed successfully.
 
-Write:    "*CLS"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR:DISP?"
-Bytes: 16
+Write:    ":SENS1:CORR:DATA:PAR:COUN?"
+Bytes: 27
 Status: 0x0 Operation completed successfully.
 
 Read:     "1"
 Bytes: 2
 Status: 0x0 Operation completed successfully.
 
-Write:    ":SYST:ERR:DISP 0"
-Bytes: 17
+Write:    ":SENS2:CORR:DATA:PAR:COUN?"
+Bytes: 27
 Status: 0x0 Operation completed successfully.
 
-Write:    "*IDN?"
-Bytes: 6
+Read:     "1"
+Bytes: 2
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB20-4Port,1311601064100104,2.60.1.226"
-Bytes: 54
+Write:    ":MMEM:CDIR?"
+Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Write:    ":SENS1:CORR:DATA:PAR? MVNA,1"
-Bytes: 29
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
-Read:     ""
-Bytes: 1
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
 Status: 0x0 Operation completed successfully.
 
-Write:    ":SYST:ERR?"
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "-220,"Parameter error;:SENS1:CORR:DATA:PAR? MVNA,1""
-Bytes: 52
+Read:     "122316, 221621010432, cal group 1.cal, , 58494, cal group 2.cal, , 63822,"
+Bytes: 76
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\Vna'"
+Bytes: 57
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,2,Ch2'"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:DATA:PAR:COUN?"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR:COUN?"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN1:NAME?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "'Ch1'"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2:NAME?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "'Ch2'"
+Bytes: 6
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"
@@ -191,233 +411,6 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "0,"No error""
 Bytes: 13
-Status: 0x0 Operation completed successfully.
-
-SCPI Errors:
--220: Parameter error;:SENS1:CORR:DATA:PAR? MVNA,1
-
-Write:    "*CLS"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR:DISP 1"
-Bytes: 17
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? PORT"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "1,2"
-Bytes: 4
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:CDAT? 'DIRECTIVITY',1,1"
-Bytes: 36
-Status: 0x0 Operation completed successfully.
-
-Read:     "#41136..."
-Bytes: 1143
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"

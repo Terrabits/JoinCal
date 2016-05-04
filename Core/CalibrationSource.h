@@ -33,4 +33,7 @@ private:
     QString _calGroup;
 };
 
+bool operator!=(const CalibrationSource &left, const CalibrationSource &right);
+bool operator==(const CalibrationSource &left, const CalibrationSource &right);
+
 #endif // CALIBRATION_SOURCE_H

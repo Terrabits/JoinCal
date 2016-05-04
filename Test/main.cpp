@@ -1,9 +1,11 @@
 
 
 // Project
+#include "CalibrationSourceTest.h"
 #include "CalibrationTest.h"
 #include "CorrectionsTest.h"
 #include "JoinCalibrationsTest.h"
+#include "GetCalDialogTest.h"
 
 // RsaToolbox
 #include <TestClass.h>
@@ -19,9 +21,11 @@ using namespace RsaToolbox;
 int main()
 {
     TestRunner testRunner;
+    testRunner.addTest(new CalibrationSourceTest);
     testRunner.addTest(new CalibrationTest);
     testRunner.addTest(new CorrectionsTest);
     testRunner.addTest(new JoinCalibrationsTest);
+    testRunner.addTest(new GetCalDialogTest);
 
     qDebug() << "Global result: " << (testRunner.runTests() ? "PASS" : "FAIL");
     return 0;

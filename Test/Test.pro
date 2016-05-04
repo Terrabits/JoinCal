@@ -6,11 +6,15 @@ CONFIG  += testcase
 include(../Core/core.pri)
 HEADERS += CalibrationTest.h \
     CorrectionsTest.h \
-    JoinCalibrationsTest.h
+    JoinCalibrationsTest.h \
+    GetCalDialogTest.h \
+    CalibrationSourceTest.h
 SOURCES += main.cpp \
            CalibrationTest.cpp \
     CorrectionsTest.cpp \
-    JoinCalibrationsTest.cpp
+    JoinCalibrationsTest.cpp \
+    GetCalDialogTest.cpp \
+    CalibrationSourceTest.cpp
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
 
