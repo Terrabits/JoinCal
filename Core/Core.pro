@@ -15,14 +15,20 @@ HEADERS += CalibrationWidget.h \
            Corrections.h \
            JoinCalibrations.h \
            Calibration.h \
-           FrequencyRange.h
+           FrequencyRange.h \
+    CalSourceWidget.h \
+    GetCalDialog.h
 SOURCES += CalibrationWidget.cpp \
            CalibrationSource.cpp \
            Corrections.cpp \
            JoinCalibrations.cpp \
            Calibration.cpp \
-           FrequencyRange.cpp
-FORMS   += CalibrationWidget.ui
+           FrequencyRange.cpp \
+    CalSourceWidget.cpp \
+    GetCalDialog.cpp
+FORMS   += CalibrationWidget.ui \
+    CalSourceWidget.ui \
+    GetCalDialog.ui
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
 CONFIG(debug, debug|release):  DEFINES += DEBUG_MODE
