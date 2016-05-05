@@ -5,10 +5,14 @@
 // Project
 #include "GetCalDialog.h"
 
+// RsaToolbox
+using namespace RsaToolbox;
 
-CalSourceWidget::CalSourceWidget(QWidget *parent) :
+
+CalSourceWidget::CalSourceWidget(Vna *vna, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::CalSourceWidget)
+    ui(new Ui::CalSourceWidget),
+    _vna(vna)
 {
     ui->setupUi(this);
 
@@ -22,6 +26,18 @@ CalSourceWidget::~CalSourceWidget()
     delete ui;
 }
 
+void CalSourceWidget::setSource(const CalibrationSource &source) {
+    if (_source == source)
+        return;
+
+    _source = source;
+    updateText();
+    emit sourceChanged(_source);
+}
+CalibrationSource CalSourceWidget::source() const {
+    return _source;
+}
+
 void CalSourceWidget::showCalDialog() {
     GetCalDialog dialog(_vna);
     dialog.exec();
@@ -31,7 +47,11 @@ void CalSourceWidget::showCalDialog() {
 
     if (source != _source) {
         _source = source;
-        ui->lineEdit->setText(_source.displayText());
+        updateText();
         emit sourceChanged(_source);
     }
+}
+
+void CalSourceWidget::updateText() {
+    ui->lineEdit->setText(_source.displayText());
 }

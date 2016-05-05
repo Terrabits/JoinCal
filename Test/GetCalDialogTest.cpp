@@ -7,11 +7,14 @@
 // RsaToolbox
 using namespace RsaToolbox;
 
+// Qt
+#include <QTest>
+
 
 GetCalDialogTest::GetCalDialogTest(QObject *parent) :
     VnaTestClass(parent)
 {
-    _applicationName = "Corrections (class) Test";
+    _applicationName = "GetCalDialog Test";
     _version         = "0.0";
 
     _logDir.setPath(SOURCE_DIR);

@@ -17,7 +17,8 @@ HEADERS += CalibrationWidget.h \
            Calibration.h \
            FrequencyRange.h \
     CalSourceWidget.h \
-    GetCalDialog.h
+    GetCalDialog.h \
+    CalWidgetRow.h
 SOURCES += CalibrationWidget.cpp \
            CalibrationSource.cpp \
            Corrections.cpp \
@@ -25,7 +26,8 @@ SOURCES += CalibrationWidget.cpp \
            Calibration.cpp \
            FrequencyRange.cpp \
     CalSourceWidget.cpp \
-    GetCalDialog.cpp
+    GetCalDialog.cpp \
+    CalWidgetRow.cpp
 FORMS   += CalibrationWidget.ui \
     CalSourceWidget.ui \
     GetCalDialog.ui

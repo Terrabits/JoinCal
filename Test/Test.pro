@@ -8,13 +8,15 @@ HEADERS += CalibrationTest.h \
     CorrectionsTest.h \
     JoinCalibrationsTest.h \
     GetCalDialogTest.h \
-    CalibrationSourceTest.h
+    CalibrationSourceTest.h \
+    CalibrationWidgetTest.h
 SOURCES += main.cpp \
            CalibrationTest.cpp \
     CorrectionsTest.cpp \
     JoinCalibrationsTest.cpp \
     GetCalDialogTest.cpp \
-    CalibrationSourceTest.cpp
+    CalibrationSourceTest.cpp \
+    CalibrationWidgetTest.cpp
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
 
