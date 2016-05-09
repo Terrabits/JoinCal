@@ -9,6 +9,7 @@
 using namespace RsaToolbox;
 
 // Qt
+#include <QDebug>
 #include <QEventLoop>
 #include <QTest>
 
@@ -27,7 +28,7 @@ CalibrationWidgetTest::CalibrationWidgetTest(QObject *parent) :
         _logDir.cd("Zva");
     }
     else if (isZnbFamily()) {
-        _logDir.mkpath("Zva");
+        _logDir.mkpath("Znb");
         _logDir.cd("Znb");
     }
     _calGroups = _logDir;
@@ -58,12 +59,14 @@ void CalibrationWidgetTest::clearCalGroups() {
         _vna->deleteCalGroup(calGroup);
     }
 
+    QVERIFY(!_vna->isError());
     QVERIFY(_vna->calGroups().isEmpty());
 }
 void CalibrationWidgetTest::copyCalGroups() {
     _vna->fileSystem().uploadFile(_calGroups.filePath(_calGroup1Filename), _calGroup1Filename, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->fileSystem().uploadFile(_calGroups.filePath(_calGroup2Filename), _calGroup2Filename, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
 
+    QVERIFY(!_vna->isError());
     QVERIFY(_vna->isCalGroup(_calGroup1));
     QVERIFY(_vna->isCalGroup(_calGroup2));
 }
@@ -75,7 +78,9 @@ void CalibrationWidgetTest::makeTwoCalibratedChannels() {
     QVERIFY(_vna->isChannel(2));
 
     if (!_vna->calGroups().isEmpty()) {
-        const QString calGroup = _vna->calGroups().first();
+        QString calGroup = _vna->calGroups().first();
+        if (calGroup.endsWith(".cal", Qt::CaseInsensitive))
+            calGroup.chop(4);
         _vna->channel(1).setCalGroup(calGroup);
         _vna->channel(1).dissolveCalGroupLink();
         _vna->channel(2).setCalGroup(calGroup);
