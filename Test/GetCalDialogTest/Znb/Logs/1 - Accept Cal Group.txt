@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Mon May 9 13:04:36 2016
+Mon May 9 15:16:32 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -66,7 +66,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "274698, 220724875264, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58470, ports 1-2 1-8 ghz 100 mhz steps..."
+Read:     "274698, 220505358336, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58470, ports 1-2 1-8 ghz 100 mhz steps..."
 Bytes: 185
 Status: 0x0 Operation completed successfully.
 
@@ -110,7 +110,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 220725161984,"
+Read:     "0, 220505645056,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -186,7 +186,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 220725035008, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 220505518080, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -214,7 +214,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 220725035008, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 220505518080, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -266,7 +266,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 220725035008, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 220505518080, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -294,7 +294,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 220725035008, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 220505518080, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -362,7 +362,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 220725035008, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 220505518080, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 

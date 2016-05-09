@@ -3,7 +3,6 @@
 // Project
 #include "CalibrationSourceTest.h"
 #include "CalibrationTest.h"
-#include "CalibrationWidgetTest.h"
 #include "CorrectionsTest.h"
 #include "JoinCalibrationsTest.h"
 #include "GetCalDialogTest.h"
@@ -22,12 +21,11 @@ using namespace RsaToolbox;
 int main()
 {
     TestRunner testRunner;
-//    testRunner.addTest(new CalibrationSourceTest);
-//    testRunner.addTest(new CalibrationTest);
-//    testRunner.addTest(new CorrectionsTest);
-//    testRunner.addTest(new JoinCalibrationsTest);
-//    testRunner.addTest(new GetCalDialogTest);
-    testRunner.addTest(new CalibrationWidgetTest);
+    testRunner.addTest(new CalibrationSourceTest);
+    testRunner.addTest(new CalibrationTest);
+    testRunner.addTest(new CorrectionsTest);
+    testRunner.addTest(new JoinCalibrationsTest);
+    testRunner.addTest(new GetCalDialogTest);
 
     qDebug() << "Global result: " << (testRunner.runTests() ? "PASS" : "FAIL");
     return 0;

@@ -10,25 +10,23 @@ CONFIG(debug, debug|release) {
 }
 
 include(../RsaToolbox/rsatoolbox.pri)
-HEADERS += CalibrationWidget.h \
+HEADERS += \
            CalibrationSource.h \
            Corrections.h \
            JoinCalibrations.h \
            Calibration.h \
            FrequencyRange.h \
     CalSourceWidget.h \
-    GetCalDialog.h \
-    CalWidgetRow.h
-SOURCES += CalibrationWidget.cpp \
+    GetCalDialog.h
+SOURCES += \
            CalibrationSource.cpp \
            Corrections.cpp \
            JoinCalibrations.cpp \
            Calibration.cpp \
            FrequencyRange.cpp \
     CalSourceWidget.cpp \
-    GetCalDialog.cpp \
-    CalWidgetRow.cpp
-FORMS   += CalibrationWidget.ui \
+    GetCalDialog.cpp
+FORMS   += \
     CalSourceWidget.ui \
     GetCalDialog.ui
 
