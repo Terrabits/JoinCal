@@ -14,7 +14,7 @@ SOURCES       += main.cpp \
 HEADERS       += MainWindow.h
 FORMS         += MainWindow.ui
 RESOURCES     += resources.qrc
-OTHER_FILES   += DEBUG_LOGFILE.txt
+OTHER_FILES   += $$PWD/_Debug/Log.txt
 win32: RC_FILE = VS2010Resources.rc
 
                               DEFINES += SOURCE_DIR=\\\"$$PWD\\\"

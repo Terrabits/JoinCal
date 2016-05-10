@@ -9,6 +9,17 @@
 using namespace RsaToolbox;
 
 
+CalSourceWidget::CalSourceWidget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::CalSourceWidget),
+    _vna(NULL)
+{
+    ui->setupUi(this);
+
+    connect(ui->pushButton, SIGNAL(clicked()),
+            this, SLOT(showCalDialog()));
+    ui->lineEdit->setText(_source.displayText());
+}
 CalSourceWidget::CalSourceWidget(Vna *vna, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CalSourceWidget),
@@ -24,6 +35,10 @@ CalSourceWidget::CalSourceWidget(Vna *vna, QWidget *parent) :
 CalSourceWidget::~CalSourceWidget()
 {
     delete ui;
+}
+
+void CalSourceWidget::setVna(Vna *vna) {
+    _vna = vna;
 }
 
 void CalSourceWidget::setSource(const CalibrationSource &source) {

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>382</width>
+    <height>217</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,124 @@
    <iconset resource="resources.qrc">
     <normaloff>:/Icons/RS.ico</normaloff>:/Icons/RS.ico</iconset>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
+       <item row="0" column="0">
+        <widget class="CalSourceWidget" name="calibration1" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="CalSourceWidget" name="calibration2" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="summary1">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="summary2">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Crossover Frequency:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="RsaToolbox::FrequencyEdit" name="crossover"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="load">
+         <property name="text">
+          <string>Load after creation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Save As:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="filename"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>18</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>181</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="close">
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="generate">
+         <property name="text">
+          <string>Generate</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CalSourceWidget</class>
+   <extends>QWidget</extends>
+   <header>CalSourceWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RsaToolbox::FrequencyEdit</class>
+   <extends>QLineEdit</extends>
+   <header>FrequencyEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>

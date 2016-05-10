@@ -20,8 +20,11 @@ class CalSourceWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit CalSourceWidget(RsaToolbox::Vna *vna, QWidget *parent = 0);
+    explicit CalSourceWidget(QWidget *parent = 0);
+    CalSourceWidget(RsaToolbox::Vna *vna, QWidget *parent = 0);
     ~CalSourceWidget();
+
+    void setVna(RsaToolbox::Vna *vna);
 
     void setSource(const CalibrationSource &source);
     CalibrationSource source() const;

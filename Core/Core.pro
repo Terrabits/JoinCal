@@ -10,25 +10,23 @@ CONFIG(debug, debug|release) {
 }
 
 include(../RsaToolbox/rsatoolbox.pri)
-HEADERS += \
+HEADERS += Settings.h \
            CalibrationSource.h \
            Corrections.h \
            JoinCalibrations.h \
            Calibration.h \
            FrequencyRange.h \
-    CalSourceWidget.h \
-    GetCalDialog.h
-SOURCES += \
-           CalibrationSource.cpp \
+           CalSourceWidget.h \
+           GetCalDialog.h
+SOURCES += CalibrationSource.cpp \
            Corrections.cpp \
            JoinCalibrations.cpp \
            Calibration.cpp \
            FrequencyRange.cpp \
-    CalSourceWidget.cpp \
-    GetCalDialog.cpp
-FORMS   += \
-    CalSourceWidget.ui \
-    GetCalDialog.ui
+           CalSourceWidget.cpp \
+           GetCalDialog.cpp
+FORMS   += CalSourceWidget.ui \
+           GetCalDialog.ui
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
 CONFIG(debug, debug|release):  DEFINES += DEBUG_MODE
