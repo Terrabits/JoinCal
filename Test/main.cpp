@@ -21,10 +21,10 @@ using namespace RsaToolbox;
 int main()
 {
     TestRunner testRunner;
-    testRunner.addTest(new CalibrationSourceTest);
-    testRunner.addTest(new CalibrationTest);
-    testRunner.addTest(new CorrectionsTest);
-    testRunner.addTest(new JoinCalibrationsTest);
+//    testRunner.addTest(new CalibrationSourceTest);
+//    testRunner.addTest(new CalibrationTest);
+//    testRunner.addTest(new CorrectionsTest);
+//    testRunner.addTest(new JoinCalibrationsTest);
     testRunner.addTest(new GetCalDialogTest);
 
     qDebug() << "Global result: " << (testRunner.runTests() ? "PASS" : "FAIL");

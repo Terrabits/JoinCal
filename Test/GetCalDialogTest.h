@@ -25,7 +25,6 @@ private:
 
     void clearCalGroups();
     void copyCalGroups();
-    void clearChannels();
     void makeTwoCalibratedChannels();
 
 private slots:

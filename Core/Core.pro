@@ -17,14 +17,16 @@ HEADERS += Settings.h \
            Calibration.h \
            FrequencyRange.h \
            CalSourceWidget.h \
-           GetCalDialog.h
+           GetCalDialog.h \
+    CalSort.h
 SOURCES += CalibrationSource.cpp \
            Corrections.cpp \
            JoinCalibrations.cpp \
            Calibration.cpp \
            FrequencyRange.cpp \
            CalSourceWidget.cpp \
-           GetCalDialog.cpp
+           GetCalDialog.cpp \
+    CalSort.cpp
 FORMS   += CalSourceWidget.ui \
            GetCalDialog.ui
 

@@ -5,6 +5,7 @@
 #include "GetCalDialog.h"
 
 // RsaToolbox
+#include "Test.h"
 using namespace RsaToolbox;
 
 // Qt
@@ -60,23 +61,25 @@ void GetCalDialogTest::clearCalGroups() {
     foreach (QString calGroup, calGroups) {
         _vna->deleteCalGroup(calGroup);
     }
+    _vna->pause();
 
+    QVERIFY(!_vna->isError());
     QVERIFY(_vna->calGroups().isEmpty());
 }
 void GetCalDialogTest::copyCalGroups() {
     _vna->fileSystem().uploadFile(_calGroups.filePath(_calGroup1Filename), _calGroup1Filename, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->fileSystem().uploadFile(_calGroups.filePath(_calGroup2Filename), _calGroup2Filename, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->pause();
 
+    QVERIFY(!_vna->isError());
     QVERIFY(_vna->isCalGroup(_calGroup1));
     QVERIFY(_vna->isCalGroup(_calGroup2));
+
 }
 
 void GetCalDialogTest::makeTwoCalibratedChannels() {
     _vna->createChannel(1);
-    QVERIFY(_vna->isChannel(1));
     _vna->createChannel(2);
-    QVERIFY(_vna->isChannel(2));
-
     if (!_vna->calGroups().isEmpty()) {
         const QString calGroup = _vna->calGroups().first();
         _vna->channel(1).setCalGroup(calGroup);
@@ -86,7 +89,7 @@ void GetCalDialogTest::makeTwoCalibratedChannels() {
     }
     else {
         copyCalGroups();
-        _vna->channel(1).setCalGroup(_calGroup1);
+        _vna->channel(1).setCalGroup(_calGroup1Filename);
         _vna->channel(1).dissolveCalGroupLink();
         _vna->channel(2).setCalGroup(_calGroup1);
         _vna->channel(2).dissolveCalGroupLink();
