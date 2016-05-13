@@ -15,8 +15,11 @@
 class CalSort
 {
 public:
-    CalSort(QVector<Calibration> &calibrations, RsaToolbox::Vna *vna);
+    CalSort(Calibration &cal1, Calibration &cal2, RsaToolbox::Vna *vna);
     ~CalSort();
+
+private:
+    void swap(Calibration &cal1, Calibration &cal2);
 };
 
 #endif // CALSORT_H

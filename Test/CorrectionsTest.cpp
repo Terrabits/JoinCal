@@ -23,15 +23,20 @@ CorrectionsTest::CorrectionsTest(QObject *parent) :
     _version         = "0.0";
 
     _logDir.setPath(SOURCE_DIR);
+    _logDir.mkpath("CorrectionsTest");
     _logDir.cd("CorrectionsTest");
     if (isZvaFamily()) {
+        _logDir.mkpath("Zva");
         _logDir.cd("Zva");
     }
     else if (isZnbFamily()) {
+        _logDir.mkpath("Znb");
         _logDir.cd("Znb");
     }
     _calGroups = _logDir;
+    _logDir.mkpath("Logs");
     _logDir.cd("Logs");
+    _calGroups.mkpath("CalGroups");
     _calGroups.cd("CalGroups");
 
     _logFilenames << "1 - Full Corrections.txt"

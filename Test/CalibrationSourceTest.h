@@ -1,5 +1,5 @@
-#ifndef CALIBRATIONSOURCETEST_H
-#define CALIBRATIONSOURCETEST_H
+#ifndef CALIBRATIONSOURCETEST
+#define CALIBRATIONSOURCETEST
 
 
 // RsaToolbox
@@ -9,11 +9,10 @@
 #include <QObject>
 
 
-class CalibrationSourceTest : public RsaToolbox::TestClass
-{
+class CalibrationSourceTest : public RsaToolbox::TestClass {
     Q_OBJECT
 public:
-    explicit CalibrationSourceTest(QObject *parent = 0);
+    CalibrationSourceTest(QObject *parent = 0);
     ~CalibrationSourceTest();
 
 private slots:
@@ -26,4 +25,6 @@ private slots:
     void displayText();
 };
 
-#endif // CALIBRATIONSOURCETEST_H
+
+#endif // CALIBRATIONSOURCETEST
+

@@ -4,27 +4,19 @@
 // Project
 #include "Corrections.h"
 
+// RsaToolbox
+using namespace RsaToolbox;
 
-CalSort::CalSort(QVector<Calibration> &calibrations, RsaToolbox::Vna *vna)
+
+CalSort::CalSort(Calibration &cal1, Calibration &cal2, RsaToolbox::Vna *vna)
 {
-    const int size = calibrations.size();
-    for (int i = 0; i < size; i++) {
-        for (int j = i+1; j < size; j++) {
-            Corrections c1(calibrations[i], vna);
-            Corrections c2(calibrations[j], vna);
-            if (c1.frequencies_Hz().first() > c2.frequencies_Hz().first()) {
-                Calibration temp = calibrations[i];
-                calibrations[i]  = calibrations[j];
-                calibrations[j]  = temp;
-            }
-            else if (c1.frequencies_Hz().first() == c2.frequencies_Hz().first()) {
-                if (c2.frequencies_Hz().last() < c1.frequencies_Hz().last()) {
-                    Calibration temp = calibrations[i];
-                    calibrations[i]  = calibrations[j];
-                    calibrations[j]  = temp;
-                }
-            }
-        }
+    const QRowVector freq1 = Corrections(cal1, vna).frequencies_Hz();
+    const QRowVector freq2 = Corrections(cal2, vna).frequencies_Hz();
+    if (freq1.first() > freq2.first()) {
+        swap(cal1, cal2);
+    }
+    else if (freq1.first() == freq2.first() && freq2.last() < freq1.last()) {
+        swap(cal1, cal2);
     }
 }
 
@@ -33,3 +25,9 @@ CalSort::~CalSort()
 
 }
 
+void CalSort::swap(Calibration &cal1, Calibration &cal2) {
+    Calibration temp;
+    temp = cal1;
+    cal1 = cal2;
+    cal2 = temp;
+}

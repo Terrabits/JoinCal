@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Mon May 9 15:16:23 2016
+Thu May 12 20:42:24 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -50,8 +50,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -66,8 +66,8 @@ Write:    ":MMEM:DATA 'Ports 1-2 1-8 GHz 100 MHz steps.cal', #582152??"
 Bytes: 82211
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 1,'Ports 1-2 1-8 GHz 100 MHz steps.cal'"
