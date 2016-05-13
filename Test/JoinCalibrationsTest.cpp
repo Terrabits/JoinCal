@@ -42,8 +42,8 @@ JoinCalibrationsTest::~JoinCalibrationsTest()
 }
 
 void JoinCalibrationsTest::test1() {
-    QString calGroup1 = "Ports 1-2 1-4 GHz 100 MHz steps.cal";
-    QString calGroup2 = "Ports 1-2 4p1-8 GHz 100 MHz steps.cal";
+    QString calGroup1 = "ports 1-2 1-4 ghz 100 mhz steps.cal";
+    QString calGroup2 = "ports 1-2 4p1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup1), calGroup1, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup2), calGroup2, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
 
@@ -64,17 +64,17 @@ void JoinCalibrationsTest::test1() {
                  << calibration2;
     QVector<uint> ports;
     ports << 1 << 2;
-    QString saveAs = "Result.cal";
+    QString saveAs = "result.cal";
 
     QCOMPARE(_vna->channels().size(), 1);
     JoinCalibrations join(calibrations, ports, _vna.data(), saveAs);
     QVERIFY(!_vna->isError());
-    QVERIFY(_vna->isCalGroup("Result"));
+    QVERIFY(_vna->isCalGroup("result"));
     QCOMPARE(_vna->channels().size(), 1);
     QVERIFY(!_vna->channel().isCalibrated());
 
     _vna->channel().setCalGroup(saveAs);
     QVERIFY(!_vna->isError());
     QVERIFY(_vna->channel().isCalGroup());
-    QCOMPARE(_vna->channel().calGroup(), QString("Result"));
+    QCOMPARE(_vna->channel().calGroup(), QString("result"));
 }

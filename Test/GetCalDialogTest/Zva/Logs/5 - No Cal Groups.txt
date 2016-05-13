@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu May 12 21:32:49 2016
+Thu May 12 21:32:57 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -70,7 +70,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
+Read:     "35122, 220979920896, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -122,7 +122,43 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 220980060160,"
+Read:     "0, 220979961856,"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN1 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0, 220979961856,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -214,7 +250,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
+Read:     "35122, 220979920896, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -242,71 +278,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
-Bytes: 75
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
-Bytes: 34
-Status: 0x0 Operation completed successfully.
-
-Write:    ":CONF:CHAN1 1"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":CONF:CHAN2 1"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "'C:\Rohde&Schwarz\Nwa'"
-Bytes: 23
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR DEF"
-Bytes: 15
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR '.\Calibration\Data'"
-Bytes: 32
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CAT?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
-Bytes: 75
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
-Bytes: 34
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "'C:\Rohde&Schwarz\Nwa'"
-Bytes: 23
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR DEF"
-Bytes: 15
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR '.\Calibration\Data'"
-Bytes: 32
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CAT?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
+Read:     "35122, 220979920896, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -328,6 +300,86 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR:RES 2"
 Bytes: 22
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "35122, 220979920896, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
+Bytes: 75
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DEL:CORR 'cal group 1.cal'"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:DEL:CORR 'cal group 2.cal'"
+Bytes: 33
+Status: 0x0 Operation completed successfully.
+
+Write:    "*OPC?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "1"
+Bytes: 2
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SYST:ERR?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0,"No error""
+Bytes: 13
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "0, 220979961856,"
+Bytes: 19
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"
@@ -374,8 +426,8 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "35122, 220980019200, cal group 1.cal, , 16409, cal group 2.cal, , 18713,"
-Bytes: 75
+Read:     "0, 220979961856,"
+Bytes: 19
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
@@ -420,14 +472,6 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "'Ch2'"
 Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SYST:ERR?"
-Bytes: 11
-Status: 0x0 Operation completed successfully.
-
-Read:     "0,"No error""
-Bytes: 13
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"

@@ -35,11 +35,11 @@ GetCalDialogTest::GetCalDialogTest(QObject *parent) :
     _calGroups.mkpath("CalGroups");
     _calGroups.cd("CalGroups");
 
-    _calGroup1Filename = "Cal Group 1.cal";
+    _calGroup1Filename = "cal group 1.cal";
     _calGroup1 = _calGroup1Filename;
     _calGroup1.chop(4);
 
-    _calGroup2Filename = "Cal Group 2.cal";
+    _calGroup2Filename = "cal group 2.cal";
     _calGroup2 = _calGroup2Filename;
     _calGroup2.chop(4);
 

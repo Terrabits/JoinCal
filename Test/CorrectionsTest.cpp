@@ -52,7 +52,7 @@ CorrectionsTest::~CorrectionsTest()
 }
 
 void CorrectionsTest::fullCorrections() {
-    QString calGroup = "Ports 1-2 1-8 GHz 100 MHz steps.cal";
+    QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->channel().setCalGroup(calGroup);
     QVERIFY(!_vna->channel().calGroup().isEmpty());
@@ -77,7 +77,7 @@ void CorrectionsTest::fullCorrections() {
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
 void CorrectionsTest::subsection() {
-    QString calGroup = "Ports 1-2 1-8 GHz 100 MHz steps.cal";
+    QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->channel().setCalGroup(calGroup);
     QVERIFY(!_vna->channel().calGroup().isEmpty());
@@ -105,7 +105,7 @@ void CorrectionsTest::subsection() {
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
 void CorrectionsTest::stopExcluded() {
-    QString calGroup = "Ports 1-2 1-8 GHz 100 MHz steps.cal";
+    QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->channel().setCalGroup(calGroup);
     QVERIFY(!_vna->channel().calGroup().isEmpty());
@@ -134,7 +134,7 @@ void CorrectionsTest::stopExcluded() {
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
 void CorrectionsTest::stopIncluded() {
-    QString calGroup = "Ports 1-2 1-8 GHz 100 MHz steps.cal";
+    QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna->channel().setCalGroup(calGroup);
     QVERIFY(!_vna->channel().calGroup().isEmpty());
@@ -163,7 +163,7 @@ void CorrectionsTest::stopIncluded() {
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
 void CorrectionsTest::fromCalGroup() {
-    QString calGroup = "Ports 1-2 1-8 GHz 100 MHz steps.cal";
+    QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
 
     QCOMPARE(_vna->channels().size(), 1);
