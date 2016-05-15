@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu May 12 20:45:56 2016
+Sun May 15 00:41:11 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -26,7 +26,6 @@ Options:          ZNB-K2
                   ZNB8-B34
                   ZNB-B81
                   ZNB-B2
-                  ZNB-B12
                   ZN-B15
 
 
@@ -66,8 +65,8 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 221001887744,"
-Bytes: 19
+Read:     "0, 34061455360,"
+Bytes: 18
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
@@ -110,8 +109,8 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 221001887744,"
-Bytes: 19
+Read:     "0, 34061455360,"
+Bytes: 18
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
@@ -138,8 +137,8 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 221001887744,"
-Bytes: 19
+Read:     "0, 34061455360,"
+Bytes: 18
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"

@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu May 12 20:42:26 2016
+Sun May 15 00:40:47 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -26,7 +26,6 @@ Options:          ZNB-K2
                   ZNB8-B34
                   ZNB-B81
                   ZNB-B2
-                  ZNB-B12
                   ZN-B15
 
 
@@ -62,7 +61,7 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'Ports 1-2 1-8 GHz 100 MHz steps.cal', #582152??"
+Write:    ":MMEM:DATA 'ports 1-2 1-8 ghz 100 mhz steps.cal', #582152??"
 Bytes: 82211
 Status: 0x0 Operation completed successfully.
 
@@ -106,7 +105,7 @@ Write:    ":CONF:CHAN2 1"
 Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:LOAD:CORR 2,'Ports 1-2 1-8 GHz 100 MHz steps.cal'"
+Write:    ":MMEM:LOAD:CORR 2,'ports 1-2 1-8 ghz 100 mhz steps.cal'"
 Bytes: 56
 Status: 0x0 Operation completed successfully.
 
@@ -182,7 +181,7 @@ Write:    ":MMEM:LOAD:CORR? 2"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
-Read:     "'Ports 1-2 1-8 GHz 100 MHz steps.cal'"
+Read:     "'ports 1-2 1-8 ghz 100 mhz steps.cal'"
 Bytes: 38
 Status: 0x0 Operation completed successfully.
 
