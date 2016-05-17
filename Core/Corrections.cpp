@@ -2,6 +2,7 @@
 
 
 // RsaToolbox
+#include <General.h>
 #include <VnaChannel.h>
 using namespace RsaToolbox;
 
@@ -12,6 +13,7 @@ using namespace RsaToolbox;
 Corrections::Corrections(Calibration calibration, Vna *vna) :
     _isManaged(false),
     _channel(0),
+    _isEmpty(false),
     _vna(vna)
 {
     if (calibration.source().isChannel()) {
@@ -26,7 +28,14 @@ Corrections::Corrections(Calibration calibration, Vna *vna) :
 
     const QRowVector frequencies_Hz = _vna->channel(_channel).corrections().frequencies_Hz();
     _startIndex = findStart(frequencies_Hz, calibration.range().start_Hz());
-    _stopIndex  = findStop(frequencies_Hz, calibration.range().stop_Hz(), calibration.range().isStopInclusive());
+    if (_startIndex == -1) {
+        _isEmpty = true;
+    }
+    else {
+        _stopIndex  = findStop(frequencies_Hz, calibration.range().stop_Hz(), calibration.range().isStopInclusive());
+        if (_stopIndex == -1)
+            _isEmpty = true;
+    }
 }
 Corrections::~Corrections()
 {
@@ -43,6 +52,16 @@ bool Corrections::isReady() const {
     return isChannel() && isCalibrated();
 }
 
+QString Corrections::displayText() const {
+    QRowVector freq = frequencies_Hz();
+
+    QString text = "%1 - %2, Ports %3";
+    text = text.arg(formatValue(freq.first(), 3, Units::Hertz));
+    text = text.arg(formatValue(freq.last(),  3, Units::Hertz));
+    text = text.arg(portString(ports()));
+    return text;
+}
+
 bool Corrections::isSwitchMatrix() const {
     return _vna->channel(_channel).corrections().switchMatrices();
 }
@@ -50,25 +69,46 @@ QVector<uint> Corrections::ports() const {
     return _vna->channel(_channel).corrections().ports();
 }
 QRowVector Corrections::frequencies_Hz() const {
+    if (_isEmpty)
+        return QRowVector();
+
     return subsection(_vna->channel(_channel).corrections().frequencies_Hz());
 }
 ComplexRowVector Corrections::directivity(uint outputPort, uint inputPort) const {
+    if (_isEmpty)
+        return ComplexRowVector();
+
     return subsection(_vna->channel(_channel).corrections().directivity(outputPort, inputPort));
 }
 ComplexRowVector Corrections::sourceMatch(uint outputPort, uint inputPort) const {
+    if (_isEmpty)
+        return ComplexRowVector();
+
     return subsection(_vna->channel(_channel).corrections().sourceMatch(outputPort, inputPort));
 }
 ComplexRowVector Corrections::reflectionTracking(uint outputPort, uint inputPort) const {
+    if (_isEmpty)
+        return ComplexRowVector();
+
     return subsection(_vna->channel(_channel).corrections().reflectionTracking(outputPort, inputPort));
 }
 ComplexRowVector Corrections::loadMatch(uint outputPort, uint inputPort) const {
+    if (_isEmpty)
+        return ComplexRowVector();
+
     return subsection(_vna->channel(_channel).corrections().loadMatch(outputPort, inputPort));
 }
 ComplexRowVector Corrections::transmissionTracking(uint outputPort, uint inputPort) const {
+    if (_isEmpty)
+        return ComplexRowVector();
+
     return subsection(_vna->channel(_channel).corrections().transmissionTracking(outputPort, inputPort));
 }
 
 uint Corrections::findStart(const QRowVector &frequencies_Hz, double start_Hz) {
+    if (start_Hz > frequencies_Hz.last())
+        return -1;
+
     const int size = frequencies_Hz.size();
     int i = 0;
     while (i+1 < size && frequencies_Hz[i] < start_Hz) {
@@ -77,6 +117,9 @@ uint Corrections::findStart(const QRowVector &frequencies_Hz, double start_Hz) {
     return i;
 }
 uint Corrections::findStop(const QRowVector &frequencies_Hz, double stop_Hz, bool isInclusive) {
+    if (stop_Hz < frequencies_Hz.first())
+        return -1;
+
     const int size = frequencies_Hz.size();
     int i = size-1;
     while (i-1 >= 0 && stop_Hz < frequencies_Hz[i]) {

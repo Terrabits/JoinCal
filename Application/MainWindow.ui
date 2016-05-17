@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>382</width>
-    <height>217</height>
+    <width>467</width>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,7 +55,7 @@
        <item row="4" column="1">
         <widget class="QCheckBox" name="load">
          <property name="text">
-          <string>Load after creation</string>
+          <string>Apply to new channel</string>
          </property>
         </widget>
        </item>
@@ -84,6 +84,9 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item>
+     <widget class="RsaToolbox::ErrorLabel" name="error" native="true"/>
     </item>
     <item>
      <widget class="QWidget" name="widget_2" native="true">
@@ -133,6 +136,12 @@
    <class>RsaToolbox::FrequencyEdit</class>
    <extends>QLineEdit</extends>
    <header>FrequencyEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RsaToolbox::ErrorLabel</class>
+   <extends>QWidget</extends>
+   <header>ErrorLabel.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

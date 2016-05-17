@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Sun May 15 00:41:09 2016
+Mon May 16 22:27:16 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -65,7 +65,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 34061340672, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 33508503552, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -117,7 +117,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 34061467648,"
+Read:     "0, 33508630528,"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 
@@ -153,7 +153,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 34061467648,"
+Read:     "0, 33508630528,"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 
@@ -245,7 +245,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 34061340672, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 33508503552, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -273,7 +273,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 34061340672, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 33508503552, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -317,7 +317,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 34061340672, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 33508503552, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 75
 Status: 0x0 Operation completed successfully.
 
@@ -369,7 +369,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 34061467648,"
+Read:     "0, 33508630528,"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 
@@ -421,7 +421,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 34061467648,"
+Read:     "0, 33508630528,"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 

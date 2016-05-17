@@ -24,6 +24,8 @@ public:
     bool isCalibrated() const;
     bool isReady() const;
 
+    QString displayText() const;
+
     bool isSwitchMatrix() const;
     QVector<uint> ports() const;
     RsaToolbox::QRowVector frequencies_Hz() const;
@@ -39,8 +41,9 @@ private:
     mutable RsaToolbox::Vna *_vna;
 
     // Chop off unwanted parts
-    uint _startIndex;
-    uint _stopIndex;
+    bool _isEmpty;
+    int _startIndex;
+    int _stopIndex;
     static uint findStart(const RsaToolbox::QRowVector& frequencies_Hz, double start_Hz);
     static uint findStop(const RsaToolbox::QRowVector& frequencies_Hz, double stop_Hz, bool isInclusive);
     RsaToolbox::QRowVector subsection(const RsaToolbox::QRowVector &frequencies_Hz) const;

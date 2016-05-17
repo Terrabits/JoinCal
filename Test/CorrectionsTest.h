@@ -21,11 +21,18 @@ private:
     QDir _calGroups;
 
 private slots:
+    virtual void initTestCase();
+    virtual void cleanupTestCase();
+
+    void fromChannel();
+    void fromCalGroup();
     void fullCorrections();
     void subsection();
     void stopExcluded();
     void stopIncluded();
-    void fromCalGroup();
+    void startTooHigh();
+    void stopTooLow();
+    void displayText();
 };
 
 #endif // CORRECTIONSTEST_H

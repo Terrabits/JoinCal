@@ -52,29 +52,30 @@ void JoinCalibrationsTest::test1() {
     calibration1.range().setStart(1.0E9);
     calibration1.range().setStop(4.0E9);
     calibration1.range().setStopInclusive(true);
+    Corrections corrections1(calibration1, _vna.data());
 
     Calibration calibration2;
     calibration2.source().setCalGroup(calGroup2);
     calibration2.range().setStart(4.1E9);
     calibration2.range().setStop(8.0E9);
     calibration2.range().setStopInclusive(true);
+    Corrections corrections2(calibration2, _vna.data());
 
-    QVector<Calibration> calibrations;
-    calibrations << calibration1
-                 << calibration2;
+    QVector<Corrections*> corrections;
+    corrections << &corrections1
+                << &corrections2;
     QVector<uint> ports;
     ports << 1 << 2;
     QString saveAs = "result.cal";
 
-    QCOMPARE(_vna->channels().size(), 1);
-    JoinCalibrations join(calibrations, ports, _vna.data(), saveAs);
+    JoinCalibrations(corrections, ports, _vna.data(), saveAs);
     QVERIFY(!_vna->isError());
     QVERIFY(_vna->isCalGroup("result"));
-    QCOMPARE(_vna->channels().size(), 1);
-    QVERIFY(!_vna->channel().isCalibrated());
+    QVERIFY(!_vna->channel(1).isCalibrated());
 
     _vna->channel().setCalGroup(saveAs);
     QVERIFY(!_vna->isError());
-    QVERIFY(_vna->channel().isCalGroup());
-    QCOMPARE(_vna->channel().calGroup(), QString("result"));
+    QVERIFY(_vna->channel(1).isCalGroup());
+    QCOMPARE(_vna->channel(1).calGroup(), QString("result"));
+    QCOMPARE(_vna->channel(1).corrections().points(), uint(corrections1.frequencies_Hz().size() + corrections2.frequencies_Hz().size()));
 }

@@ -19,8 +19,8 @@ public:
 
 
 private slots:
-    void initTestCase();
-    void cleanupTestCase();
+    virtual void initTestCase();
+    virtual void cleanupTestCase();
 
     void presortedExclusive();
     void exclusive();

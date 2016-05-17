@@ -1,37 +1,32 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu May 12 21:33:01 2016
+Mon May 16 19:50:52 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
 Address:          127.0.0.1::5025
 Make:             Rohde & Schwarz
-Model:            ZVA
-Serial No:        1145101099999999
-Firmware Version: 3.60
-Min Frequency:    300 KHz
-Max Frequency:    8 GHz
+Model:            ZNB
+Serial No:        1311601044100104
+Firmware Version: 2.70
+Min Frequency:    9 KHz
+Max Frequency:    8.5 GHz
 Number of Ports:  4
-Options:          ZVA-K7
-                  ZVA-K17
-                  ZVAB-SIM
-                  ZVT8-B63
-                  ZVT8-B64
-                  ZVT8-B65
-                  ZVT8-B66
-                  ZVT8-B68
-                  ZVA8-B16
-                  ZVA8-B21
-                  ZVA8-B22
-                  ZVA8-B23
-                  ZVA8-B24
-                  ZVA8-B31
-                  ZVA8-B32
-                  ZVA8-B33
-                  ZVA8-B34
-                  ZVT8-B67
-                  ZVA-B7
+Options:          ZNB-K2
+                  ZNB-K4
+                  ZNB-K14
+                  ZNB-K17
+                  ZNB-K19
+                  ZNB-K20
+                  ZNB8-B24
+                  ZNB8-B31
+                  ZNB8-B32
+                  ZNB8-B33
+                  ZNB8-B34
+                  ZNB-B81
+                  ZNB-B2
+                  ZN-B15
 
 
 Write:    "*CLS"

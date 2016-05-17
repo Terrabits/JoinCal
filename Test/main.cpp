@@ -26,7 +26,7 @@ int main()
     testRunner.addTest(new CalibrationTest);
     testRunner.addTest(new CorrectionsTest);
     testRunner.addTest(new JoinCalibrationsTest);
-    testRunner.addTest(new GetCalDialogTest);
+//    testRunner.addTest(new GetCalDialogTest);
     testRunner.addTest(new CalSortTest);
 
     qDebug() << "Global result: " << (testRunner.runTests() ? "PASS" : "FAIL");

@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Sun May 15 00:40:47 2016
+Mon May 16 22:26:53 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -42,54 +42,6 @@ Bytes: 6
 Status: 0x0 Operation completed successfully.
 
 Read:     "1"
-Bytes: 2
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
-Bytes: 46
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR DEF"
-Bytes: 15
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR '.\Calibration\Data'"
-Bytes: 32
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:DATA 'ports 1-2 1-8 ghz 100 mhz steps.cal', #582152??"
-Bytes: 82211
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
-Bytes: 57
-Status: 0x0 Operation completed successfully.
-
-Write:    ":CONF:CHAN:CAT?"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Read:     "'1,Ch1'"
-Bytes: 8
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:LOAD:CORR? 1"
-Bytes: 19
-Status: 0x0 Operation completed successfully.
-
-Read:     "''"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR:COUN?"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "0"
 Bytes: 2
 Status: 0x0 Operation completed successfully.
 

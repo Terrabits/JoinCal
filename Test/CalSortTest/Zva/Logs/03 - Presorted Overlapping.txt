@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu May 12 21:32:40 2016
+Mon May 16 23:17:02 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -50,54 +50,6 @@ Read:     "1"
 Bytes: 2
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "'C:\Rohde&Schwarz\Nwa'"
-Bytes: 23
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR DEF"
-Bytes: 15
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR '.\Calibration\Data'"
-Bytes: 32
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:DATA 'ports 1-2 1-8 ghz 100 mhz steps.cal', #526649??"
-Bytes: 26708
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
-Bytes: 34
-Status: 0x0 Operation completed successfully.
-
-Write:    ":CONF:CHAN:CAT?"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Read:     "'1,Ch1'"
-Bytes: 8
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:LOAD:CORR? 1"
-Bytes: 19
-Status: 0x0 Operation completed successfully.
-
-Read:     "''"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR:COUN?"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "0"
-Bytes: 2
-Status: 0x0 Operation completed successfully.
-
 Write:    ":CONF:CHAN:CAT?"
 Bytes: 16
 Status: 0x0 Operation completed successfully.
@@ -110,107 +62,15 @@ Write:    ":CONF:CHAN2 1"
 Bytes: 14
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:LOAD:CORR 2,'ports 1-2 1-8 ghz 100 mhz steps.cal'"
-Bytes: 56
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":CONF:CHAN:CAT?"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Read:     "'1,Ch1,2,Ch2'"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:DATA:PAR:COUN?"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "1"
-Bytes: 2
-Status: 0x0 Operation completed successfully.
-
-Write:    ":MMEM:LOAD:CORR? 2"
-Bytes: 19
-Status: 0x0 Operation completed successfully.
-
-Read:     "'ports 1-2 1-8 ghz 100 mhz steps.cal'"
+Write:    ":MMEM:LOAD:CORR 2,'overlapping_a.cal'"
 Bytes: 38
 Status: 0x0 Operation completed successfully.
 
-Write:    "*IDN?"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Read:     "Rohde&Schwarz,ZVA8-4Port,1145101099999999,3.60"
-Bytes: 47
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:DATA:PAR? PORT"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "1,2"
-Bytes: 4
-Status: 0x0 Operation completed successfully.
-
 Write:    ":SENS2:CORR:DATA:PAR? POIN"
 Bytes: 27
 Status: 0x0 Operation completed successfully.
 
-Read:     "71"
+Read:     "41"
 Bytes: 3
 Status: 0x0 Operation completed successfully.
 
@@ -250,8 +110,8 @@ Write:    ":SENS2:CORR:STIM?"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 
-Read:     "#3568..."
-Bytes: 574
+Read:     "#3328..."
+Bytes: 334
 Status: 0x0 Operation completed successfully.
 
 Write:    ":FORM ASC"
@@ -262,7 +122,7 @@ Write:    ":SENS2:CORR:DATA:PAR? POIN"
 Bytes: 27
 Status: 0x0 Operation completed successfully.
 
-Read:     "71"
+Read:     "41"
 Bytes: 3
 Status: 0x0 Operation completed successfully.
 
@@ -302,112 +162,8 @@ Write:    ":SENS2:CORR:STIM?"
 Bytes: 18
 Status: 0x0 Operation completed successfully.
 
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS2:CORR:CDAT? 'DIRECTIVITY',1,1"
-Bytes: 36
-Status: 0x0 Operation completed successfully.
-
-Read:     "#41136..."
-Bytes: 1143
+Read:     "#3328..."
+Bytes: 334
 Status: 0x0 Operation completed successfully.
 
 Write:    ":FORM ASC"
@@ -432,6 +188,130 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "'1,Ch1'"
 Bytes: 8
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2 1"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:LOAD:CORR 2,'overlapping_b.cal'"
+Bytes: 38
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "51"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3408..."
+Bytes: 414
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "51"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3408..."
+Bytes: 414
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN:CAT?"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Read:     "'1,Ch1,2,Ch2'"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":CONF:CHAN2 0"
+Bytes: 14
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"

@@ -2,7 +2,7 @@
 
 
 // Project
-#include "Corrections.h"
+//
 
 // RsaToolbox
 #include <VnaChannel.h>
@@ -17,16 +17,14 @@ using namespace RsaToolbox;
 // - sections are sorted
 //   low to high frequency
 typedef QSharedPointer<Corrections> SharedCorrections;
-JoinCalibrations::JoinCalibrations(const QVector<Calibration> &sections,
+JoinCalibrations::JoinCalibrations(const QVector<Corrections*> &corrections,
                                    const QVector<uint> &ports,
                                    RsaToolbox::Vna *vna,
                                    QString saveAs)
 {
     QRowVector frequencies_Hz;
-    QVector<SharedCorrections> corrections;
-    for (int i = 0; i < sections.size(); i++) {
-        corrections.append(SharedCorrections(new Corrections(sections[i], vna)));
-        frequencies_Hz += corrections.last()->frequencies_Hz();
+    for (int i = 0; i < corrections.size(); i++) {
+        frequencies_Hz += corrections[i]->frequencies_Hz();
     }
 
     uint c = vna->createChannel();
@@ -46,7 +44,7 @@ JoinCalibrations::JoinCalibrations(const QVector<Calibration> &sections,
             ComplexRowVector reflectionTracking;
             ComplexRowVector loadMatch;
             ComplexRowVector transmissionTracking;
-            for (int i = 0; i < sections.size(); i++) {
+            for (int i = 0; i < corrections.size(); i++) {
                 append(directivity,              corrections[i]->directivity(p1, p2));
                 append(sourceMatch,              corrections[i]->sourceMatch(p1, p2));
                 append(reflectionTracking,       corrections[i]->reflectionTracking(p1, p2));

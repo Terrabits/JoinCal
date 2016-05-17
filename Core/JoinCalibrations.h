@@ -3,7 +3,7 @@
 
 
 // Project
-#include "Calibration.h"
+#include "Corrections.h"
 
 // RsaToolbox
 #include <Definitions.h>
@@ -16,7 +16,7 @@
 class JoinCalibrations
 {
 public:
-    JoinCalibrations(const QVector<Calibration> &sections, const QVector<uint> &ports, RsaToolbox::Vna *vna, QString saveAs);
+    JoinCalibrations(const QVector<Corrections*> &corrections, const QVector<uint> &ports, RsaToolbox::Vna *vna, QString saveAs);
     ~JoinCalibrations();
 
 private:
