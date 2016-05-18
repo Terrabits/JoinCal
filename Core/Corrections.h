@@ -4,6 +4,7 @@
 
 // Project
 #include "Calibration.h"
+#include "CalibrationSource.h"
 
 // RsaToolbox
 #include <Vna.h>
@@ -17,6 +18,7 @@
 class Corrections
 {
 public:
+    Corrections(CalibrationSource source, RsaToolbox::Vna *vna);
     Corrections(Calibration calibration, RsaToolbox::Vna *vna);
     ~Corrections();
 

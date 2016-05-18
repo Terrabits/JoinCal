@@ -9,6 +9,32 @@ using namespace RsaToolbox;
 // Qt
 #include <QDebug>
 
+Corrections::Corrections(CalibrationSource source, Vna *vna) :
+    _isManaged(false),
+    _channel(0),
+    _isEmpty(false),
+    _vna(vna)
+{
+    if (source.isChannel()) {
+        _channel = source.channel();
+    }
+    else if (source.isCalGroup()) {
+        _isManaged = true;
+        _channel = _vna->createChannel();
+        const QString calGroup = source.calGroup();
+        _vna->channel(_channel).setCalGroup(calGroup);
+    }
+
+    if (_vna->channel(_channel).corrections().frequencies_Hz().isEmpty()) {
+        _isEmpty = true;
+        _startIndex = -1;
+        _stopIndex  = -1;
+    }
+    else {
+        _startIndex = 0;
+        _stopIndex  = frequencies_Hz().size() - 1;
+    }
+}
 
 Corrections::Corrections(Calibration calibration, Vna *vna) :
     _isManaged(false),

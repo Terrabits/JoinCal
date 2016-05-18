@@ -2,7 +2,7 @@
 
 
 // Project
-#include "Calibration.h"
+#include "CalibrationSource.h"
 #include "CalSort.h"
 
 // RsaToolbox
@@ -94,113 +94,113 @@ void CalSortTest::cleanupTestCase() {
 }
 
 void CalSortTest::presortedExclusive() {
-    Calibration calA;
-    calA.source().setCalGroup(_exclusive_a);
-    Calibration calB;
-    calB.source().setCalGroup(_exclusive_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_exclusive_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_exclusive_b);
     CalSort(calA, calB, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("exclusive_a"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("exclusive_b"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("exclusive_a"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("exclusive_b"));
 }
 void CalSortTest::exclusive() {
-    Calibration calA;
-    calA.source().setCalGroup(_exclusive_a);
-    Calibration calB;
-    calB.source().setCalGroup(_exclusive_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_exclusive_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_exclusive_b);
     CalSort(calB, calA, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("exclusive_b"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("exclusive_a"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("exclusive_b"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("exclusive_a"));
 }
 void CalSortTest::presortedOverlapping() {
-    Calibration calA;
-    calA.source().setCalGroup(_overlapping_a);
-    Calibration calB;
-    calB.source().setCalGroup(_overlapping_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_overlapping_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_overlapping_b);
     CalSort(calA, calB, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("overlapping_a"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("overlapping_b"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("overlapping_a"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("overlapping_b"));
 }
 void CalSortTest::overlapping() {
-    Calibration calA;
-    calA.source().setCalGroup(_overlapping_a);
-    Calibration calB;
-    calB.source().setCalGroup(_overlapping_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_overlapping_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_overlapping_b);
     CalSort(calB, calA, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("overlapping_b"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("overlapping_a"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("overlapping_b"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("overlapping_a"));
 }
 void CalSortTest::presortedSameStart() {
-    Calibration calA;
-    calA.source().setCalGroup(_same_start_a);
-    Calibration calB;
-    calB.source().setCalGroup(_same_start_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_same_start_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_same_start_b);
     CalSort(calA, calB, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("same_start_a"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("same_start_b"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("same_start_a"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("same_start_b"));
 }
 void CalSortTest::sameStart() {
-    Calibration calA;
-    calA.source().setCalGroup(_same_start_a);
-    Calibration calB;
-    calB.source().setCalGroup(_same_start_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_same_start_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_same_start_b);
     CalSort(calB, calA, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("same_start_b"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("same_start_a"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("same_start_b"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("same_start_a"));
 }
 void CalSortTest::presortedSameStop() {
-    Calibration calA;
-    calA.source().setCalGroup(_same_stop_a);
-    Calibration calB;
-    calB.source().setCalGroup(_same_stop_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_same_stop_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_same_stop_b);
     CalSort(calA, calB, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("same_stop_a"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("same_stop_b"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("same_stop_a"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("same_stop_b"));
 }
 void CalSortTest::sameStop() {
-    Calibration calA;
-    calA.source().setCalGroup(_same_stop_a);
-    Calibration calB;
-    calB.source().setCalGroup(_same_stop_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_same_stop_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_same_stop_b);
     CalSort(calB, calA, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("same_stop_b"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("same_stop_a"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("same_stop_b"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("same_stop_a"));
 }
 void CalSortTest::presortedSubset() {
-    Calibration calA;
-    calA.source().setCalGroup(_subset_a);
-    Calibration calB;
-    calB.source().setCalGroup(_subset_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_subset_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_subset_b);
     CalSort(calA, calB, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("subset_a"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("subset_b"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("subset_a"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("subset_b"));
 }
 void CalSortTest::subset() {
-    Calibration calA;
-    calA.source().setCalGroup(_subset_a);
-    Calibration calB;
-    calB.source().setCalGroup(_subset_b);
+    CalibrationSource calA;
+    calA.setCalGroup(_subset_a);
+    CalibrationSource calB;
+    calB.setCalGroup(_subset_b);
     CalSort(calB, calA, _vna.data());
-    QVERIFY(calA.source().isCalGroup());
-    QCOMPARE(calA.source().calGroup(), QString("subset_b"));
-    QVERIFY(calB.source().isCalGroup());
-    QCOMPARE(calB.source().calGroup(), QString("subset_a"));
+    QVERIFY(calA.isCalGroup());
+    QCOMPARE(calA.calGroup(), QString("subset_b"));
+    QVERIFY(calB.isCalGroup());
+    QCOMPARE(calB.calGroup(), QString("subset_a"));
 }
 

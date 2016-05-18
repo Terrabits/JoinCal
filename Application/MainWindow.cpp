@@ -4,6 +4,7 @@
 
 // Project
 #include "Calibration.h"
+#include "CalSort.h"
 #include "Corrections.h"
 #include "JoinCalibrations.h"
 #include "Settings.h"
@@ -33,6 +34,15 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
     QRegExp regex("^[\\w\\{\\}\\[\\]\\(\\)]+([\\w\\{\\}\\[\\]\\(\\)\\s]*[\\w\\{\\}\\[\\]\\(\\)]+)?(\\.cal)?$", Qt::CaseInsensitive);
     ui->filename->setValidator(new QRegExpValidator(regex));
 
+    // Error messages
+    connect(ui->crossover, SIGNAL(outOfRange(QString)),
+            ui->error, SLOT(showMessage(QString)));
+
+    // Process inputs
+    connect(ui->calibration1, SIGNAL(sourceChanged(CalibrationSource)),
+            this, SLOT(sourceChanged()));
+    connect(ui->calibration2, SIGNAL(sourceChanged(CalibrationSource)),
+            this, SLOT(sourceChanged()));
     connect(ui->filename, SIGNAL(editingFinished()),
             this, SLOT(checkFilename()));
     connect(ui->close, SIGNAL(clicked()),
@@ -47,8 +57,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::sourceChanged() {
+    if (!isTwoCalibrations()) {
+        return;
+    }
+
+    sortCalibrations();
+    checkFrequencyOverlap();
+}
+
 void MainWindow::generate() {
-    double crossover_Hz = ui->crossover->frequency_Hz();
     if (ui->calibration1->source().isEmpty()) {
         ui->error->showMessage("*Choose first calibration");
         ui->calibration1->setFocus();
@@ -59,7 +77,8 @@ void MainWindow::generate() {
         ui->calibration2->setFocus();
         return;
     }
-    if (ui->crossover->text().isEmpty()) {
+    const bool isCrossover = ui->crossover->isEnabled();
+    if (isCrossover && ui->crossover->text().isEmpty()) {
         ui->error->showMessage("*Choose crossover frequency");
         ui->crossover->setFocus();
         return;
@@ -71,27 +90,24 @@ void MainWindow::generate() {
         return;
     }
 
+    double crossover_Hz;
+    if (isCrossover)
+        crossover_Hz = ui->crossover->frequency_Hz();
+
     Calibration cal1;
     cal1.source() = ui->calibration1->source();
-    cal1.range().setStop(crossover_Hz);
+    if (isCrossover)
+        cal1.range().setStop(crossover_Hz);
     Corrections corr1(cal1, _vna);
-    if (corr1.frequencies_Hz().isEmpty()) {
-        ui->error->showMessage("*Crossover too low");
-        ui->crossover->selectAll();
-        ui->crossover->setFocus();
-        return;
-    }
 
     Calibration cal2;
     cal2.source() = ui->calibration2->source();
-    cal2.range().setStart(crossover_Hz);
+    if (isCrossover)
+        cal2.range().setStart(crossover_Hz);
     Corrections corr2(cal2, _vna);
-    if (corr2.frequencies_Hz().isEmpty()) {
-        ui->error->showMessage("*Crossover too high");
-        ui->crossover->selectAll();
-        ui->crossover->setFocus();
+
+    if (!isValid(corr1, corr2))
         return;
-    }
 
     QVector<Corrections*> corrections;
     corrections << &corr1 << &corr2;
@@ -119,9 +135,56 @@ void MainWindow::checkFilename() {
     }
 }
 
-bool MainWindow::isValid(Corrections &c1, Corrections &c2, double crossover_Hz) {
+bool MainWindow::isTwoCalibrations() const {
+    if (ui->calibration1->source().isEmpty())
+        return false;
+    if (ui->calibration2->source().isEmpty())
+        return false;
+
+    return true;
+}
+void MainWindow::sortCalibrations() {
+    // Assumes two valid calibrations
+    bool isCal1Blocked = ui->calibration1->blockSignals(true);
+    bool isCal2Blocked = ui->calibration2->blockSignals(true);
+
+    CalibrationSource cal1 = ui->calibration1->source();
+    CalibrationSource cal2 = ui->calibration2->source();
+    CalSort(cal1, cal2, _vna);
+    ui->calibration1->setSource(cal1);
+    ui->calibration2->setSource(cal2);
+
+    ui->calibration1->blockSignals(isCal1Blocked);
+    ui->calibration2->blockSignals(isCal2Blocked);
+}
+void MainWindow::checkFrequencyOverlap() {
+    // Assumes calibrations are sorted
+    Corrections c1(ui->calibration1->source(), _vna);
+    Corrections c2(ui->calibration2->source(), _vna);
+    if (c1.frequencies_Hz().last() < c2.frequencies_Hz().first()) {
+        // No overlap
+        ui->crossover->setDisabled(true);
+        ui->crossover->clearLimits();
+        ui->crossover->clear();
+        return;
+    }
+    else {
+        ui->crossover->setMinimum(c2.frequencies_Hz().first());
+        ui->crossover->setMaximum(c1.frequencies_Hz().last() );
+        ui->crossover->setEnabled(true);
+    }
+}
+
+bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
     if (!c1.isReady()) {
         QString msg = "*Can\'t load cal from %1";
+        msg = msg.arg(ui->calibration1->source().displayText());
+        ui->error->showMessage(msg);
+        ui->calibration1->setFocus();
+        return false;
+    }
+    if (c1.frequencies_Hz().isEmpty()) {
+        QString msg = "*No points from cal %1";
         msg = msg.arg(ui->calibration1->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration1->setFocus();
@@ -134,6 +197,13 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2, double crossover_Hz) 
         ui->calibration2->setFocus();
         return false;
     }
-    // Prevent 0 point cutoff frequency in validator
+    if (c2.frequencies_Hz().isEmpty()) {
+        QString msg = "*No points from cal %1";
+        msg = msg.arg(ui->calibration2->source().displayText());
+        ui->error->showMessage(msg);
+        ui->calibration2->setFocus();
+        return false;
+    }
 
+    return true;
 }

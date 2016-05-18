@@ -3,7 +3,7 @@
 
 
 // Project
-#include "Calibration.h"
+#include "CalibrationSource.h"
 
 // RsaToolbox
 #include <Vna.h>
@@ -15,11 +15,11 @@
 class CalSort
 {
 public:
-    CalSort(Calibration &cal1, Calibration &cal2, RsaToolbox::Vna *vna);
+    CalSort(CalibrationSource &cal1, CalibrationSource &cal2, RsaToolbox::Vna *vna);
     ~CalSort();
 
 private:
-    void swap(Calibration &cal1, Calibration &cal2);
+    void swap(CalibrationSource &cal1, CalibrationSource &cal2);
 };
 
 #endif // CALSORT_H

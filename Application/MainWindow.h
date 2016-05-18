@@ -27,8 +27,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void generate();
+    void sourceChanged();
     void checkFilename();
+    void generate();
 
 private:
     Ui::MainWindow *ui;
@@ -38,7 +39,14 @@ private:
     RsaToolbox::Keys    *_keys;
     RsaToolbox::LastPath _lastPath;
 
-    bool isValid(Corrections &c1, Corrections &c2, double crossover_Hz);
+    bool isTwoCalibrations() const;
+    void sortCalibrations();
+    void checkFrequencyOverlap();
+
+    void blockInputs();
+    void unblockInputs();
+
+    bool isValid(Corrections &c1, Corrections &c2);
 };
 
 #endif // MAINWINDOW_H

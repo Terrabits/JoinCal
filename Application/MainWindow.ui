@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>467</width>
+    <width>861</width>
     <height>313</height>
    </rect>
   </property>
@@ -23,22 +23,36 @@
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
        <item row="0" column="0">
-        <widget class="CalSourceWidget" name="calibration1" native="true"/>
+        <widget class="CalSourceWidget" name="calibration1" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
-        <widget class="CalSourceWidget" name="calibration2" native="true"/>
+        <widget class="CalSourceWidget" name="calibration2" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="0" column="1">
         <widget class="QLabel" name="summary1">
          <property name="text">
-          <string/>
+          <string>(Freq Range, Ports)</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="summary2">
          <property name="text">
-          <string/>
+          <string>(Freq Range, Ports)</string>
          </property>
         </widget>
        </item>
