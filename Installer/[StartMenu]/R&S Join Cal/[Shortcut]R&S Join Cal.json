@@ -1,0 +1,7 @@
+{
+    "description":       "Combine two calibrations point-by-point",
+    "target":            "[ProgramFiles]\\Rohde-Schwarz\\Join Cal\\R&S Join Cal.exe",
+    "icon":              "icon.ico",
+    "working directory": "[ProgramFiles]\\Rohde-Schwarz\\Join Cal",
+    "arguments":         []
+}

@@ -1,0 +1,4 @@
+{
+    "target":            "[SystemFolder]msiexec.exe",
+    "arguments":         "/x [ProductCode]"
+}

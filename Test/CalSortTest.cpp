@@ -75,7 +75,6 @@ void CalSortTest::initTestCase() {
     _vna.reset();
 }
 void CalSortTest::cleanupTestCase() {
-    qDebug() << "cleanupTestCase";
     _vna.reset(new Vna(_connectionType, _address));
     _vna->fileSystem().changeDirectory(VnaFileSystem::CAL_GROUP_DIRECTORY);
     _vna->fileSystem().deleteFile( _exclusive_a   );

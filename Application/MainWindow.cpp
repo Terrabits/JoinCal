@@ -10,6 +10,7 @@
 #include "Settings.h"
 
 // RsaToolbox
+#include <Shake.h>
 using namespace RsaToolbox;
 
 // Qt
@@ -37,6 +38,8 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
     // Error messages
     connect(ui->crossover, SIGNAL(outOfRange(QString)),
             ui->error, SLOT(showMessage(QString)));
+    connect(ui->crossover, SIGNAL(outOfRange(QString)),
+            this, SLOT(shake()));
 
     // Process inputs
     connect(ui->calibration1, SIGNAL(sourceChanged(CalibrationSource)),
@@ -58,35 +61,46 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::sourceChanged() {
-    if (!isTwoCalibrations()) {
-        return;
-    }
+    if (isCal1())
+        updateCal1Summary();
+    if (isCal2())
+        updateCal2Summary();
 
-    sortCalibrations();
-    checkFrequencyOverlap();
+    if (isTwoCalibrations()) {
+        sortCalibrations();
+        checkFrequencyOverlap();
+    }
+    else {
+        ui->crossover->clearLimits();
+        ui->crossover->setEnabled(true);
+    }
 }
 
 void MainWindow::generate() {
     if (ui->calibration1->source().isEmpty()) {
         ui->error->showMessage("*Choose first calibration");
         ui->calibration1->setFocus();
+        shake();
         return;
     }
     if (ui->calibration2->source().isEmpty()) {
         ui->error->showMessage("*Choose second calibration");
         ui->calibration2->setFocus();
+        shake();
         return;
     }
     const bool isCrossover = ui->crossover->isEnabled();
     if (isCrossover && ui->crossover->text().isEmpty()) {
         ui->error->showMessage("*Choose crossover frequency");
         ui->crossover->setFocus();
+        shake();
         return;
     }
     if (!ui->filename->hasAcceptableInput()) {
         ui->error->showMessage("*Choose valid filename");
         ui->filename->selectAll();
         ui->filename->setFocus();
+        shake();
         return;
     }
 
@@ -128,6 +142,10 @@ void MainWindow::generate() {
     }
     close();
 }
+void MainWindow::shake() {
+    RsaToolbox::shake(this);
+}
+
 void MainWindow::checkFilename() {
     QString filename = ui->filename->text();
     if (!filename.endsWith(".cal", Qt::CaseInsensitive)) {
@@ -135,13 +153,14 @@ void MainWindow::checkFilename() {
     }
 }
 
+bool MainWindow::isCal1() const {
+     return !ui->calibration1->source().isEmpty();
+}
+bool MainWindow::isCal2() const {
+    return !ui->calibration2->source().isEmpty();
+}
 bool MainWindow::isTwoCalibrations() const {
-    if (ui->calibration1->source().isEmpty())
-        return false;
-    if (ui->calibration2->source().isEmpty())
-        return false;
-
-    return true;
+    return isCal1() && isCal2();
 }
 void MainWindow::sortCalibrations() {
     // Assumes two valid calibrations
@@ -174,6 +193,14 @@ void MainWindow::checkFrequencyOverlap() {
         ui->crossover->setEnabled(true);
     }
 }
+void MainWindow::updateCal1Summary() {
+    Corrections corr(ui->calibration1->source(), _vna);
+    ui->summary1->setText(corr.displayText());
+}
+void MainWindow::updateCal2Summary() {
+    Corrections corr(ui->calibration2->source(), _vna);
+    ui->summary2->setText(corr.displayText());
+}
 
 bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
     if (!c1.isReady()) {
@@ -181,6 +208,7 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
         msg = msg.arg(ui->calibration1->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration1->setFocus();
+        shake();
         return false;
     }
     if (c1.frequencies_Hz().isEmpty()) {
@@ -188,6 +216,7 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
         msg = msg.arg(ui->calibration1->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration1->setFocus();
+        shake();
         return false;
     }
     if (!c2.isReady()) {
@@ -195,6 +224,7 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
         msg = msg.arg(ui->calibration2->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration2->setFocus();
+        shake();
         return false;
     }
     if (c2.frequencies_Hz().isEmpty()) {
@@ -202,6 +232,7 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
         msg = msg.arg(ui->calibration2->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration2->setFocus();
+        shake();
         return false;
     }
 

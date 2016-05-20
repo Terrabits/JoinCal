@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
-    <height>313</height>
+    <width>559</width>
+    <height>248</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,14 +45,14 @@
        <item row="0" column="1">
         <widget class="QLabel" name="summary1">
          <property name="text">
-          <string>(Freq Range, Ports)</string>
+          <string/>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="summary2">
          <property name="text">
-          <string>(Freq Range, Ports)</string>
+          <string/>
          </property>
         </widget>
        </item>

@@ -31,6 +31,7 @@ private slots:
     void acceptCalGroup();
     void acceptChannel();
     void rejectDialog();
+    void cannotAcceptNothing();
     void noChannels();
     void noCalGroups();
     void noCalibrationsAtAll();

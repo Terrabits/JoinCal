@@ -28,6 +28,12 @@ public:
 
     CalibrationSource selectedCal() const;
 
+public slots:
+    virtual void accept();
+
+private slots:
+    void shake();
+
 private:
     Ui::GetCalDialog *ui;
 

@@ -6,174 +6,176 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>452</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QTabWidget" name="tabWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>361</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>0</number>
-   </property>
-   <widget class="QWidget" name="calGroupTab">
-    <property name="accessibleName">
-     <string/>
-    </property>
-    <attribute name="title">
-     <string>Cal Group</string>
-    </attribute>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QTreeWidget" name="calGroupTreeWidget">
-       <property name="sizeAdjustPolicy">
-        <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
-       </property>
-       <attribute name="headerVisible">
-        <bool>false</bool>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Description</string>
-        </property>
-       </column>
-       <item>
-        <property name="text">
-         <string>Cal Group 1</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 201 points</string>
-        </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="calGroupTab">
+      <property name="accessibleName">
+       <string/>
+      </property>
+      <attribute name="title">
+       <string>Cal Group</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="calGroupTreeWidget">
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="itemsExpandable">
+          <bool>false</bool>
+         </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
+         <attribute name="headerVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="headerDefaultSectionSize">
+          <number>180</number>
+         </attribute>
+         <attribute name="headerMinimumSectionSize">
+          <number>180</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>Cal Group 1</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 201 points</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Cal Group 2</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 201 points</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Cal Group 3</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 201 points</string>
+          </property>
+         </item>
+        </widget>
        </item>
-       <item>
-        <property name="text">
-         <string>Cal Group 2</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 201 points</string>
-        </property>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="channelTab">
+      <attribute name="title">
+       <string>Channel</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="channelTreeWidget">
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="itemsExpandable">
+          <bool>false</bool>
+         </property>
+         <property name="headerHidden">
+          <bool>true</bool>
+         </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
+         <attribute name="headerVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="headerDefaultSectionSize">
+          <number>180</number>
+         </attribute>
+         <attribute name="headerMinimumSectionSize">
+          <number>180</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>Ch1</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 401 points</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ch2</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 401 points</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ch3</string>
+          </property>
+          <property name="text">
+           <string>12.345 GHz - 12.345 GHz, 401 points</string>
+          </property>
+         </item>
+        </widget>
        </item>
-       <item>
-        <property name="text">
-         <string>Cal Group 3</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 201 points</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="channelTab">
-    <attribute name="title">
-     <string>Channel</string>
-    </attribute>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QTreeWidget" name="channelTreeWidget">
-       <property name="sizeAdjustPolicy">
-        <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="headerHidden">
-        <bool>true</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
-       </property>
-       <attribute name="headerVisible">
-        <bool>false</bool>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Description</string>
-        </property>
-       </column>
-       <item>
-        <property name="text">
-         <string>Ch1</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 401 points</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Ch2</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 401 points</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Ch3</string>
-        </property>
-        <property name="text">
-         <string>12.345 GHz - 12.345 GHz, 401 points</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>

@@ -46,9 +46,10 @@ GetCalDialogTest::GetCalDialogTest(QObject *parent) :
     _logFilenames << "1 - Accept Cal Group.txt"
                   << "2 - Accept Channel.txt"
                   << "3 - Reject Dialog.txt"
-                  << "4 - No Channels.txt"
-                  << "5 - No Cal Groups.txt"
-                  << "6 - No Calibrations At All.txt";
+                  << "4 - Cannot accept nothing.txt"
+                  << "5 - No Channels.txt"
+                  << "6 - No Cal Groups.txt"
+                  << "7 - No Calibrations At All.txt";
 }
 
 GetCalDialogTest::~GetCalDialogTest()
@@ -136,6 +137,18 @@ void GetCalDialogTest::rejectDialog() {
 
     GetCalDialog dialog(_vna.data());
     dialog.setWindowTitle("Reject");
+    dialog.exec();
+    QVERIFY(!_vna->isError());
+    QCOMPARE(QDialog::DialogCode(dialog.result()), QDialog::Rejected);
+    QVERIFY(dialog.selectedCal().isEmpty());
+}
+void GetCalDialogTest::cannotAcceptNothing() {
+    clearCalGroups();
+    copyCalGroups();
+    makeTwoCalibratedChannels();
+
+    GetCalDialog dialog(_vna.data());
+    dialog.setWindowTitle("Try clicking ok");
     dialog.exec();
     QVERIFY(!_vna->isError());
     QCOMPARE(QDialog::DialogCode(dialog.result()), QDialog::Rejected);

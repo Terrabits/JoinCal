@@ -239,7 +239,7 @@ void CorrectionsTest::stopIncluded() {
     const double stop_Hz  = 7.0E9;
     calibration.range().setStop(stop_Hz);
     calibration.range().setStopInclusive(true);
-    const double step_Hz = 100.0E6;
+//    const double step_Hz = 100.0E6;
 
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());

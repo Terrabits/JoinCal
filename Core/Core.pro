@@ -18,7 +18,7 @@ HEADERS += Settings.h \
            FrequencyRange.h \
            CalSourceWidget.h \
            GetCalDialog.h \
-    CalSort.h
+           CalSort.h
 SOURCES += CalibrationSource.cpp \
            Corrections.cpp \
            JoinCalibrations.cpp \
@@ -26,7 +26,7 @@ SOURCES += CalibrationSource.cpp \
            FrequencyRange.cpp \
            CalSourceWidget.cpp \
            GetCalDialog.cpp \
-    CalSort.cpp
+           CalSort.cpp
 FORMS   += CalSourceWidget.ui \
            GetCalDialog.ui
 

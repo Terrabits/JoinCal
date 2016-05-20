@@ -1,0 +1,5 @@
+{
+    "target":            "[WindowsFolder]explorer.exe",
+    "icon":              "icon.ico",
+    "arguments":         "[ProgramData]\\Rohde-Schwarz\\Join Cal"
+}

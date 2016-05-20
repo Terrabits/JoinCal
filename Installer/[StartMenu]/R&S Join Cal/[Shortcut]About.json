@@ -1,0 +1,6 @@
+{
+    "target":            "[ProgramFiles]\\Rohde-Schwarz\\Join Cal\\R&S Join Cal.exe",
+    "arguments":         "-about",
+    "icon":              "icon.ico",
+    "working directory": "[ProgramFiles]\\Rohde-Schwarz\\Join Cal"
+}

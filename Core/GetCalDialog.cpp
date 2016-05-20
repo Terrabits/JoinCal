@@ -3,6 +3,7 @@
 
 
 // RsaToolbox
+#include <Shake.h>
 using namespace RsaToolbox;
 
 // Qt
@@ -80,6 +81,29 @@ CalibrationSource GetCalDialog::selectedCal() const {
             return CalibrationSource(_channels[i]);
         }
     }
+}
+
+void GetCalDialog::accept() {
+    QWidget *currentWidget = ui->tabWidget->currentWidget();
+    QModelIndexList rows;
+    if (currentWidget == ui->calGroupTab) {
+        rows = ui->calGroupTreeWidget->selectionModel()->selectedRows(0);
+
+    }
+    else {
+        rows = ui->channelTreeWidget->selectionModel()->selectedRows(0);
+    }
+    if (rows.isEmpty()) {
+        shake();
+        return;
+    }
+    else {
+        QDialog::accept();
+    }
+}
+
+void GetCalDialog::shake() {
+    RsaToolbox::shake(this);
 }
 
 QVector<uint> GetCalDialog::calibratedChannels(Vna *vna) {

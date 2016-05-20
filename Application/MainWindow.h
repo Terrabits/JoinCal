@@ -31,6 +31,8 @@ private slots:
     void checkFilename();
     void generate();
 
+    void shake();
+
 private:
     Ui::MainWindow *ui;
 
@@ -39,12 +41,13 @@ private:
     RsaToolbox::Keys    *_keys;
     RsaToolbox::LastPath _lastPath;
 
+    bool isCal1() const;
+    bool isCal2() const;
     bool isTwoCalibrations() const;
     void sortCalibrations();
     void checkFrequencyOverlap();
-
-    void blockInputs();
-    void unblockInputs();
+    void updateCal1Summary();
+    void updateCal2Summary();
 
     bool isValid(Corrections &c1, Corrections &c2);
 };
