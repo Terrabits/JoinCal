@@ -49,7 +49,8 @@ GetCalDialogTest::GetCalDialogTest(QObject *parent) :
                   << "4 - Cannot accept nothing.txt"
                   << "5 - No Channels.txt"
                   << "6 - No Cal Groups.txt"
-                  << "7 - No Calibrations At All.txt";
+                  << "7 - No Calibrations At All.txt"
+                  << "8 - Many Cal Groups.txt";
 }
 
 GetCalDialogTest::~GetCalDialogTest()
@@ -77,7 +78,28 @@ void GetCalDialogTest::copyCalGroups() {
     QVERIFY(_vna->isCalGroup(_calGroup2));
 
 }
-
+void GetCalDialogTest::copyManyCalGroups() {
+    QString exclusive_a   = "exclusive_a.cal";
+    QString exclusive_b   = "exclusive_b.cal";
+    QString overlapping_a = "overlapping_a.cal";
+    QString overlapping_b = "overlapping_b.cal";
+    QString same_start_a  = "same_start_a.cal";
+    QString same_start_b  = "same_start_b.cal";
+    QString same_stop_a   = "same_stop_a.cal";
+    QString same_stop_b   = "same_stop_b.cal";
+    QString subset_a      = "subset_a.cal";
+    QString subset_b      = "subset_b.cal";
+    _vna->fileSystem().uploadFile(_calGroups.filePath( exclusive_a  ), exclusive_a,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( exclusive_b  ), exclusive_b,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( overlapping_a), overlapping_a, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( overlapping_b), overlapping_b, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( same_start_a ), same_start_a,  VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( same_start_b ), same_start_b,  VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( same_stop_a  ), same_stop_a,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( same_stop_b  ), same_stop_b,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( subset_a     ), subset_a,      VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+    _vna->fileSystem().uploadFile(_calGroups.filePath( subset_b     ), subset_b,      VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
+}
 void GetCalDialogTest::makeTwoCalibratedChannels() {
     _vna->createChannel(1);
     _vna->createChannel(2);
@@ -176,5 +198,8 @@ void GetCalDialogTest::noCalibrationsAtAll() {
     GetCalDialog dialog(_vna.data());
     dialog.setWindowTitle("No Cals");
     dialog.exec();
+}
+void GetCalDialogTest::manyCalGroups() {
+
 }
 

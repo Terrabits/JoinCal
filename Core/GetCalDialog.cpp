@@ -2,6 +2,9 @@
 #include "ui_GetCalDialog.h"
 
 
+// Project
+#include "Corrections.h"
+
 // RsaToolbox
 #include <Shake.h>
 using namespace RsaToolbox;
@@ -30,7 +33,9 @@ GetCalDialog::GetCalDialog(Vna *vna, QWidget *parent) :
             QTreeWidgetItem *item = new QTreeWidgetItem;
             ui->calGroupTreeWidget->addTopLevelItem(item);
             item->setText(0, _calGroups[i]);
-            item->setText(1, "Summary");
+            Calibration source;
+            source.source().setCalGroup(_calGroups[i]);
+            item->setText(1, Corrections(source, vna).displayText());
         }
     }
 
@@ -46,7 +51,9 @@ GetCalDialog::GetCalDialog(Vna *vna, QWidget *parent) :
             QTreeWidgetItem *item = new QTreeWidgetItem;
             ui->channelTreeWidget->addTopLevelItem(item);
             item->setText(0, vna->channel(c).name());
-            item->setText(1, "Summary");
+            Calibration source;
+            source.source().setChannel(c);
+            item->setText(1, Corrections(source, vna).displayText());
         }
     }
 }

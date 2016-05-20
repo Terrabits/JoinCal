@@ -25,6 +25,7 @@ private:
 
     void clearCalGroups();
     void copyCalGroups();
+    void copyManyCalGroups();
     void makeTwoCalibratedChannels();
 
 private slots:
@@ -35,6 +36,7 @@ private slots:
     void noChannels();
     void noCalGroups();
     void noCalibrationsAtAll();
+    void manyCalGroups();
 };
 
 #endif // GETCALDIALOGTEST_H
