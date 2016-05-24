@@ -21,8 +21,8 @@ private:
     QDir _calGroups;
 
 private slots:
-    virtual void initTestCase();
-    virtual void cleanupTestCase();
+    virtual void init();
+    virtual void cleanup();
 
     void fromChannel();
     void fromCalGroup();

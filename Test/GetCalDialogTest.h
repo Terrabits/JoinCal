@@ -9,6 +9,7 @@
 #include <QDir>
 #include <QObject>
 
+
 class GetCalDialogTest : public RsaToolbox::VnaTestClass
 {
     Q_OBJECT
@@ -29,6 +30,9 @@ private:
     void makeTwoCalibratedChannels();
 
 private slots:
+    virtual void init();
+    virtual void cleanup();
+
     void acceptCalGroup();
     void acceptChannel();
     void rejectDialog();
@@ -38,5 +42,6 @@ private slots:
     void noCalibrationsAtAll();
     void manyCalGroups();
 };
+
 
 #endif // GETCALDIALOGTEST_H

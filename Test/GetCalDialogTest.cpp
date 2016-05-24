@@ -124,8 +124,16 @@ void GetCalDialogTest::makeTwoCalibratedChannels() {
     QVERIFY(_vna->channel(2).isCalibrated());
 }
 
-void GetCalDialogTest::acceptCalGroup() {
+void GetCalDialogTest::init() {
+    _init();
     clearCalGroups();
+}
+void GetCalDialogTest::cleanup() {
+    clearCalGroups();
+    _cleanup();
+}
+
+void GetCalDialogTest::acceptCalGroup() {
     copyCalGroups();
     makeTwoCalibratedChannels();
 
@@ -139,7 +147,6 @@ void GetCalDialogTest::acceptCalGroup() {
     QCOMPARE(dialog.selectedCal(), expectedCal);
 }
 void GetCalDialogTest::acceptChannel() {
-    clearCalGroups();
     copyCalGroups();
     makeTwoCalibratedChannels();
 
@@ -153,7 +160,6 @@ void GetCalDialogTest::acceptChannel() {
     QCOMPARE(dialog.selectedCal(), expectedCal);
 }
 void GetCalDialogTest::rejectDialog() {
-    clearCalGroups();
     copyCalGroups();
     makeTwoCalibratedChannels();
 
@@ -165,7 +171,6 @@ void GetCalDialogTest::rejectDialog() {
     QVERIFY(dialog.selectedCal().isEmpty());
 }
 void GetCalDialogTest::cannotAcceptNothing() {
-    clearCalGroups();
     copyCalGroups();
     makeTwoCalibratedChannels();
 
@@ -177,7 +182,6 @@ void GetCalDialogTest::cannotAcceptNothing() {
     QVERIFY(dialog.selectedCal().isEmpty());
 }
 void GetCalDialogTest::noChannels() {
-    clearCalGroups();
     copyCalGroups();
 
     GetCalDialog dialog(_vna.data());
@@ -185,7 +189,6 @@ void GetCalDialogTest::noChannels() {
     dialog.exec();
 }
 void GetCalDialogTest::noCalGroups() {
-    clearCalGroups();
     makeTwoCalibratedChannels();
 
     GetCalDialog dialog(_vna.data());
@@ -193,13 +196,14 @@ void GetCalDialogTest::noCalGroups() {
     dialog.exec();
 }
 void GetCalDialogTest::noCalibrationsAtAll() {
-    clearCalGroups();
-
     GetCalDialog dialog(_vna.data());
     dialog.setWindowTitle("No Cals");
     dialog.exec();
 }
 void GetCalDialogTest::manyCalGroups() {
-
+    copyManyCalGroups();
+    GetCalDialog dialog(_vna.data());
+    dialog.setWindowTitle("How slow?");
+    dialog.exec();
 }
 
