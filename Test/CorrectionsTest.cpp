@@ -55,9 +55,8 @@ CorrectionsTest::~CorrectionsTest()
 
 }
 
-void CorrectionsTest::init() {
+void CorrectionsTest::initTestCase() {
     _initTestCase();
-
     _vna.reset(new Vna(_connectionType, _address));
     QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";
     _vna->fileSystem().uploadFile(_calGroups.filePath(calGroup), calGroup, VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
@@ -66,7 +65,7 @@ void CorrectionsTest::init() {
     _vna->fileSystem().uploadFile(_calGroups.filePath("segmented.cal"), "segmented.cal", VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna.reset();
 }
-void CorrectionsTest::cleanup() {
+void CorrectionsTest::cleanupTestCase() {
     _vna.reset(new Vna(_connectionType, _address));
     _vna->fileSystem().deleteFile("ports 1-2 1-8 ghz 100 mhz steps.cal");
     _vna->fileSystem().deleteFile("linear.cal");

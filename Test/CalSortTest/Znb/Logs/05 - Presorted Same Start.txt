@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Fri May 20 15:51:55 2016
+Mon May 23 19:41:56 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -26,6 +26,7 @@ Options:          ZNB-K2
                   ZNB8-B34
                   ZNB-B81
                   ZNB-B2
+                  ZNB-B12
                   ZN-B15
 
 

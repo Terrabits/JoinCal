@@ -59,7 +59,7 @@ CalSortTest::~CalSortTest() {
 
 }
 
-void CalSortTest::init() {
+void CalSortTest::initTestCase() {
     _initTestCase();
     _vna.reset(new Vna(_connectionType, _address));
     _vna->fileSystem().uploadFile(_calGroups.filePath( _exclusive_a  ), _exclusive_a,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
@@ -74,7 +74,7 @@ void CalSortTest::init() {
     _vna->fileSystem().uploadFile(_calGroups.filePath( _subset_b     ), _subset_b,      VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
     _vna.reset();
 }
-void CalSortTest::cleanup() {
+void CalSortTest::cleanupTestCase() {
     _vna.reset(new Vna(_connectionType, _address));
     _vna->fileSystem().changeDirectory(VnaFileSystem::CAL_GROUP_DIRECTORY);
     _vna->fileSystem().deleteFile( _exclusive_a   );

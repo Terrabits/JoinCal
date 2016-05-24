@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui widgets
-TARGET    = JoinCals
+TARGET    = JoinCal
 TEMPLATE  = app
 
 include(../Core/core.pri)
