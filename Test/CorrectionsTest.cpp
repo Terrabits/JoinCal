@@ -19,6 +19,21 @@ using namespace RsaToolbox;
 CorrectionsTest::CorrectionsTest(QObject *parent) :
     VnaTestClass(parent)
 {
+
+}
+CorrectionsTest::CorrectionsTest(ConnectionType type, const QString &address, QObject *parent) :
+    VnaTestClass(parent)
+{
+    setConnectionType(type);
+    setAddress(address);
+}
+
+CorrectionsTest::~CorrectionsTest()
+{
+
+}
+
+void CorrectionsTest::initTestCase() {
     _applicationName = "Corrections (class) Test";
     _version         = "0.0";
 
@@ -48,14 +63,7 @@ CorrectionsTest::CorrectionsTest(QObject *parent) :
                   << "7 - Start Too High.txt"
                   << "8 - Stop Too Low.txt"
                   << "9 - Display Text.txt";
-}
 
-CorrectionsTest::~CorrectionsTest()
-{
-
-}
-
-void CorrectionsTest::initTestCase() {
     _initTestCase();
     _vna.reset(new Vna(_connectionType, _address));
     QString calGroup = "ports 1-2 1-8 ghz 100 mhz steps.cal";

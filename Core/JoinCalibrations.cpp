@@ -26,16 +26,22 @@ JoinCalibrations::JoinCalibrations(const QVector<Corrections*> &corrections,
     for (int i = 0; i < corrections.size(); i++) {
         frequencies_Hz += corrections[i]->frequencies_Hz();
     }
+    vna->isError();
+    vna->clearStatus();
 
     uint c = vna->createChannel();
     VnaChannel channel = vna->channel(c);
     if (channel.isCalGroup())
         channel.dissolveCalGroupLink();
     channel.setFrequencies(frequencies_Hz);
+    vna->isError();
+    vna->clearStatus();
 
     VnaCorrections newCorrections = channel.corrections();
     channel.calibrate().start("JoinCal", VnaCalibrate::CalType::Tosm, ports);
     newCorrections.loadDefaultCorrections();
+    vna->isError();
+    vna->clearStatus();
 
     foreach (int p1, ports) {
         foreach (int p2, ports) {
@@ -60,6 +66,8 @@ JoinCalibrations::JoinCalibrations(const QVector<Corrections*> &corrections,
                 newCorrections.setLoadMatch(loadMatch, p1, p2);
                 newCorrections.setTransmissionTracking(transmissionTracking, p1, p2);
             }
+            vna->isError();
+            vna->clearStatus();
         }
     }
 
@@ -67,6 +75,8 @@ JoinCalibrations::JoinCalibrations(const QVector<Corrections*> &corrections,
     channel.dissolveCalGroupLink();
     channel.setCalGroup(saveAs);
     vna->deleteChannel(c);
+    vna->isError();
+    vna->clearStatus();
 }
 
 JoinCalibrations::~JoinCalibrations()

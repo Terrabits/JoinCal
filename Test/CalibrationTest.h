@@ -14,7 +14,8 @@ class CalibrationTest : public RsaToolbox::VnaTestClass
 {
     Q_OBJECT
 public:
-    CalibrationTest(QObject *parent = 0);
+    explicit CalibrationTest(QObject *parent = 0);
+    CalibrationTest(RsaToolbox::ConnectionType type, const QString &address, QObject *parent);
     ~CalibrationTest();
 
 private:

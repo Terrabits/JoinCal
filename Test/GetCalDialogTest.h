@@ -15,6 +15,7 @@ class GetCalDialogTest : public RsaToolbox::VnaTestClass
     Q_OBJECT
 public:
     explicit GetCalDialogTest(QObject *parent = 0);
+    explicit GetCalDialogTest(RsaToolbox::ConnectionType type, const QString &address, QObject *parent = 0);
     ~GetCalDialogTest();
 
 private:
@@ -30,6 +31,8 @@ private:
     void makeTwoCalibratedChannels();
 
 private slots:
+    virtual void initTestCase();
+
     virtual void init();
     virtual void cleanup();
 

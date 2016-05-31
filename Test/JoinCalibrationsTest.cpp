@@ -16,8 +16,24 @@ using namespace RsaToolbox;
 #include <QTest>
 
 
-JoinCalibrationsTest::JoinCalibrationsTest()
+JoinCalibrationsTest::JoinCalibrationsTest(QObject *parent) :
+    VnaTestClass(parent)
 {
+
+}
+JoinCalibrationsTest::JoinCalibrationsTest(ConnectionType type, const QString &address, QObject *parent) :
+    VnaTestClass(parent)
+{
+    setConnectionType(type);
+    setAddress(address);
+}
+
+JoinCalibrationsTest::~JoinCalibrationsTest()
+{
+
+}
+
+void JoinCalibrationsTest::initTestCase() {
     _applicationName = "JoinCalibrations (class) Test";
     _version         = "0.0";
 
@@ -34,11 +50,8 @@ JoinCalibrationsTest::JoinCalibrationsTest()
     _calGroups.cd("CalGroups");
 
     _logFilenames << "1 - test1.txt";
-}
 
-JoinCalibrationsTest::~JoinCalibrationsTest()
-{
-
+    _initTestCase();
 }
 
 void JoinCalibrationsTest::test1() {

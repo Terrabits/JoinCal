@@ -15,44 +15,14 @@ using namespace RsaToolbox;
 GetCalDialogTest::GetCalDialogTest(QObject *parent) :
     VnaTestClass(parent)
 {
-    _applicationName = "GetCalDialog Test";
-    _version         = "0.0";
 
-    _logDir.setPath(SOURCE_DIR);
-    _logDir.mkpath("GetCalDialogTest");
-    _logDir.cd("GetCalDialogTest");
-    if (isZvaFamily()) {
-        _logDir.mkpath("Zva");
-        _logDir.cd("Zva");
-    }
-    else if (isZnbFamily()) {
-        _logDir.mkpath("Zva");
-        _logDir.cd("Znb");
-    }
-    _calGroups = _logDir;
-    _logDir.mkpath("Logs");
-    _logDir.cd("Logs");
-    _calGroups.mkpath("CalGroups");
-    _calGroups.cd("CalGroups");
-
-    _calGroup1Filename = "cal group 1.cal";
-    _calGroup1 = _calGroup1Filename;
-    _calGroup1.chop(4);
-
-    _calGroup2Filename = "cal group 2.cal";
-    _calGroup2 = _calGroup2Filename;
-    _calGroup2.chop(4);
-
-    _logFilenames << "1 - Accept Cal Group.txt"
-                  << "2 - Accept Channel.txt"
-                  << "3 - Reject Dialog.txt"
-                  << "4 - Cannot accept nothing.txt"
-                  << "5 - No Channels.txt"
-                  << "6 - No Cal Groups.txt"
-                  << "7 - No Calibrations At All.txt"
-                  << "8 - Many Cal Groups.txt";
 }
-
+GetCalDialogTest::GetCalDialogTest(ConnectionType type, const QString &address, QObject *parent) :
+    VnaTestClass(parent)
+{
+    setConnectionType(type);
+    setAddress(address);
+}
 GetCalDialogTest::~GetCalDialogTest()
 {
 
@@ -122,6 +92,47 @@ void GetCalDialogTest::makeTwoCalibratedChannels() {
     QVERIFY(!_vna->isError());
     QVERIFY(_vna->channel(1).isCalibrated());
     QVERIFY(_vna->channel(2).isCalibrated());
+}
+
+void GetCalDialogTest::initTestCase() {
+    _applicationName = "GetCalDialog Test";
+    _version         = "0.0";
+
+    _logDir.setPath(SOURCE_DIR);
+    _logDir.mkpath("GetCalDialogTest");
+    _logDir.cd("GetCalDialogTest");
+    if (isZvaFamily()) {
+        _logDir.mkpath("Zva");
+        _logDir.cd("Zva");
+    }
+    else if (isZnbFamily()) {
+        _logDir.mkpath("Zva");
+        _logDir.cd("Znb");
+    }
+    _calGroups = _logDir;
+    _logDir.mkpath("Logs");
+    _logDir.cd("Logs");
+    _calGroups.mkpath("CalGroups");
+    _calGroups.cd("CalGroups");
+
+    _calGroup1Filename = "cal group 1.cal";
+    _calGroup1 = _calGroup1Filename;
+    _calGroup1.chop(4);
+
+    _calGroup2Filename = "cal group 2.cal";
+    _calGroup2 = _calGroup2Filename;
+    _calGroup2.chop(4);
+
+    _logFilenames << "1 - Accept Cal Group.txt"
+                  << "2 - Accept Channel.txt"
+                  << "3 - Reject Dialog.txt"
+                  << "4 - Cannot accept nothing.txt"
+                  << "5 - No Channels.txt"
+                  << "6 - No Cal Groups.txt"
+                  << "7 - No Calibrations At All.txt"
+                  << "8 - Many Cal Groups.txt";
+
+    _initTestCase();
 }
 
 void GetCalDialogTest::init() {

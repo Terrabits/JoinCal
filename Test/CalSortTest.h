@@ -15,6 +15,7 @@ class CalSortTest : public RsaToolbox::VnaTestClass
     Q_OBJECT
 public:
     explicit CalSortTest(QObject *parent = 0);
+    explicit CalSortTest(RsaToolbox::ConnectionType type, const QString &address, QObject *parent = 0);
     ~CalSortTest();
 
 

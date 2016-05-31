@@ -12,6 +12,20 @@ using namespace RsaToolbox;
 CalSortTest::CalSortTest(QObject *parent) :
     VnaTestClass(parent)
 {
+
+}
+CalSortTest::CalSortTest(ConnectionType type, const QString &address, QObject *parent) :
+    VnaTestClass(parent)
+{
+    setConnectionType(type);
+    setAddress(address);
+}
+CalSortTest::~CalSortTest() {
+
+}
+
+void CalSortTest::initTestCase() {
+
     _applicationName = "Corrections (class) Test";
     _version         = "0.0";
 
@@ -53,13 +67,7 @@ CalSortTest::CalSortTest(QObject *parent) :
     _same_stop_b   = "same_stop_b.cal";
     _subset_a      = "subset_a.cal";
     _subset_b      = "subset_b.cal";
-}
 
-CalSortTest::~CalSortTest() {
-
-}
-
-void CalSortTest::initTestCase() {
     _initTestCase();
     _vna.reset(new Vna(_connectionType, _address));
     _vna->fileSystem().uploadFile(_calGroups.filePath( _exclusive_a  ), _exclusive_a,   VnaFileSystem::Directory::CAL_GROUP_DIRECTORY);
