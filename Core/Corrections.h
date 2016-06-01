@@ -30,6 +30,11 @@ public:
 
     bool isSwitchMatrix() const;
     QVector<uint> ports() const;
+    uint points() const;
+    double startFrequency_Hz() const;
+    double stopFrequency_Hz() const;
+    // Connector connector(uint port) const;
+    // QVector<uint> connectors() const;
     RsaToolbox::QRowVector frequencies_Hz() const;
     RsaToolbox::ComplexRowVector directivity(uint outputPort, uint inputPort) const;
     RsaToolbox::ComplexRowVector sourceMatch(uint outputPort, uint inputPort) const;

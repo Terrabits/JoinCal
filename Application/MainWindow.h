@@ -8,6 +8,7 @@
 // RsaToolbox
 #include <Keys.h>
 #include <LastPath.h>
+#include <VnaPauseSweeps.h>
 #include <Vna.h>
 
 // Qt
@@ -37,6 +38,7 @@ private:
     Ui::MainWindow *ui;
 
     RsaToolbox::Vna     *_vna;
+    RsaToolbox::VnaPauseSweeps _pause;
 
     RsaToolbox::Keys    *_keys;
     RsaToolbox::LastPath _lastPath;

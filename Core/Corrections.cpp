@@ -94,6 +94,15 @@ bool Corrections::isSwitchMatrix() const {
 QVector<uint> Corrections::ports() const {
     return _vna->channel(_channel).corrections().ports();
 }
+uint Corrections::points() const {
+    return _vna->channel(_channel).corrections().points();
+}
+double Corrections::startFrequency_Hz() const {
+    return _vna->channel(_channel).corrections().startFrequency_Hz();
+}
+double Corrections::stopFrequency_Hz() const {
+    return _vna->channel(_channel).corrections().stopFrequency_Hz();
+}
 QRowVector Corrections::frequencies_Hz() const {
     if (_isEmpty)
         return QRowVector();

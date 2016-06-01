@@ -14,6 +14,7 @@ using namespace RsaToolbox;
 // Qt
 #include <QApplication>
 #include <QMessageBox>
+#include <QScopedPointer>
 
 
 // About menu
@@ -52,11 +53,13 @@ int main(int argc, char *argv[])
     windowTitle         = windowTitle.arg(APP_NAME);
     windowTitle         = windowTitle.arg(APP_VERSION);
 
-    MainWindow w(&vna, &keys);
-    w.setWindowTitle(windowTitle);
-    w.show();
+    QScopedPointer<MainWindow> w(new MainWindow(&vna, &keys));
+    w->setWindowTitle(windowTitle);
+    w->show();
+    int result = a.exec();
 
-    return a.exec();
+    w.reset();
+    return result;
 }
 
 

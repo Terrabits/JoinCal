@@ -24,6 +24,7 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     _vna(vna),
+    _pause(vna),
     _keys(keys),
     _lastPath(_keys, SAVE_PATH_KEY, QDir::homePath())
 {
@@ -56,6 +57,7 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    _pause.resume();
     _vna->local();
     delete ui;
 }
@@ -188,8 +190,10 @@ void MainWindow::checkFrequencyOverlap() {
         return;
     }
     else {
-        ui->crossover->setMinimum(c2.frequencies_Hz().first());
-        ui->crossover->setMaximum(c1.frequencies_Hz().last() );
+        double _min = std::max(c1.frequencies_Hz().first(), c2.frequencies_Hz().first());
+        double _max = std::min(c1.frequencies_Hz().last(),  c2.frequencies_Hz().last());
+        ui->crossover->setMinimum(_min);
+        ui->crossover->setMaximum(_max);
         ui->crossover->setEnabled(true);
     }
 }

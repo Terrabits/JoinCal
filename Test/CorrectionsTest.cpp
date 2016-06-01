@@ -109,8 +109,11 @@ void CorrectionsTest::fromChannel() {
 
     QVERIFY(!corrections->isSwitchMatrix());
     QCOMPARE(corrections->ports(),                  ports);
+//    QCOMPARE(corrections->points(),                 points);
     QCOMPARE(corrections->frequencies_Hz().size(),  points);
+//    QCOMPARE(corrections->startFrequency_Hz(),      start_Hz);
     QCOMPARE(corrections->frequencies_Hz().first(), start_Hz);
+//    QCOMPARE(corrections->stopFrequency_Hz(),       stop_Hz - step_Hz);
     QCOMPARE(corrections->frequencies_Hz().last(),  stop_Hz - step_Hz);
     QCOMPARE(corrections->directivity(1,1).size(),  uint(points));
 
