@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Tue May 31 19:12:00 2016
+Wed Jun 1 20:56:07 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -66,7 +66,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219694952448,"
+Read:     "0, 219180785664,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -110,7 +110,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219694952448,"
+Read:     "0, 219180785664,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -202,7 +202,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694825472, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180658688, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -230,7 +230,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694825472, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180658688, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -266,7 +266,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694755840, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180658688, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -294,7 +294,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694825472, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180658688, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -362,7 +362,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694825472, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180658688, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -384,6 +384,58 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 3,'cal group 1.cal'"
 Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3248..."
+Bytes: 254
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS3:CORR:DATA:PAR? POIN"
@@ -524,6 +576,58 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 3,'cal group 2.cal'"
 Bytes: 36
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "40"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS3:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3320..."
+Bytes: 326
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS3:CORR:DATA:PAR? POIN"
@@ -786,6 +890,58 @@ Write:    ":FORM ASC"
 Bytes: 10
 Status: 0x0 Operation completed successfully.
 
+Write:    ":SENS1:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3248..."
+Bytes: 254
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
+Status: 0x0 Operation completed successfully.
+
 Write:    ":SENS1:CORR:DATA:PAR? PORT"
 Bytes: 27
 Status: 0x0 Operation completed successfully.
@@ -800,6 +956,58 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "'Ch2'"
 Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "31"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS2:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3248..."
+Bytes: 254
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS2:CORR:DATA:PAR? POIN"
@@ -942,7 +1150,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219694804992, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219180638208, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -994,7 +1202,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219694931968,"
+Read:     "0, 219180765184,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 

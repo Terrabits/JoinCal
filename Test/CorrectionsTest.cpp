@@ -109,11 +109,11 @@ void CorrectionsTest::fromChannel() {
 
     QVERIFY(!corrections->isSwitchMatrix());
     QCOMPARE(corrections->ports(),                  ports);
-//    QCOMPARE(corrections->points(),                 points);
+    QCOMPARE(corrections->points(),                 uint(points));
     QCOMPARE(corrections->frequencies_Hz().size(),  points);
-//    QCOMPARE(corrections->startFrequency_Hz(),      start_Hz);
+    QCOMPARE(corrections->startFrequency_Hz(),      start_Hz);
     QCOMPARE(corrections->frequencies_Hz().first(), start_Hz);
-//    QCOMPARE(corrections->stopFrequency_Hz(),       stop_Hz - step_Hz);
+    QCOMPARE(corrections->stopFrequency_Hz(),       stop_Hz - step_Hz);
     QCOMPARE(corrections->frequencies_Hz().last(),  stop_Hz - step_Hz);
     QCOMPARE(corrections->directivity(1,1).size(),  uint(points));
 
@@ -144,8 +144,11 @@ void CorrectionsTest::fromCalGroup() {
 
     QVERIFY(!corrections->isSwitchMatrix());
     QCOMPARE(corrections->ports(),                  ports);
+    QCOMPARE(corrections->points(),                 uint(points));
     QCOMPARE(corrections->frequencies_Hz().size(),  points);
+    QCOMPARE(corrections->startFrequency_Hz(),      start_Hz);
     QCOMPARE(corrections->frequencies_Hz().first(), start_Hz);
+    QCOMPARE(corrections->stopFrequency_Hz(),       stop_Hz - step_Hz);
     QCOMPARE(corrections->frequencies_Hz().last(),  stop_Hz - step_Hz);
     QCOMPARE(corrections->directivity(1,1).size(),  uint(points));
 
@@ -171,8 +174,11 @@ void CorrectionsTest::fullCorrections() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
+    QCOMPARE(corrections.startFrequency_Hz(),      1.0E9);
     QCOMPARE(corrections.frequencies_Hz().first(), 1.0E9);
+    QCOMPARE(corrections.stopFrequency_Hz(),       8.0E9);
     QCOMPARE(corrections.frequencies_Hz().last(),  8.0E9);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
@@ -198,8 +204,11 @@ void CorrectionsTest::subsection() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
+    QCOMPARE(corrections.startFrequency_Hz(),      2.0E9);
     QCOMPARE(corrections.frequencies_Hz().first(), 2.0E9);
+    QCOMPARE(corrections.stopFrequency_Hz(),       7.0E9);
     QCOMPARE(corrections.frequencies_Hz().last(),  7.0E9);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
@@ -226,8 +235,11 @@ void CorrectionsTest::stopExcluded() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
+    QCOMPARE(corrections.startFrequency_Hz(),      start_Hz);
     QCOMPARE(corrections.frequencies_Hz().first(), start_Hz);
+    QCOMPARE(corrections.stopFrequency_Hz(),       stop_Hz - step_Hz);
     QCOMPARE(corrections.frequencies_Hz().last(),  stop_Hz - step_Hz);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
@@ -254,8 +266,11 @@ void CorrectionsTest::stopIncluded() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
+    QCOMPARE(corrections.startFrequency_Hz(),      start_Hz);
     QCOMPARE(corrections.frequencies_Hz().first(), start_Hz);
+    QCOMPARE(corrections.stopFrequency_Hz(),       stop_Hz);
     QCOMPARE(corrections.frequencies_Hz().last(),  stop_Hz);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
@@ -278,6 +293,7 @@ void CorrectionsTest::startTooHigh() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }
@@ -300,6 +316,7 @@ void CorrectionsTest::stopTooLow() {
     Corrections corrections(calibration, _vna.data());
     QVERIFY(!corrections.isSwitchMatrix());
     QCOMPARE(corrections.ports(),                  ports);
+    QCOMPARE(corrections.points(),                 uint(points));
     QCOMPARE(corrections.frequencies_Hz().size(),  points);
     QCOMPARE(corrections.directivity(1,1).size(),  uint(points));
 }

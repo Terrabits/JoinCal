@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Tue May 31 19:11:15 2016
+Wed Jun 1 20:55:42 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -56,58 +56,6 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "'ports 1-2 1-8 ghz 100 mhz steps.cal'"
 Bytes: 38
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? POIN"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "71"
-Bytes: 3
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM?"
-Bytes: 7
-Status: 0x0 Operation completed successfully.
-
-Read:     "ASC,0"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD?"
-Bytes: 12
-Status: 0x0 Operation completed successfully.
-
-Read:     "SWAP"
-Bytes: 5
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM REAL,64"
-Bytes: 14
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM:BORD SWAP"
-Bytes: 16
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:STIM?"
-Bytes: 18
-Status: 0x0 Operation completed successfully.
-
-Read:     "#3568..."
-Bytes: 574
-Status: 0x0 Operation completed successfully.
-
-Write:    ":FORM ASC"
-Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    "*IDN?"
@@ -191,6 +139,58 @@ Status: 0x0 Operation completed successfully.
 
 Read:     "1,2"
 Bytes: 4
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:DATA:PAR? POIN"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "71"
+Bytes: 3
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM?"
+Bytes: 7
+Status: 0x0 Operation completed successfully.
+
+Read:     "ASC,0"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "SWAP"
+Bytes: 5
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM REAL,64"
+Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM:BORD SWAP"
+Bytes: 16
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:STIM?"
+Bytes: 18
+Status: 0x0 Operation completed successfully.
+
+Read:     "#3568..."
+Bytes: 574
+Status: 0x0 Operation completed successfully.
+
+Write:    ":FORM ASC"
+Bytes: 10
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS1:CORR:DATA:PAR? POIN"

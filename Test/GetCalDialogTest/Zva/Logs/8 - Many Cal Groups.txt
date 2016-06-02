@@ -1,33 +1,37 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Wed Jun 1 20:56:20 2016
+Wed Jun 1 21:06:15 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
 Address:          127.0.0.1::5025
 Make:             Rohde & Schwarz
-Model:            ZNB
-Serial No:        1311601044100104
-Firmware Version: 2.70
-Min Frequency:    9 KHz
-Max Frequency:    8.5 GHz
+Model:            ZVA
+Serial No:        1145101099999999
+Firmware Version: 3.60
+Min Frequency:    300 KHz
+Max Frequency:    8 GHz
 Number of Ports:  4
-Options:          ZNB-K2
-                  ZNB-K4
-                  ZNB-K14
-                  ZNB-K17
-                  ZNB-K19
-                  ZNB-K20
-                  ZNB8-B24
-                  ZNB8-B31
-                  ZNB8-B32
-                  ZNB8-B33
-                  ZNB8-B34
-                  ZNB-B81
-                  ZNB-B2
-                  ZNB-B12
-                  ZN-B15
+Options:          ZVA-K7
+                  ZVA-K17
+                  ZVAB-SIM
+                  ZVT8-B63
+                  ZVT8-B64
+                  ZVT8-B65
+                  ZVT8-B66
+                  ZVT8-B68
+                  ZVA8-B16
+                  ZVA8-B21
+                  ZVA8-B22
+                  ZVA8-B23
+                  ZVA8-B24
+                  ZVA8-B31
+                  ZVA8-B32
+                  ZVA8-B33
+                  ZVA8-B34
+                  ZVT8-B67
+                  ZVA-B7
 
 
 Write:    "*CLS"
@@ -50,8 +54,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -66,12 +70,12 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180707840,"
+Read:     "0, 219179864064,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    "*OPC?"
@@ -94,8 +98,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -110,20 +114,20 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180707840,"
+Read:     "0, 219179864064,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -134,20 +138,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'exclusive_a.cal', #558470??"
-Bytes: 58509
+Write:    ":MMEM:DATA 'exclusive_a.cal', #516409??"
+Bytes: 16448
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -158,20 +162,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'exclusive_b.cal', #563798??"
-Bytes: 63837
+Write:    ":MMEM:DATA 'exclusive_b.cal', #518713??"
+Bytes: 18752
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -182,20 +186,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'overlapping_a.cal', #564206??"
-Bytes: 64247
+Write:    ":MMEM:DATA 'overlapping_a.cal', #518969??"
+Bytes: 19010
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -206,20 +210,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'overlapping_b.cal', #570126??"
-Bytes: 70167
+Write:    ":MMEM:DATA 'overlapping_b.cal', #521529??"
+Bytes: 21570
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -230,20 +234,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'same_start_a.cal', #564206??"
-Bytes: 64246
+Write:    ":MMEM:DATA 'same_start_a.cal', #518969??"
+Bytes: 19009
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -254,20 +258,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'same_start_b.cal', #581966??"
-Bytes: 82006
+Write:    ":MMEM:DATA 'same_start_b.cal', #526649??"
+Bytes: 26689
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -278,20 +282,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'same_stop_a.cal', #581968??"
-Bytes: 82007
+Write:    ":MMEM:DATA 'same_stop_a.cal', #526649??"
+Bytes: 26688
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -302,20 +306,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'same_stop_b.cal', #563616??"
-Bytes: 63655
+Write:    ":MMEM:DATA 'same_stop_b.cal', #518713??"
+Bytes: 18752
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -326,20 +330,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'subset_a.cal', #581968??"
-Bytes: 82004
+Write:    ":MMEM:DATA 'subset_a.cal', #526649??"
+Bytes: 26685
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -350,20 +354,20 @@ Write:    ":MMEM:CDIR '.\Calibration\Data'"
 Bytes: 32
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:DATA 'subset_b.cal', #570128??"
-Bytes: 70164
+Write:    ":MMEM:DATA 'subset_b.cal', #521529??"
+Bytes: 21565
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -378,12 +382,12 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "700452, 219179978752, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
+Read:     "214778, 219179626496, exclusive_a.cal, , 16409, exclusive_b.cal, , 18713, overlapping_a.cal, , 1896..."
 Bytes: 284
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":CONF:CHAN:CAT?"
@@ -2326,8 +2330,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -2342,12 +2346,12 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "700452, 219179921408, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
+Read:     "214778, 219179569152, exclusive_a.cal, , 16409, exclusive_b.cal, , 18713, overlapping_a.cal, , 1896..."
 Bytes: 284
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:DEL:CORR 'exclusive_a.cal'"
@@ -2410,8 +2414,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Rohde&Schwarz\Nwa'"
+Bytes: 23
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -2426,12 +2430,12 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180650496,"
+Read:     "0, 219179806720,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Rohde&Schwarz\Nwa'"
+Bytes: 34
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"

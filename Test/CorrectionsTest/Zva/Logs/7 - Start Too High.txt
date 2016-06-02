@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Tue May 17 01:26:42 2016
+Wed Jun 1 21:05:49 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -62,6 +62,22 @@ Read:     "'ports 1-2 1-8 ghz 100 mhz steps.cal'"
 Bytes: 38
 Status: 0x0 Operation completed successfully.
 
+Write:    "*IDN?"
+Bytes: 6
+Status: 0x0 Operation completed successfully.
+
+Read:     "Rohde&Schwarz,ZVA8-4Port,1145101099999999,3.60"
+Bytes: 47
+Status: 0x0 Operation completed successfully.
+
+Write:    ":SENS1:CORR:DATA:PAR? PORT"
+Bytes: 27
+Status: 0x0 Operation completed successfully.
+
+Read:     "1,2"
+Bytes: 4
+Status: 0x0 Operation completed successfully.
+
 Write:    ":SENS1:CORR:DATA:PAR? POIN"
 Bytes: 27
 Status: 0x0 Operation completed successfully.
@@ -112,22 +128,6 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":FORM ASC"
 Bytes: 10
-Status: 0x0 Operation completed successfully.
-
-Write:    "*IDN?"
-Bytes: 6
-Status: 0x0 Operation completed successfully.
-
-Read:     "Rohde&Schwarz,ZVA8-4Port,1145101099999999,3.60"
-Bytes: 47
-Status: 0x0 Operation completed successfully.
-
-Write:    ":SENS1:CORR:DATA:PAR? PORT"
-Bytes: 27
-Status: 0x0 Operation completed successfully.
-
-Read:     "1,2"
-Bytes: 4
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SYST:ERR?"

@@ -22,32 +22,45 @@ public:
     Corrections(Calibration calibration, RsaToolbox::Vna *vna);
     ~Corrections();
 
+    enum /*class*/ State {
+        NoLimits,
+        LimitsNotApplied,
+        LimitsApplied,
+        Empty
+    };
+
     bool isChannel() const;
     bool isCalibrated() const;
     bool isReady() const;
 
-    QString displayText() const;
+    QString displayText();
 
     bool isSwitchMatrix() const;
     QVector<uint> ports() const;
-    uint points() const;
-    double startFrequency_Hz() const;
-    double stopFrequency_Hz() const;
+    uint points();
+    double startFrequency_Hz();
+    double stopFrequency_Hz();
     // Connector connector(uint port) const;
     // QVector<uint> connectors() const;
-    RsaToolbox::QRowVector frequencies_Hz() const;
-    RsaToolbox::ComplexRowVector directivity(uint outputPort, uint inputPort) const;
-    RsaToolbox::ComplexRowVector sourceMatch(uint outputPort, uint inputPort) const;
-    RsaToolbox::ComplexRowVector reflectionTracking(uint outputPort, uint inputPort) const;
-    RsaToolbox::ComplexRowVector loadMatch(uint outputPort, uint inputPort) const; // Only when out != in
-    RsaToolbox::ComplexRowVector transmissionTracking(uint outputPort, uint inputPort) const; // Only when out != in
+    RsaToolbox::QRowVector frequencies_Hz();
+    RsaToolbox::ComplexRowVector directivity(uint outputPort, uint inputPort);
+    RsaToolbox::ComplexRowVector sourceMatch(uint outputPort, uint inputPort);
+    RsaToolbox::ComplexRowVector reflectionTracking(uint outputPort, uint inputPort);
+    RsaToolbox::ComplexRowVector loadMatch(uint outputPort, uint inputPort); // Only when out != in
+    RsaToolbox::ComplexRowVector transmissionTracking(uint outputPort, uint inputPort); // Only when out != in
 
 private:
     bool _isManaged;
     uint _channel;
     mutable RsaToolbox::Vna *_vna;
+    void initialize(CalibrationSource &source);
+    void initialize(Calibration &calibration);
 
     // Chop off unwanted parts
+    State _state;
+    FrequencyRange _range;
+    void applyLimits();
+
     bool _isEmpty;
     int _startIndex;
     int _stopIndex;
