@@ -16,7 +16,6 @@ using namespace RsaToolbox;
 // - sections are valid
 // - sections are sorted
 //   low to high frequency
-typedef QSharedPointer<Corrections> SharedCorrections;
 JoinCalibrations::JoinCalibrations(const QVector<Corrections*> &corrections,
                                    const QVector<uint> &ports,
                                    RsaToolbox::Vna *vna,

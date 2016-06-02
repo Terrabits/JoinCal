@@ -51,6 +51,7 @@ private:
     void updateCal1Summary();
     void updateCal2Summary();
 
+    QVector<uint> commonPorts(Corrections &c1, Corrections &c2);
     bool isValid(Corrections &c1, Corrections &c2);
 };
 

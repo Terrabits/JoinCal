@@ -63,11 +63,6 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::sourceChanged() {
-    if (isCal1())
-        updateCal1Summary();
-    if (isCal2())
-        updateCal2Summary();
-
     if (isTwoCalibrations()) {
         sortCalibrations();
         checkFrequencyOverlap();
@@ -76,6 +71,11 @@ void MainWindow::sourceChanged() {
         ui->crossover->clearLimits();
         ui->crossover->setEnabled(true);
     }
+
+    if (isCal1())
+        updateCal1Summary();
+    if (isCal2())
+        updateCal2Summary();
 }
 
 void MainWindow::generate() {
@@ -129,7 +129,8 @@ void MainWindow::generate() {
     corrections << &corr1 << &corr2;
 
     QString filename = ui->filename->text();
-    JoinCalibrations join(corrections, corr1.ports(), _vna, filename);
+    QVector<uint> ports = commonPorts(corr1, corr2);
+    JoinCalibrations join(corrections, ports, _vna, filename);
 
     if (ui->load->isChecked()) {
         uint c = _vna->createChannel();
@@ -137,9 +138,8 @@ void MainWindow::generate() {
         QString t = _vna->createTrace(c);
         _vna->trace(t).setDiagram(d);
 
-        Calibration cal;
-        cal.source().setCalGroup(filename);
-        _vna->channel(c).setFrequencies(Corrections(cal, _vna).frequencies_Hz());
+        CalibrationSource source(filename);
+        _vna->channel(c).setFrequencies(Corrections(source, _vna).frequencies_Hz());
         _vna->channel(c).setCalGroup(filename);
     }
     close();
@@ -206,6 +206,17 @@ void MainWindow::updateCal2Summary() {
     ui->summary2->setText(corr.displayText());
 }
 
+QVector<uint> MainWindow::commonPorts(Corrections &c1, Corrections &c2) {
+    QVector<uint> ports1 = c1.ports();
+    QVector<uint> ports2 = c2.ports();
+    QVector<uint> shared;
+    foreach (uint p, ports1) {
+        if (ports2.contains(p))
+            shared.append(p);
+    }
+    return shared;
+}
+
 bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
     if (!c1.isReady()) {
         QString msg = "*Can\'t load cal from %1";
@@ -236,6 +247,13 @@ bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
         msg = msg.arg(ui->calibration2->source().displayText());
         ui->error->showMessage(msg);
         ui->calibration2->setFocus();
+        shake();
+        return false;
+    }
+    if (commonPorts(c1, c2).isEmpty()) {
+        QString msg = "*Ports do not overlap";
+        ui->error->showMessage(msg);
+        ui->calibration1->setFocus();
         shake();
         return false;
     }
