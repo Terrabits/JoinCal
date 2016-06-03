@@ -4,6 +4,7 @@
 
 // Project
 #include "Corrections.h"
+#include "JoinError.h"
 
 // RsaToolbox
 #include <Keys.h>
@@ -43,6 +44,7 @@ private:
     RsaToolbox::Keys    *_keys;
     RsaToolbox::LastPath _lastPath;
 
+
     bool isCal1() const;
     bool isCal2() const;
     bool isTwoCalibrations() const;
@@ -50,9 +52,8 @@ private:
     void checkFrequencyOverlap();
     void updateCal1Summary();
     void updateCal2Summary();
-
-    QVector<uint> commonPorts(Corrections &c1, Corrections &c2);
-    bool isValid(Corrections &c1, Corrections &c2);
+    bool isValidInput();
+    void displayError(JoinError error);
 };
 
 #endif // MAINWINDOW_H

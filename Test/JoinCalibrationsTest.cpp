@@ -74,17 +74,13 @@ void JoinCalibrationsTest::test1() {
     calibration2.range().setStopInclusive(true);
     Corrections corrections2(calibration2, _vna.data());
 
-    QVector<Corrections*> corrections;
-    corrections << &corrections1
-                << &corrections2;
-    QVector<uint> ports;
-    ports << 1 << 2;
     QString saveAs = "result.cal";
-
-    JoinCalibrations(corrections, ports, _vna.data(), saveAs);
+    JoinError error;
+    JoinCalibrations join(&corrections1, &corrections2, _vna.data(), saveAs);
+    QVERIFY(join.isValid(error));
+    join.generate();
     QVERIFY(!_vna->isError());
     QVERIFY(_vna->isCalGroup("result"));
-    QVERIFY(!_vna->channel(1).isCalibrated());
 
     _vna->channel().setCalGroup(saveAs);
     QVERIFY(!_vna->isError());

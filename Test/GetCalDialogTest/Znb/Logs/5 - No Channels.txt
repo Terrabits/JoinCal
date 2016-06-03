@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Wed Jun 1 20:56:12 2016
+Thu Jun 2 22:49:17 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -66,7 +66,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180756992,"
+Read:     "0, 219177771008,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -110,7 +110,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180756992,"
+Read:     "0, 219177771008,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -202,7 +202,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219180630016, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219177644032, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -230,7 +230,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219180630016, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219177644032, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -258,7 +258,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219180630016, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219177644032, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -686,7 +686,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "122268, 219180630016, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
+Read:     "122268, 219177644032, cal group 1.cal, , 58470, cal group 2.cal, , 63798,"
 Bytes: 76
 Status: 0x0 Operation completed successfully.
 
@@ -738,7 +738,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180756992,"
+Read:     "0, 219177771008,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 

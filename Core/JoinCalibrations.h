@@ -4,6 +4,7 @@
 
 // Project
 #include "Corrections.h"
+#include "JoinError.h"
 
 // RsaToolbox
 #include <Definitions.h>
@@ -16,12 +17,19 @@
 class JoinCalibrations
 {
 public:
-    JoinCalibrations(const QVector<Corrections*> &corrections, const QVector<uint> &ports, RsaToolbox::Vna *vna, QString saveAs);
+    JoinCalibrations(Corrections *c1, Corrections *c2, RsaToolbox::Vna *vna, QString saveAs);
     ~JoinCalibrations();
 
-private:
-    static void append(RsaToolbox::ComplexRowVector &vector, const RsaToolbox::ComplexRowVector &values);
+    bool isValid(JoinError &error);
+    void generate();
 
+private:
+    Corrections *_corr1, *_corr2;
+    RsaToolbox::Vna *_vna;
+    QString _filename;
+    QVector<uint> ports();
+
+    static void append(RsaToolbox::ComplexRowVector &vector, const RsaToolbox::ComplexRowVector &values);
 };
 
 #endif // JOINCALIBRATIONS_H

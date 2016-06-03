@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Wed Jun 1 20:56:20 2016
+Thu Jun 2 22:49:24 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -66,7 +66,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180707840,"
+Read:     "0, 219177721856,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -110,7 +110,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180707840,"
+Read:     "0, 219177721856,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -378,7 +378,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "700452, 219179978752, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
+Read:     "700452, 219176992768, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
 Bytes: 284
 Status: 0x0 Operation completed successfully.
 
@@ -2342,7 +2342,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "700452, 219179921408, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
+Read:     "700452, 219176935424, exclusive_a.cal, , 58470, exclusive_b.cal, , 63798, overlapping_a.cal, , 6420..."
 Bytes: 284
 Status: 0x0 Operation completed successfully.
 
@@ -2426,7 +2426,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180650496,"
+Read:     "0, 219177664512,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 

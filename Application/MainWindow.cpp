@@ -79,33 +79,7 @@ void MainWindow::sourceChanged() {
 }
 
 void MainWindow::generate() {
-    if (ui->calibration1->source().isEmpty()) {
-        ui->error->showMessage("*Choose first calibration");
-        ui->calibration1->setFocus();
-        shake();
-        return;
-    }
-    if (ui->calibration2->source().isEmpty()) {
-        ui->error->showMessage("*Choose second calibration");
-        ui->calibration2->setFocus();
-        shake();
-        return;
-    }
-    const bool isCrossover = ui->crossover->isEnabled();
-    if (isCrossover && ui->crossover->text().isEmpty()) {
-        ui->error->showMessage("*Choose crossover frequency");
-        ui->crossover->setFocus();
-        shake();
-        return;
-    }
-    if (!ui->filename->hasAcceptableInput()) {
-        ui->error->showMessage("*Choose valid filename");
-        ui->filename->selectAll();
-        ui->filename->setFocus();
-        shake();
-        return;
-    }
-
+    bool isCrossover = ui->crossover->isEnabled();
     double crossover_Hz;
     if (isCrossover)
         crossover_Hz = ui->crossover->frequency_Hz();
@@ -122,15 +96,21 @@ void MainWindow::generate() {
         cal2.range().setStart(crossover_Hz);
     Corrections corr2(cal2, _vna);
 
-    if (!isValid(corr1, corr2))
+    if (!isValidInput())
         return;
 
-    QVector<Corrections*> corrections;
-    corrections << &corr1 << &corr2;
-
     QString filename = ui->filename->text();
-    QVector<uint> ports = commonPorts(corr1, corr2);
-    JoinCalibrations join(corrections, ports, _vna, filename);
+
+    JoinCalibrations join(&corr1, &corr2, _vna, filename);
+    JoinError error;
+    if (!join.isValid(error)) {
+        displayError(error);
+        return;
+    }
+
+    // Move into another thread
+    // Add progress bar
+    join.generate();
 
     if (ui->load->isChecked()) {
         uint c = _vna->createChannel();
@@ -205,58 +185,61 @@ void MainWindow::updateCal2Summary() {
     Corrections corr(ui->calibration2->source(), _vna);
     ui->summary2->setText(corr.displayText());
 }
-
-QVector<uint> MainWindow::commonPorts(Corrections &c1, Corrections &c2) {
-    QVector<uint> ports1 = c1.ports();
-    QVector<uint> ports2 = c2.ports();
-    QVector<uint> shared;
-    foreach (uint p, ports1) {
-        if (ports2.contains(p))
-            shared.append(p);
-    }
-    return shared;
-}
-
-bool MainWindow::isValid(Corrections &c1, Corrections &c2) {
-    if (!c1.isReady()) {
-        QString msg = "*Can\'t load cal from %1";
-        msg = msg.arg(ui->calibration1->source().displayText());
-        ui->error->showMessage(msg);
-        ui->calibration1->setFocus();
-        shake();
+bool MainWindow::isValidInput() {
+    if (ui->calibration1->source().isEmpty()) {
+        JoinError error;
+        error.code = JoinError::Code::Calibration1;
+        error.msg = "*Choose first calibration";
+        displayError(error);
         return false;
     }
-    if (c1.frequencies_Hz().isEmpty()) {
-        QString msg = "*No points from cal %1";
-        msg = msg.arg(ui->calibration1->source().displayText());
-        ui->error->showMessage(msg);
-        ui->calibration1->setFocus();
-        shake();
+    if (ui->calibration2->source().isEmpty()) {
+        JoinError error;
+        error.code = JoinError::Code::Calibration2;
+        error.msg = "*Choose second calibration";
+        displayError(error);
         return false;
     }
-    if (!c2.isReady()) {
-        QString msg = "*Can\'t load cal from %1";
-        msg = msg.arg(ui->calibration2->source().displayText());
-        ui->error->showMessage(msg);
-        ui->calibration2->setFocus();
-        shake();
+    const bool isCrossover = ui->crossover->isEnabled();
+    if (isCrossover && ui->crossover->text().isEmpty()) {
+        JoinError error;
+        error.code = JoinError::Code::FrequencyRange;
+        error.msg = "*Choose crossover frequency";
+        displayError(error);
         return false;
     }
-    if (c2.frequencies_Hz().isEmpty()) {
-        QString msg = "*No points from cal %1";
-        msg = msg.arg(ui->calibration2->source().displayText());
-        ui->error->showMessage(msg);
-        ui->calibration2->setFocus();
-        shake();
+    if (!ui->filename->hasAcceptableInput()) {
+        JoinError error;
+        error.code = JoinError::Code::Filename;
+        error.msg = "*Choose valid filename";
+        displayError(error);
         return false;
-    }
-    if (commonPorts(c1, c2).isEmpty()) {
-        QString msg = "*Ports do not overlap";
-        ui->error->showMessage(msg);
-        ui->calibration1->setFocus();
-        shake();
         return false;
     }
 
     return true;
+}
+void MainWindow::displayError(JoinError error) {
+    switch(error.code) {
+    case JoinError::Code::Calibration1:
+        ui->calibration1->setFocus();
+        break;
+    case JoinError::Code::Calibration2:
+        ui->calibration2->setFocus();
+        break;
+    case JoinError::Code::FrequencyRange:
+        if (ui->crossover->isEnabled()) {
+            ui->crossover->setFocus();
+            ui->crossover->selectAll();
+        }
+        break;
+    case JoinError::Code::Filename:
+        ui->filename->setFocus();
+        ui->filename->selectAll();
+        break;
+    default:
+        break;
+    }
+    ui->error->showMessage(error.msg);
+    shake();
 }

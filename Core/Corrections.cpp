@@ -10,26 +10,32 @@ using namespace RsaToolbox;
 #include <QDebug>
 
 Corrections::Corrections(CalibrationSource source, Vna *vna) :
+    _source(source),
     _isManaged(false),
     _channel(0),
     _vna(vna),
     _state(State::NoLimits)
 {
-    initialize(source);
+    initialize();
 }
 
 Corrections::Corrections(Calibration calibration, Vna *vna) :
+    _source(calibration.source()),
     _isManaged(false),
     _channel(0),
     _vna(vna),
-    _state(State::LimitsNotApplied)
+    _state(State::LimitsNotApplied),
+    _range(calibration.range())
 {
-    initialize(calibration);
-    _range = calibration.range();
+    initialize();
 }
 Corrections::~Corrections()
 {
     cleanup();
+}
+
+CalibrationSource Corrections::source() const {
+    return _source;
 }
 
 bool Corrections::isChannel() const {
@@ -56,6 +62,10 @@ bool Corrections::isSwitchMatrix() const {
 QVector<uint> Corrections::ports() const {
     return _vna->channel(_channel).corrections().ports();
 }
+bool Corrections::isEmpty() {
+    return points() == 0;
+}
+
 uint Corrections::points() {
     if (_state == State::NoLimits)
         return _vna->channel(_channel).corrections().points();
@@ -147,25 +157,14 @@ ComplexRowVector Corrections::transmissionTracking(uint outputPort, uint inputPo
     return subsection(_vna->channel(_channel).corrections().transmissionTracking(outputPort, inputPort));
 }
 
-void Corrections::initialize(CalibrationSource &source) {
-    if (source.isChannel()) {
-        _channel = source.channel();
+void Corrections::initialize() {
+    if (_source.isChannel()) {
+        _channel = _source.channel();
     }
-    else if (source.isCalGroup()) {
+    else if (_source.isCalGroup()) {
         _isManaged = true;
         _channel = _vna->createChannel();
-        const QString calGroup = source.calGroup();
-        _vna->channel(_channel).setCalGroup(calGroup);
-    }
-}
-void Corrections::initialize(Calibration &calibration) {
-    if (calibration.source().isChannel()) {
-        _channel = calibration.source().channel();
-    }
-    else if (calibration.source().isCalGroup()) {
-        _isManaged = true;
-        _channel = _vna->createChannel();
-        const QString calGroup = calibration.source().calGroup();
+        const QString calGroup = _source.calGroup();
         _vna->channel(_channel).setCalGroup(calGroup);
     }
 }

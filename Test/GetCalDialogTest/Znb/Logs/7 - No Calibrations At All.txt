@@ -1,7 +1,7 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Wed Jun 1 20:56:17 2016
+Thu Jun 2 22:49:22 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -66,7 +66,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180716032,"
+Read:     "0, 219177730048,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -110,7 +110,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180716032,"
+Read:     "0, 219177730048,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -138,7 +138,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180716032,"
+Read:     "0, 219177730048,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -182,7 +182,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180716032,"
+Read:     "0, 219177730048,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 
@@ -226,7 +226,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "0, 219180716032,"
+Read:     "0, 219177730048,"
 Bytes: 19
 Status: 0x0 Operation completed successfully.
 

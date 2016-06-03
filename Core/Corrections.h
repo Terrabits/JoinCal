@@ -29,6 +29,8 @@ public:
         Empty
     };
 
+    CalibrationSource source() const;
+
     bool isChannel() const;
     bool isCalibrated() const;
     bool isReady() const;
@@ -36,12 +38,15 @@ public:
     QString displayText();
 
     bool isSwitchMatrix() const;
-    QVector<uint> ports() const;
+
+    bool isEmpty();
     uint points();
-    double startFrequency_Hz();
-    double stopFrequency_Hz();
+    QVector<uint> ports() const;
     // Connector connector(uint port) const;
     // QVector<uint> connectors() const;
+
+    double startFrequency_Hz();
+    double stopFrequency_Hz();
     RsaToolbox::QRowVector frequencies_Hz();
     RsaToolbox::ComplexRowVector directivity(uint outputPort, uint inputPort);
     RsaToolbox::ComplexRowVector sourceMatch(uint outputPort, uint inputPort);
@@ -50,11 +55,11 @@ public:
     RsaToolbox::ComplexRowVector transmissionTracking(uint outputPort, uint inputPort); // Only when out != in
 
 private:
+    CalibrationSource _source;
     bool _isManaged;
     uint _channel;
     mutable RsaToolbox::Vna *_vna;
-    void initialize(CalibrationSource &source);
-    void initialize(Calibration &calibration);
+    void initialize();
 
     // Chop off unwanted parts
     State _state;
