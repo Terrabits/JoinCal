@@ -60,6 +60,7 @@ CalibrationSource CalSourceWidget::source() const {
 
 void CalSourceWidget::showCalDialog() {
     GetCalDialog dialog(_vna);
+    dialog.setDefault(_source);
     dialog.exec();
     CalibrationSource source = dialog.selectedCal();
     if (source.isEmpty())

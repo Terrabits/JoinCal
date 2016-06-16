@@ -1,7 +1,7 @@
-R&S Join Cal Version 1.0
+R&S Join Cal Version 1.1
 (C) 2016 Rohde & Schwarz North America
 
-Wed Jun 15 18:49:52 2016
+Wed Jun 15 22:12:44 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
@@ -90,7 +90,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -162,7 +162,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -242,7 +242,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -314,7 +314,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -474,7 +474,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -634,7 +634,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -678,7 +678,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600261120, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915591680, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -1058,7 +1058,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600220160, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915554816, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 
@@ -1138,7 +1138,7 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "7118752, 219600220160, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
+Read:     "7118752, 219915554816, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-8 ghz 100 mhz steps.c..."
 Bytes: 181
 Status: 0x0 Operation completed successfully.
 

@@ -84,6 +84,8 @@ void MainWindow::sourceChanged() {
 }
 
 void MainWindow::generate() {
+    this->setDisabled(true);
+
     bool isCrossover = ui->crossover->isEnabled();
     double crossover_Hz;
     if (isCrossover)
@@ -101,8 +103,10 @@ void MainWindow::generate() {
         cal2.range().setStart(crossover_Hz);
     _corr2.reset(new Corrections(cal2, _vna));
 
-    if (!isValidInput())
+    if (!isValidInput()) {
+        this->setEnabled(true);
         return;
+    }
 
     QString filename = ui->filename->text();
 
@@ -137,6 +141,9 @@ void MainWindow::generateStarted() {
 void MainWindow::generateFinished() {
     _thread.quit();
     _join.reset();
+    _corr1.reset();
+    _corr2.reset();
+    _pause.resume();
     if (ui->load->isChecked()) {
         uint c = _vna->createChannel();
         uint d = _vna->createDiagram();
@@ -150,12 +157,14 @@ void MainWindow::generateFinished() {
     }
 
     ui->progressBar->setValue(100);
+    this->setEnabled(true);
     QString msg = "\'%1\' generated successfully!";
     msg = msg.arg(ui->filename->text());
     QMessageBox::information(this,
                              APP_NAME,
                              msg);
     ui->progressBar->setVisible(false);
+
     close();
 }
 
@@ -167,14 +176,12 @@ void MainWindow::loadKeys() {
     CalibrationSource source;
     if (_keys->exists(CALSOURCE1_KEY)) {
         _keys->get(CALSOURCE1_KEY, source);
-        qDebug() << "Cal1: " << source.displayText();
         if (Corrections(source, _vna).isReady()) {
             ui->calibration1->setSource(source);
         }
     }
     if (_keys->exists(CALSOURCE2_KEY)) {
         _keys->get(CALSOURCE2_KEY, source);
-        qDebug() << "Cal2: " << source.displayText();
         if (Corrections(source, _vna).isReady()) {
             ui->calibration2->setSource(source);
         }

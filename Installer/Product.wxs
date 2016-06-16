@@ -3,7 +3,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
     <Product Id="*" Language="1033"
              Name="R&amp;S Join Cal"
-             Version="1.0"
+             Version="1.1"
              Manufacturer="Rohde &amp; Schwarz"
              UpgradeCode="8FC61D25-B0A6-42FE-A1EE-187B48ACAE05">
         <Package       InstallerVersion="200" Compressed="yes" InstallScope="perMachine"              />
@@ -35,6 +35,7 @@
             <ComponentRef Id="libGLESv2"      />
             <ComponentRef Id="Qt5Core"        />
             <ComponentRef Id="Qt5Gui"         />
+            <ComponentRef Id="Qt5Network"     />
             <ComponentRef Id="Qt5Widgets"     />
             <!-- R&S Visa       -->
             <ComponentRef Id="RsVisa32"       />
@@ -129,6 +130,9 @@
         <Component Id="Qt5Gui"   Guid="*" Directory="INSTALLFOLDER">
             <File Source="[ProgramFiles]\Rohde-Schwarz\Join Cal\Qt5Gui.dll" KeyPath="yes" />
         </Component>
+        <Component Id="Qt5Network"   Guid="*" Directory="INSTALLFOLDER">
+            <File Source="[ProgramFiles]\Rohde-Schwarz\Join Cal\Qt5Network.dll" KeyPath="yes" />
+        </Component>
         <Component Id="Qt5Widgets"   Guid="*" Directory="INSTALLFOLDER">
             <File Source="[ProgramFiles]\Rohde-Schwarz\Join Cal\Qt5Widgets.dll" KeyPath="yes" />
         </Component>
@@ -171,8 +175,9 @@
             </RegistryKey>
             <Shortcut Id="AboutShortcut"     Name="About"     Icon="icon.ico" WorkingDirectory="INSTALLFOLDER" Target="[INSTALLFOLDER]\R&amp;S Join Cal.exe" Arguments="-about" />
             <Shortcut Id="AppShortcut"       Name="Join Cal"  Icon="icon.ico" WorkingDirectory="INSTALLFOLDER" Target="[INSTALLFOLDER]\R&amp;S Join Cal.exe" />
-            <Shortcut Id="LogsShortcut"      Name="Logs"      Icon="icon.ico" WorkingDirectory="INSTALLFOLDER" Target="[WindowsFolder]\explorer.exe" Arguments="&quot;[MyAppDataFolder]&quot;" />
-            <Shortcut Id="UninstallShortcut" Name="Uninstall" Icon="icon.ico" WorkingDirectory="INSTALLFOLDER" Target="[SystemFolder]\msiexec.exe" Arguments="/x [ProductCode]" />
+            <Shortcut Id="UpdateShortcut"    Name="Update"    Icon="icon.ico" WorkingDirectory="INSTALLFOLDER" Target="[INSTALLFOLDER]\R&amp;S Join Cal.exe" Arguments="-update" />
+            <Shortcut Id="LogsShortcut"      Name="Logs"                      WorkingDirectory="INSTALLFOLDER" Target="[WindowsFolder]\explorer.exe" Arguments="&quot;[MyAppDataFolder]&quot;" />
+            <Shortcut Id="UninstallShortcut" Name="Uninstall"                 WorkingDirectory="INSTALLFOLDER" Target="[SystemFolder]\msiexec.exe" Arguments="/x [ProductCode]" />
             <RemoveFolder Id="RemoveStartFolder" Directory="StartFolder" On="uninstall" />
         </Component>
     </Fragment>

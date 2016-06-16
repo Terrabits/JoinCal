@@ -26,6 +26,7 @@ public:
     explicit GetCalDialog(RsaToolbox::Vna *vna, QWidget *parent = 0);
     ~GetCalDialog();
 
+    void setDefault(CalibrationSource source);
     CalibrationSource selectedCal() const;
 
 public slots:

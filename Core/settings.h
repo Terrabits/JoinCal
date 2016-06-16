@@ -10,11 +10,12 @@
 
 // Application settings
 const QString APP_NAME            = "R&S Join Cal";
-const QString APP_VERSION         = "1.0";
+const QString APP_VERSION         = "1.1";
 const QString MANUFACTURER_FOLDER = "Rohde-Schwarz";
 const QString APP_FOLDER          = "Join Cal";
-const QString APP_DESCRIPTION     = "Combine corrections from two calibrations";
+const QString APP_DESCRIPTION     = "Combine corrections from two calibrations with different frequency ranges";
 const QString CONTACT_INFO        = "<html><head/><body><p>Nick Lalic<br/>VNA Software Developer<br/>Half Moon Bay, CA USA<br/>+1 424 200 2846<br/>nick.lalic@rsa.rohde-schwarz.com<br/><a href=\"http://vna.rs-us.net\"><span style=\"text-decoration: underline; color:#0000ff;\">http://vna.rs-us.net</span></a></p></body></html>";
+const QString JSON_UPDATE_URL     = "https://vna.rs-us.net/applications/join_cal.json";
 
 #ifdef DEBUG_MODE
 // Debug program data

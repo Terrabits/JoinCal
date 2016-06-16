@@ -63,6 +63,26 @@ GetCalDialog::~GetCalDialog()
     delete ui;
 }
 
+void GetCalDialog::setDefault(CalibrationSource source) {
+    if (source.isEmpty())
+        return;
+
+    if (source.isChannel() && _channels.contains(source.channel())) {
+        ui->tabWidget->setCurrentWidget(ui->channelTab);
+        int row = _channels.indexOf(source.channel());
+        QModelIndex index = ui->channelTreeWidget->model()->index(row,0);
+        ui->channelTreeWidget->setCurrentIndex(index);
+        ui->channelTreeWidget->setFocus();
+    }
+    else if (source.isCalGroup() && _calGroups.contains(source.calGroup())) {
+        ui->tabWidget->setCurrentWidget(ui->calGroupTab);
+        int row = _calGroups.indexOf(source.calGroup());
+        QModelIndex index = ui->calGroupTreeWidget->model()->index(row, 0);
+        ui->calGroupTreeWidget->setCurrentIndex(index);
+        ui->calGroupTreeWidget->setFocus();
+    }
+}
+
 CalibrationSource GetCalDialog::selectedCal() const {
     if (result() == QDialog::Rejected)
         return CalibrationSource();
