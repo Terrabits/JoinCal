@@ -9,6 +9,7 @@
 using namespace RsaToolbox;
 
 // Qt
+#include <QDebug>
 #include <QSharedPointer>
 
 
@@ -19,18 +20,20 @@ using namespace RsaToolbox;
 JoinCalibrations::JoinCalibrations(Corrections *c1,
                                    Corrections *c2,
                                    RsaToolbox::Vna *vna,
-                                   QString saveAs)
-    : _corr1(c1),
+                                   QString saveAs,
+                                   QObject *parent)
+    : QObject(parent),
+      _corr1(c1),
       _corr2(c2),
       _vna(vna),
       _filename(saveAs)
 {
-
+    // Hola. De nada.
 }
 
 JoinCalibrations::~JoinCalibrations()
 {
-
+    // Adios
 }
 
 bool JoinCalibrations::isValid(JoinError &error) {
@@ -80,6 +83,7 @@ bool JoinCalibrations::isValid(JoinError &error) {
     return true;
 }
 void JoinCalibrations::generate() {
+    emit starting();
     QRowVector frequencies_Hz = _corr1->frequencies_Hz() + _corr2->frequencies_Hz();
     _vna->isError();
     _vna->clearStatus();
@@ -99,6 +103,8 @@ void JoinCalibrations::generate() {
     _vna->isError();
     _vna->clearStatus();
 
+    int _progress = 0;
+    const int _totalSteps = _ports.size() * _ports.size();
     foreach (int p1, _ports) {
         foreach (int p2, _ports) {
             ComplexRowVector directivity;
@@ -135,6 +141,8 @@ void JoinCalibrations::generate() {
             }
             _vna->isError();
             _vna->clearStatus();
+            _progress++;
+            emit progress(100.0*_progress/_totalSteps);
         }
     }
 
@@ -144,6 +152,7 @@ void JoinCalibrations::generate() {
     _vna->deleteChannel(c);
     _vna->isError();
     _vna->clearStatus();
+    emit finished();
 }
 
 QVector<uint> JoinCalibrations::ports() {

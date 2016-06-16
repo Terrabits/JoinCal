@@ -4,16 +4,18 @@
 
 // Project
 #include "Corrections.h"
+#include "JoinCalibrations.h"
 #include "JoinError.h"
 
 // RsaToolbox
 #include <Keys.h>
-#include <LastPath.h>
 #include <VnaPauseSweeps.h>
 #include <Vna.h>
 
 // Qt
 #include <QMainWindow>
+#include <QScopedPointer>
+#include <QThread>
 
 
 namespace Ui {
@@ -31,7 +33,10 @@ public:
 private slots:
     void sourceChanged();
     void checkFilename();
+
     void generate();
+    void generateStarted();
+    void generateFinished();
 
     void shake();
 
@@ -42,8 +47,8 @@ private:
     RsaToolbox::VnaPauseSweeps _pause;
 
     RsaToolbox::Keys    *_keys;
-    RsaToolbox::LastPath _lastPath;
-
+    void loadKeys();
+    void saveKeys();
 
     bool isCal1() const;
     bool isCal2() const;
@@ -54,6 +59,11 @@ private:
     void updateCal2Summary();
     bool isValidInput();
     void displayError(JoinError error);
+
+    QThread _thread;
+    QScopedPointer<Corrections> _corr1;
+    QScopedPointer<Corrections> _corr2;
+    QScopedPointer<JoinCalibrations> _join;
 };
 
 #endif // MAINWINDOW_H

@@ -3,6 +3,7 @@
 
 
 // Qt
+#include <QDataStream>
 #include <QString>
 
 
@@ -28,6 +29,9 @@ public:
 
     QString displayText() const;
 
+    void read(QDataStream &stream);
+    void write(QDataStream &stream) const;
+
 private:
     uint _channel;
     QString _calGroup;
@@ -35,5 +39,6 @@ private:
 
 bool operator!=(const CalibrationSource &left, const CalibrationSource &right);
 bool operator==(const CalibrationSource &left, const CalibrationSource &right);
-
+QDataStream &operator<<(QDataStream &stream, const CalibrationSource &source);
+QDataStream &operator>>(QDataStream &stream, CalibrationSource &source);
 #endif // CALIBRATION_SOURCE_H

@@ -11,16 +11,25 @@
 #include <Vna.h>
 
 // Qt
+#include <QObject>
 #include <QVector>
 
 
-class JoinCalibrations
+class JoinCalibrations : public QObject
 {
+    Q_OBJECT
 public:
-    JoinCalibrations(Corrections *c1, Corrections *c2, RsaToolbox::Vna *vna, QString saveAs);
+    JoinCalibrations(Corrections *c1, Corrections *c2, RsaToolbox::Vna *vna, QString saveAs, QObject *parent = 0);
     ~JoinCalibrations();
 
     bool isValid(JoinError &error);
+
+signals:
+    void starting();
+    void progress(int percent);
+    void finished();
+
+public slots:
     void generate();
 
 private:

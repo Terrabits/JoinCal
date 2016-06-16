@@ -8,6 +8,9 @@
 // RsaToolbox
 using namespace RsaToolbox;
 
+// Qt
+#include <QDebug>
+
 
 CalSourceWidget::CalSourceWidget(QWidget *parent) :
     QWidget(parent),
@@ -16,6 +19,7 @@ CalSourceWidget::CalSourceWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setFocusProxy(ui->pushButton);
     connect(ui->pushButton, SIGNAL(clicked()),
             this, SLOT(showCalDialog()));
     ui->lineEdit->setText(_source.displayText());
@@ -27,6 +31,7 @@ CalSourceWidget::CalSourceWidget(Vna *vna, QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setFocusProxy(ui->pushButton);
     connect(ui->pushButton, SIGNAL(clicked()),
             this, SLOT(showCalDialog()));
     ui->lineEdit->setText(_source.displayText());

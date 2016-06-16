@@ -6,7 +6,6 @@
 #include "Calibration.h"
 #include "CalSort.h"
 #include "Corrections.h"
-#include "JoinCalibrations.h"
 #include "Settings.h"
 
 // RsaToolbox
@@ -16,6 +15,7 @@ using namespace RsaToolbox;
 // Qt
 #include <QDebug>
 #include <QDir>
+#include <QMessageBox>
 #include <QRegExp>
 #include <QRegExpValidator>
 
@@ -25,22 +25,16 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
     ui(new Ui::MainWindow),
     _vna(vna),
     _pause(vna),
-    _keys(keys),
-    _lastPath(_keys, SAVE_PATH_KEY, QDir::homePath())
+    _keys(keys)
 {
     ui->setupUi(this);
+    ui->progressBar->setVisible(false);
 
     ui->calibration1->setVna(_vna);
     ui->calibration2->setVna(_vna);
 
     QRegExp regex("^[\\w\\{\\}\\[\\]\\(\\)]+([\\w\\{\\}\\[\\]\\(\\)\\s]*[\\w\\{\\}\\[\\]\\(\\)]+)?(\\.cal)?$", Qt::CaseInsensitive);
     ui->filename->setValidator(new QRegExpValidator(regex));
-
-    // Error messages
-    connect(ui->crossover, SIGNAL(outOfRange(QString)),
-            ui->error, SLOT(showMessage(QString)));
-    connect(ui->crossover, SIGNAL(outOfRange(QString)),
-            this, SLOT(shake()));
 
     // Process inputs
     connect(ui->calibration1, SIGNAL(sourceChanged(CalibrationSource)),
@@ -53,10 +47,21 @@ MainWindow::MainWindow(Vna *vna, RsaToolbox::Keys *keys, QWidget *parent) :
             this, SLOT(close()));
     connect(ui->generate, SIGNAL(clicked()),
             this, SLOT(generate()));
+
+    // Keys
+    loadKeys();
+
+    // Error messages
+    connect(ui->crossover, SIGNAL(outOfRange(QString)),
+            ui->error, SLOT(showMessage(QString)));
+    connect(ui->crossover, SIGNAL(outOfRange(QString)),
+            this, SLOT(shake()));
 }
 
 MainWindow::~MainWindow()
 {
+    if (_thread.isRunning())
+        _thread.terminate();
     _pause.resume();
     _vna->local();
     delete ui;
@@ -88,44 +93,114 @@ void MainWindow::generate() {
     cal1.source() = ui->calibration1->source();
     if (isCrossover)
         cal1.range().setStop(crossover_Hz);
-    Corrections corr1(cal1, _vna);
+    _corr1.reset(new Corrections(cal1, _vna));
 
     Calibration cal2;
     cal2.source() = ui->calibration2->source();
     if (isCrossover)
         cal2.range().setStart(crossover_Hz);
-    Corrections corr2(cal2, _vna);
+    _corr2.reset(new Corrections(cal2, _vna));
 
     if (!isValidInput())
         return;
 
     QString filename = ui->filename->text();
 
-    JoinCalibrations join(&corr1, &corr2, _vna, filename);
+    _join.reset(new JoinCalibrations(_corr1.data(), _corr2.data(), _vna, filename));
     JoinError error;
-    if (!join.isValid(error)) {
+    if (!_join->isValid(error)) {
+        _join.reset();
         displayError(error);
         return;
     }
 
-    // Move into another thread
-    // Add progress bar
-    join.generate();
+    saveKeys();
+    _join->moveToThread(&_thread);
+    connect(_join.data(), SIGNAL(starting()),
+            this, SLOT(generateStarted()));
+    connect(_join.data(), SIGNAL(progress(int)),
+            ui->progressBar, SLOT(setValue(int)));
+    connect(_join.data(), SIGNAL(finished()),
+            this, SLOT(generateFinished()));
+    QMetaObject::invokeMethod(_join.data(),
+                              "generate",
+                              Qt::QueuedConnection);
+    _thread.start();
+}
+void MainWindow::generateStarted() {
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(100);
+    ui->progressBar->setVisible(true);
+    ui->progressBar->setValue(0);
+}
 
+void MainWindow::generateFinished() {
+    _thread.quit();
+    _join.reset();
     if (ui->load->isChecked()) {
         uint c = _vna->createChannel();
         uint d = _vna->createDiagram();
         QString t = _vna->createTrace(c);
         _vna->trace(t).setDiagram(d);
 
+        const QString filename = ui->filename->text();
         CalibrationSource source(filename);
         _vna->channel(c).setFrequencies(Corrections(source, _vna).frequencies_Hz());
         _vna->channel(c).setCalGroup(filename);
     }
+
+    ui->progressBar->setValue(100);
+    QString msg = "\'%1\' generated successfully!";
+    msg = msg.arg(ui->filename->text());
+    QMessageBox::information(this,
+                             APP_NAME,
+                             msg);
+    ui->progressBar->setVisible(false);
     close();
 }
+
 void MainWindow::shake() {
     RsaToolbox::shake(this);
+}
+
+void MainWindow::loadKeys() {
+    CalibrationSource source;
+    if (_keys->exists(CALSOURCE1_KEY)) {
+        _keys->get(CALSOURCE1_KEY, source);
+        qDebug() << "Cal1: " << source.displayText();
+        if (Corrections(source, _vna).isReady()) {
+            ui->calibration1->setSource(source);
+        }
+    }
+    if (_keys->exists(CALSOURCE2_KEY)) {
+        _keys->get(CALSOURCE2_KEY, source);
+        qDebug() << "Cal2: " << source.displayText();
+        if (Corrections(source, _vna).isReady()) {
+            ui->calibration2->setSource(source);
+        }
+    }
+    if (_keys->exists(CROSSOVER_KEY)) {
+        double crossover;
+        _keys->get(CROSSOVER_KEY, crossover);
+        ui->crossover->setFrequency(crossover);
+    }
+    if (_keys->exists(FILENAME_KEY)) {
+        QString filename;
+        _keys->get(FILENAME_KEY, filename);
+        ui->filename->setText(filename);
+    }
+    if (_keys->exists(LOAD_CAL_KEY)) {
+        bool loadCal;
+        _keys->get(LOAD_CAL_KEY, loadCal);
+        ui->load->setChecked(loadCal);
+    }
+}
+void MainWindow::saveKeys() {
+    _keys->set(CALSOURCE1_KEY, ui->calibration1->source());
+    _keys->set(CALSOURCE2_KEY, ui->calibration2->source());
+    _keys->set(CROSSOVER_KEY, ui->crossover->frequency_Hz());
+    _keys->set(FILENAME_KEY, ui->filename->text());
+    _keys->set(LOAD_CAL_KEY, ui->load->isChecked());
 }
 
 void MainWindow::checkFilename() {

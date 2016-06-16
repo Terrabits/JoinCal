@@ -165,7 +165,9 @@ void Corrections::initialize() {
         _isManaged = true;
         _channel = _vna->createChannel();
         const QString calGroup = _source.calGroup();
-        _vna->channel(_channel).setCalGroup(calGroup);
+        if (_vna->isCalGroup(calGroup)) {
+            _vna->channel(_channel).setCalGroup(calGroup);
+        }
     }
 }
 

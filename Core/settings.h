@@ -38,7 +38,11 @@ const QString                    ADDRESS         = "127.0.0.1::5025";
 #endif
 
 // Keys
-const QString SAVE_PATH_KEY = "SAVE_PATH";
+const QString CALSOURCE1_KEY = "CALSOURCE1";
+const QString CALSOURCE2_KEY = "CALSOURCE2";
+const QString CROSSOVER_KEY  = "CROSSOVER";
+const QString FILENAME_KEY   = "FILENAME";
+const QString LOAD_CAL_KEY   = "LOADCAL";
 
 #endif // SETTINGS_H
 
