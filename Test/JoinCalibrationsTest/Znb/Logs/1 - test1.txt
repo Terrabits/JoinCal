@@ -1,33 +1,37 @@
  Version 0.0
 (C) 2016 Rohde & Schwarz North America
 
-Thu Jun 2 22:48:44 2016
+Wed Nov 23 11:16:22 2016
 
 VNA INSTRUMENT INFO
 Connection:       TCPIP
 Address:          127.0.0.1::5025
 Make:             Rohde & Schwarz
-Model:            ZNB
-Serial No:        1311601044100104
+Model:            ZNBT
+Serial No:        1318700624100104
 Firmware Version: 2.70
 Min Frequency:    9 KHz
 Max Frequency:    8.5 GHz
-Number of Ports:  4
-Options:          ZNB-K2
-                  ZNB-K4
-                  ZNB-K14
-                  ZNB-K17
-                  ZNB-K19
-                  ZNB-K20
-                  ZNB8-B24
-                  ZNB8-B31
-                  ZNB8-B32
-                  ZNB8-B33
-                  ZNB8-B34
-                  ZNB-B81
-                  ZNB-B2
-                  ZNB-B12
-                  ZN-B15
+Number of Ports:  16
+Options:          ZNBT-K2
+                  ZNBT-K4
+                  ZNBT-K14
+                  ZNBT-K17
+                  ZNBT-K19
+                  ZNBT-K20
+                  ZNBT-B108
+                  ZNBT-B112
+                  ZNBT-B116
+                  ZNBT-B21
+                  ZNBT-B22
+                  ZNBT-B23
+                  ZNBT-B24
+                  ZNBT-B361
+                  ZNBT-B362
+                  ZNBT-B363
+                  ZNBT-B364
+                  ZNBT-B81
+                  ZNBT8-B12
 
 
 Write:    "*CLS"
@@ -50,8 +54,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -66,16 +70,16 @@ Write:    ":MMEM:DATA 'ports 1-2 1-4 ghz 100 mhz steps.cal', #558470??"
 Bytes: 58529
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -90,8 +94,8 @@ Write:    ":MMEM:DATA 'ports 1-2 4p1-8 ghz 100 mhz steps.cal', #563798??"
 Bytes: 63859
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":CONF:CHAN:CAT?"
@@ -104,6 +108,34 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":CONF:CHAN2 1"
 Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "6448296, 368735776768, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-4 ghz 100 mhz steps.c..."
+Bytes: 234
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 2,'ports 1-2 1-4 ghz 100 mhz steps.cal'"
@@ -120,6 +152,34 @@ Status: 0x0 Operation completed successfully.
 
 Write:    ":CONF:CHAN3 1"
 Bytes: 14
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR?"
+Bytes: 12
+Status: 0x0 Operation completed successfully.
+
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR DEF"
+Bytes: 15
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR '.\Calibration\Data'"
+Bytes: 32
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CAT?"
+Bytes: 11
+Status: 0x0 Operation completed successfully.
+
+Read:     "6448296, 368735776768, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-4 ghz 100 mhz steps.c..."
+Bytes: 234
+Status: 0x0 Operation completed successfully.
+
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 3,'ports 1-2 4p1-8 ghz 100 mhz steps.cal'"
@@ -1534,16 +1594,16 @@ Write:    "*IDN?"
 Bytes: 6
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB8-4Port,1311601044100104,2.70"
-Bytes: 47
+Read:     "Rohde-Schwarz,ZNBT8-16Port,1318700624100104,2.70"
+Bytes: 49
 Status: 0x0 Operation completed successfully.
 
 Write:    "*IDN?"
 Bytes: 6
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB8-4Port,1311601044100104,2.70"
-Bytes: 47
+Read:     "Rohde-Schwarz,ZNBT8-16Port,1318700624100104,2.70"
+Bytes: 49
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS4:AVER?"
@@ -1574,8 +1634,8 @@ Write:    "*IDN?"
 Bytes: 6
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB8-4Port,1311601044100104,2.70"
-Bytes: 47
+Read:     "Rohde-Schwarz,ZNBT8-16Port,1318700624100104,2.70"
+Bytes: 49
 Status: 0x0 Operation completed successfully.
 
 Write:    ":CORR:COLL:CHAN:ALL 0"
@@ -1586,8 +1646,8 @@ Write:    "*IDN?"
 Bytes: 6
 Status: 0x0 Operation completed successfully.
 
-Read:     "Rohde-Schwarz,ZNB8-4Port,1311601044100104,2.70"
-Bytes: 47
+Read:     "Rohde-Schwarz,ZNBT8-16Port,1318700624100104,2.70"
+Bytes: 49
 Status: 0x0 Operation completed successfully.
 
 Write:    ":SENS4:CORR:COLL:METH:DEF 'JoinCal',TOSM,1,2"
@@ -3810,8 +3870,8 @@ Write:    ":MMEM:CDIR?"
 Bytes: 12
 Status: 0x0 Operation completed successfully.
 
-Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 63
+Read:     "'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 46
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:CDIR DEF"
@@ -3826,12 +3886,12 @@ Write:    ":MMEM:CAT?"
 Bytes: 11
 Status: 0x0 Operation completed successfully.
 
-Read:     "192548, 219177443328, ports 1-2 1-4 ghz 100 mhz steps.cal, , 58470, ports 1-2 4p1-8 ghz 100 mhz ste..."
-Bytes: 139
+Read:     "6474856, 368735518720, linear.cal, , 2081274, log.cal, , 2081274, ports 1-2 1-4 ghz 100 mhz steps.c..."
+Bytes: 255
 Status: 0x0 Operation completed successfully.
 
-Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA\Calibration\Data'"
-Bytes: 74
+Write:    ":MMEM:CDIR 'C:\Users\Public\Documents\Rohde-Schwarz\VNA'"
+Bytes: 57
 Status: 0x0 Operation completed successfully.
 
 Write:    ":MMEM:LOAD:CORR 1,'result.cal'"

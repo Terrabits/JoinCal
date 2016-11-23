@@ -10,7 +10,7 @@
 
 // Application settings
 const QString APP_NAME            = "R&S Join Cal";
-const QString APP_VERSION         = "1.1";
+const QString APP_VERSION         = "1.1.1";
 const QString MANUFACTURER_FOLDER = "Rohde-Schwarz";
 const QString APP_FOLDER          = "Join Cal";
 const QString APP_DESCRIPTION     = "Combine corrections from two calibrations with different frequency ranges";

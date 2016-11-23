@@ -84,9 +84,10 @@ void MainWindow::sourceChanged() {
 }
 
 void MainWindow::generate() {
+    bool isCrossover = ui->crossover->isEnabled();
+
     this->setDisabled(true);
 
-    bool isCrossover = ui->crossover->isEnabled();
     double crossover_Hz;
     if (isCrossover)
         crossover_Hz = ui->crossover->frequency_Hz();
@@ -115,6 +116,7 @@ void MainWindow::generate() {
     if (!_join->isValid(error)) {
         _join.reset();
         displayError(error);
+        this->setEnabled(true);
         return;
     }
 

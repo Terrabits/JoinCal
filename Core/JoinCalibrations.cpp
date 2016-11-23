@@ -73,6 +73,8 @@ bool JoinCalibrations::isValid(JoinError &error) {
         error.msg = "*Frequency range error";
         return false;
     }
+    qDebug() << "corr1: " << _corr1->startFrequency_Hz() << _corr1->stopFrequency_Hz();
+    qDebug() << "corr2: " << _corr2->startFrequency_Hz() << _corr2->stopFrequency_Hz();
     // Common ports
     if (ports().isEmpty()) {
         error.code = JoinError::Code::Ports;
