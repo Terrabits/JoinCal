@@ -61,8 +61,6 @@ private:
     void displayError(JoinError error);
 
     QThread _thread;
-    QScopedPointer<Corrections> _corr1;
-    QScopedPointer<Corrections> _corr2;
     QScopedPointer<JoinCalibrations> _join;
 };
 

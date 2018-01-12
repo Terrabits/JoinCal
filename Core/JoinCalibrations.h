@@ -3,6 +3,7 @@
 
 
 // Project
+#include "Calibration.h"
 #include "Corrections.h"
 #include "JoinError.h"
 
@@ -12,6 +13,7 @@
 
 // Qt
 #include <QObject>
+#include <QScopedPointer>
 #include <QVector>
 
 
@@ -19,7 +21,7 @@ class JoinCalibrations : public QObject
 {
     Q_OBJECT
 public:
-    JoinCalibrations(Corrections *c1, Corrections *c2, RsaToolbox::Vna *vna, QString saveAs, QObject *parent = 0);
+    JoinCalibrations(Calibration cal1, Calibration cal2, RsaToolbox::Vna *vna, QString saveAs, bool load, QObject *parent = 0);
     ~JoinCalibrations();
 
     bool isValid(JoinError &error);
@@ -33,12 +35,23 @@ public slots:
     void generate();
 
 private:
-    Corrections *_corr1, *_corr2;
+    Calibration _cal1;
+    Calibration _cal2;
     RsaToolbox::Vna *_vna;
     QString _filename;
+    bool _load;
+
+    QScopedPointer<Corrections> _corr1;
+    QScopedPointer<Corrections> _corr2;
+    void getCorrections();
+    void clearCorrections();
+
     QVector<uint> ports();
 
+    void setSegmentedSweep(uint channel);
     static void append(RsaToolbox::ComplexRowVector &vector, const RsaToolbox::ComplexRowVector &values);
+
+    void loadResults();
 };
 
 #endif // JOINCALIBRATIONS_H

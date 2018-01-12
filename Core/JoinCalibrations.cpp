@@ -17,16 +17,18 @@ using namespace RsaToolbox;
 // - sections are valid
 // - sections are sorted
 //   low to high frequency
-JoinCalibrations::JoinCalibrations(Corrections *c1,
-                                   Corrections *c2,
+JoinCalibrations::JoinCalibrations(Calibration cal1,
+                                   Calibration cal2,
                                    RsaToolbox::Vna *vna,
                                    QString saveAs,
+                                   bool load,
                                    QObject *parent)
     : QObject(parent),
-      _corr1(c1),
-      _corr2(c2),
+      _cal1(cal1),
+      _cal2(cal2),
       _vna(vna),
-      _filename(saveAs)
+      _filename(saveAs),
+      _load(load)
 {
     // Hola. De nada.
 }
@@ -37,12 +39,14 @@ JoinCalibrations::~JoinCalibrations()
 }
 
 bool JoinCalibrations::isValid(JoinError &error) {
+    getCorrections();
     // 1st Corrections
     if (!_corr1->isReady()) {
         error.code  = JoinError::Code::Calibration1;
         error.index = 1;
         error.msg   = "*Can\'t load cal from %1";
         error.msg   = error.msg.arg(_corr1->source().displayText());
+        clearCorrections();
         return false;
     }
     if (_corr1->isEmpty()) {
@@ -50,6 +54,7 @@ bool JoinCalibrations::isValid(JoinError &error) {
         error.index = 1;
         error.msg   = "*No points from cal %1";
         error.msg   = error.msg.arg(_corr1->source().displayText());
+        clearCorrections();
         return false;
     }
     // 2nd Corrections
@@ -58,6 +63,7 @@ bool JoinCalibrations::isValid(JoinError &error) {
         error.index = 2;
         error.msg   = "*Can\'t load cal from %1";
         error.msg   = error.msg.arg(_corr2->source().displayText());
+        clearCorrections();
         return false;
     }
     if (_corr2->isEmpty()) {
@@ -65,12 +71,14 @@ bool JoinCalibrations::isValid(JoinError &error) {
         error.index = 2;
         error.msg   = "*No points from cal %1";
         error.msg   = error.msg.arg(_corr2->source().displayText());
+        clearCorrections();
         return false;
     }
     // Frequency Overlap
     if (_corr1->stopFrequency_Hz() >= _corr2->startFrequency_Hz()) {
         error.code = JoinError::Code::FrequencyRange;
         error.msg = "*Frequency range error";
+        clearCorrections();
         return false;
     }
     qDebug() << "corr1: " << _corr1->startFrequency_Hz() << _corr1->stopFrequency_Hz();
@@ -79,25 +87,34 @@ bool JoinCalibrations::isValid(JoinError &error) {
     if (ports().isEmpty()) {
         error.code = JoinError::Code::Ports;
         error.msg = "*No common ports";
+        clearCorrections();
         return false;
     }
 
+    clearCorrections();
     return true;
 }
 void JoinCalibrations::generate() {
     emit starting();
-    QRowVector frequencies_Hz = _corr1->frequencies_Hz() + _corr2->frequencies_Hz();
     _vna->isError();
     _vna->clearStatus();
 
+    // _corr1, _corr2
+    getCorrections();
+
+    // New channel
     uint c = _vna->createChannel();
     VnaChannel channel = _vna->channel(c);
-    if (channel.isCalGroup())
+    if (channel.isCalGroup()) {
         channel.dissolveCalGroupLink();
-    channel.setFrequencies(frequencies_Hz);
+    }
+
+    // New sweep
+    setSegmentedSweep(c);
     _vna->isError();
     _vna->clearStatus();
 
+    // New (blank) correction set
     QVector<uint> _ports = ports();
     VnaCorrections newCorrections = channel.corrections();
     channel.calibrate().start("JoinCal", VnaCalibrate::CalType::Tosm, _ports);
@@ -105,6 +122,7 @@ void JoinCalibrations::generate() {
     _vna->isError();
     _vna->clearStatus();
 
+    // Fill in concatenated corrections
     int _progress = 0;
     const int _totalSteps = _ports.size() * _ports.size();
     foreach (int p1, _ports) {
@@ -148,10 +166,22 @@ void JoinCalibrations::generate() {
         }
     }
 
+    // Save new cal
     channel.saveCalibration(_filename);
     channel.dissolveCalGroupLink();
     channel.setCalGroup(_filename);
+
+    // cleanup
+    clearCorrections();
     _vna->deleteChannel(c);
+    _vna->isError();
+    _vna->clearStatus();
+
+    // Display result?
+    if (_load) {
+        loadResults();
+    }
+
     _vna->isError();
     _vna->clearStatus();
     emit finished();
@@ -168,6 +198,70 @@ QVector<uint> JoinCalibrations::ports() {
     return result;
 }
 
+void JoinCalibrations::getCorrections() {
+    _corr1.reset(new Corrections(_cal1, _vna));
+    _corr2.reset(new Corrections(_cal2, _vna));
+}
+void JoinCalibrations::clearCorrections() {
+    _corr1.reset();
+    _corr2.reset();
+}
+
+void JoinCalibrations::setSegmentedSweep(uint channel) {
+    qDebug() << "setSegmentedSweep in " << channel;
+    // Create segmented sweep
+    VnaChannel ch = _vna->channel(channel);
+    VnaSegmentedSweep sweep = ch.segmentedSweep();
+    if (_corr1->sweepType() == VnaChannel::Linear) {
+        sweep.deleteSegments();
+        sweep.addSegment(1);
+        VnaSweepSegment s = sweep.segment(1);
+        s.setStart(_corr1->startFrequency_Hz());
+        s.setStop(_corr1->stopFrequency_Hz());
+        s.setPoints(_corr1->points());
+    }
+    else {
+        ch.setFrequencies(_corr1->frequencies_Hz());
+    }
+    if (_corr2->sweepType() == VnaChannel::Linear) {
+        VnaSweepSegment s = sweep.segment(sweep.addSegment());
+        s.setStart(_corr2->startFrequency_Hz());
+        s.setStop(_corr2->stopFrequency_Hz());
+        s.setPoints(_corr2->points());
+    }
+    else {
+        QRowVector freq = _corr2->frequencies_Hz();
+        for (int i = 0; i < freq.size(); i++) {
+            VnaSweepSegment s = sweep.segment(sweep.addSegment());
+            s.setSingleFrequency(freq[i]);
+        }
+    }
+    ch.setSweepType(VnaChannel::SweepType::Segmented);
+}
+
 void JoinCalibrations::append(ComplexRowVector &vector, const ComplexRowVector &values) {
     vector.insert(vector.end(), values.begin(), values.end());
+}
+
+void JoinCalibrations::loadResults() {
+    // setup channel, sweep
+    qDebug() << "channels: " << _vna->channels();
+    uint c = _vna->createChannel();
+    qDebug() << "results channel: " << c;
+    getCorrections();
+    setSegmentedSweep(c);
+    clearCorrections();
+
+    // setup calibration
+    VnaChannel channel = _vna->channel(c);
+    channel.setCalGroup(_filename);
+
+    // Show trace
+    uint d = _vna->createDiagram();
+    QString trc = _vna->createTrace(c);
+    _vna->trace(trc).setDiagram(d);
+
+    channel.continuousSweepOn();
+    _vna->isError();
+    _vna->clearStatus();
 }

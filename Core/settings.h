@@ -10,7 +10,7 @@
 
 // Application settings
 const QString APP_NAME            = "R&S Join Cal";
-const QString APP_VERSION         = "1.1.1";
+const QString APP_VERSION         = "1.1.2";
 const QString MANUFACTURER_FOLDER = "Rohde-Schwarz";
 const QString APP_FOLDER          = "Join Cal";
 const QString APP_DESCRIPTION     = "Combine corrections from two calibrations with different frequency ranges";
@@ -20,8 +20,8 @@ const QString JSON_UPDATE_URL     = "https://vna.rs-us.net/applications/join_cal
 #ifdef DEBUG_MODE
 // Debug program data
 const QDir    dataDir(SOURCE_DIR);
-const QString LOG_FILENAME = dataDir.filePath("_Debug/Log.txt");
-const QString KEY_PATH     = dataDir.filePath("_Debug/Keys");
+const QString LOG_FILENAME = dataDir.filePath("Debug/Log.txt");
+const QString KEY_PATH     = dataDir.filePath("Debug/Keys");
 
 // Debug Connection settings
 const RsaToolbox::ConnectionType CONNECTION_TYPE = RsaToolbox::ConnectionType::VisaTcpSocketConnection;
@@ -46,4 +46,3 @@ const QString FILENAME_KEY   = "FILENAME";
 const QString LOAD_CAL_KEY   = "LOADCAL";
 
 #endif // SETTINGS_H
-

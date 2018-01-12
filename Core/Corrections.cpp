@@ -96,6 +96,9 @@ double Corrections::stopFrequency_Hz() {
 
     return frequencies_Hz().last();
 }
+VnaChannel::SweepType Corrections::sweepType() const {
+    return _vna->channel(_channel).corrections().sweepType();
+}
 QRowVector Corrections::frequencies_Hz() {
     if (_state == State::NoLimits)
         return _vna->channel(_channel).corrections().frequencies_Hz();

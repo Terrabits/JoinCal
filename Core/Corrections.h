@@ -47,6 +47,7 @@ public:
 
     double startFrequency_Hz();
     double stopFrequency_Hz();
+    RsaToolbox::VnaChannel::SweepType sweepType() const;
     RsaToolbox::QRowVector frequencies_Hz();
     RsaToolbox::ComplexRowVector directivity(uint outputPort, uint inputPort);
     RsaToolbox::ComplexRowVector sourceMatch(uint outputPort, uint inputPort);

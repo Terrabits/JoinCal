@@ -89,20 +89,21 @@ void MainWindow::generate() {
     this->setDisabled(true);
 
     double crossover_Hz;
-    if (isCrossover)
+    if (isCrossover) {
         crossover_Hz = ui->crossover->frequency_Hz();
+    }
 
     Calibration cal1;
     cal1.source() = ui->calibration1->source();
-    if (isCrossover)
+    if (isCrossover) {
         cal1.range().setStop(crossover_Hz);
-    _corr1.reset(new Corrections(cal1, _vna));
+    }
 
     Calibration cal2;
     cal2.source() = ui->calibration2->source();
-    if (isCrossover)
+    if (isCrossover) {
         cal2.range().setStart(crossover_Hz);
-    _corr2.reset(new Corrections(cal2, _vna));
+    }
 
     if (!isValidInput()) {
         this->setEnabled(true);
@@ -111,7 +112,11 @@ void MainWindow::generate() {
 
     QString filename = ui->filename->text();
 
-    _join.reset(new JoinCalibrations(_corr1.data(), _corr2.data(), _vna, filename));
+    _join.reset(new JoinCalibrations(cal1,
+                                     cal2,
+                                     _vna,
+                                     filename,
+                                     ui->load->isChecked()));
     JoinError error;
     if (!_join->isValid(error)) {
         _join.reset();
@@ -143,20 +148,7 @@ void MainWindow::generateStarted() {
 void MainWindow::generateFinished() {
     _thread.quit();
     _join.reset();
-    _corr1.reset();
-    _corr2.reset();
     _pause.resume();
-    if (ui->load->isChecked()) {
-        uint c = _vna->createChannel();
-        uint d = _vna->createDiagram();
-        QString t = _vna->createTrace(c);
-        _vna->trace(t).setDiagram(d);
-
-        const QString filename = ui->filename->text();
-        CalibrationSource source(filename);
-        _vna->channel(c).setFrequencies(Corrections(source, _vna).frequencies_Hz());
-        _vna->channel(c).setCalGroup(filename);
-    }
 
     ui->progressBar->setValue(100);
     this->setEnabled(true);
