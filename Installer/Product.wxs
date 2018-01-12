@@ -3,7 +3,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
     <Product Id="*" Language="1033"
              Name="R&amp;S Join Cal"
-             Version="1.1"
+             Version="1.1.2"
              Manufacturer="Rohde &amp; Schwarz"
              UpgradeCode="8FC61D25-B0A6-42FE-A1EE-187B48ACAE05">
         <Package       InstallerVersion="200" Compressed="yes" InstallScope="perMachine"              />
