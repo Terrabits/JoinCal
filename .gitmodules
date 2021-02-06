@@ -1,0 +1,3 @@
+[submodule "RsaToolbox"]
+	path = RsaToolbox
+	url = git@github.com:Terrabits/RsaToolbox.git
