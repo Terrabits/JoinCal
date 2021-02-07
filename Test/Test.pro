@@ -3,7 +3,7 @@ TEMPLATE = app
 TARGET   = Test
 CONFIG  += testcase
 
-include(../Core/core.pri)
+include($PWD/../Core/core.pri)
 HEADERS += CalibrationTest.h \
            CorrectionsTest.h \
            JoinCalibrationsTest.h \
@@ -19,5 +19,3 @@ SOURCES += main.cpp \
            CalSortTest.cpp
 
 DEFINES += SOURCE_DIR=\\\"$$PWD/\\\"
-
-

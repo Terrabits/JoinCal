@@ -8,7 +8,7 @@ QT       += core gui widgets
 TARGET    = JoinCal
 TEMPLATE  = app
 
-include(../Core/core.pri)
+include($PWD../Core/core.pri)
 SOURCES       += main.cpp \
                  MainWindow.cpp
 HEADERS       += MainWindow.h
