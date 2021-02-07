@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 CONFIG  += ordered
-SUBDIRS += Core \
+SUBDIRS += RsaToolbox \
+           Core \
            Test \
            Application

@@ -9,7 +9,7 @@ CONFIG(debug, debug|release) {
        TARGET = $$join(TARGET,,,d)
 }
 
-include(../RsaToolbox/rsatoolbox.pri)
+include($PWD/../RsaToolbox/Install/rsatoolbox.pri)
 HEADERS += Settings.h \
            CalibrationSource.h \
            Corrections.h \
